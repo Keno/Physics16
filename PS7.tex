@@ -1,0 +1,106 @@
+\title{Physics 16: Problem Set 7}
+\include{prelude}
+\maketitle
+\begin{center}
+Collaborators: Alex Lombardi, Lucian Wang 
+\end{center}
+\section*{Problem 7-1-a}
+Let time $t=0$ in the station frame denote the time at which the trains are head-to-head and place a clock right at that position (let's call it $x_0$. Now we will call $t_1$ the time that that clock reads once the trains have just passed each other (i.e. the time at which the both the other ends of the two trains are at $x_0$). Note that this is possible, since both trains move at the same speed. Now from the standpoint of an observer on one of the trains, that clock is passing by at speed $v$ and thus the clock of an observer on the train will be faster by a factor of $\gamma$, so $\gamma t_1$ seconds pass while the trains pass and thus it takes longer (the time difference is large) for the trains to pass for observers on the trains than it does for observers at the station.
+\section*{Problem 7-2}
+This problem involves a large number of calculations, but the calculations themselves are fairly routine and thus I wrote a script to perform them (see Appendix I for the code). In all of the following problems, there are two events given between which the objects moves. The reference frames in the calculations are reference frames that move at a speed equal to the average speed between the two events such that its position is equal to that of the object we look at at both the first and the second event. When talking about the velocities of an object, we mean the velocity of the reference frame constructed in such a way, relative to our current reference frame. 
+\section*{Problem 7-2-a}
+\begin{center}
+\begin{tabular}{ l || r | r  r  c || c }
+  Events & t & x && Velocities & v \\ \hline
+  Event 1 &    		  0  & 0 			&& C & 0 \\
+  Event 2 &  42.4264  & 127.279 && F & $\frac{1}{7}$\\
+  Event 3 &  28.2843  & 0				&& B & $\frac{7}{9}$\\
+  Event 4 &  190.919  & 148.492 && b & $\frac{21}{23}$
+\end{tabular}
+\end{center}
+In this subproblem we are considering the frame of the catcher as he/she moves from Event 1 to Event 3. First note that we have the the velocity of the Catcher is zero and that x=0 at both Event 1 and Event 3, which is what we would expect and makes thus sense in this frame. However, we can also see two rather strange phenomena happening in this frame: (1) Events 1 and 2 which used to be simultaneous in the Stadium frame now happen 42 ns apart and more over (2) Event 3 is happening before Event 2 whereas it was the opposite before. Note however that time-likeness and space-likeness of the intervals is preserved as we would expect.
+\section*{Problem 7-2-b}
+\begin{center}
+\begin{tabular}{ l || r | r  r  c || c }
+  Events & t & x && Velocities & v \\ \hline
+  Event 1 &    		  0  & 0 			&& C & $-\frac{1}{7}$ \\
+  Event 2 &  24.4949  & 122.474 && F & 0\\
+  Event 3 &  28.5774  & -4.08248			&& B & $\frac{5}{7}$\\
+  Event 4 &  171.464  & 122.474 && b & $\frac{31}{35}$
+\end{tabular}
+\end{center}
+In this frame all the Event's are in the same order as in the Stadium frame and overall the situation looks similar, though with  somewhat different values though not as extreme as in some of the other frames. This is easily explained by the fact that the first basement is rather slow in the overall scheme of things (his speed is only $\frac{c}{5}$. This actually shows that the slower the relative velocities, the more likely the frames are to resemble each other. 
+\section*{Problem 7-2-c}
+\begin{center}
+\begin{tabular}{ l || r | r  r  c || c }
+  Events & t & x && Velocities & v \\ \hline
+  Event 1 &    		  0  & 0 			&& C & $-\frac{1}{7}$ \\
+  Event 2 &  -90  & 150 && F & $-\frac{5}{7}$\\
+  Event 3 &  45  & -35			&& B & 0\\
+  Event 4 &  120  & 0 && b & $\frac{7}{15}$
+\end{tabular}
+\end{center}
+This is interesting in that Event is happening at a negative time (i.e. before Event 1 which we are taking as the origin of space-time). It is also noteworthy that the numbers in this frame are very nice due to the fact that our $\gamma$ is rational. A somewhat interesting effect (though by no means surprising) is that first base and the home base are both at $x=0$ though at different times. It is also noteworthy that $F$ is moving backwards even though $F$ is moving forwards in the original stadium frame.
+\section*{Problem 7-2-d}
+\begin{center}
+\begin{tabular}{ l || r | r  r  c || c }
+  Events & t & x && Velocities & v \\ \hline
+  Event 1 &    		  0  & 0 			&& C & $-\frac{21}{23}$ \\
+  Event 2 &  -180.907  & 217.088  && F & $-\frac{31}{35}$\\
+  Event 3 &  135.68  & -63.3174				&& B & $\frac{7}{15}$\\
+  Event 4 &  190.919  & -63.3174 && b & 0
+\end{tabular}
+\end{center}
+This is the frame of the ball and by far the fastest of them all. That explains why the values are so extreme when compared to the other frames (ranging from -180 to 190 which is more than twice as far as any of the other). This is basically the counter example to $b$ where we had a relatively slow relative velocity. 
+\section*{Problem 7-3-a}
+We will calculate the invariant interval as space-time events on the path of the photons in the factory frame. Note that we thus need not consider relativistic effects (due to the fact that we remain on the path of the photon). The ring of photons is perfectly circular and we have for $x$ and $y$ coordinates:
+\[ (x_i,y_i) = \left. (\frac{d}{2}\cos(\theta_i),\frac{d}{2}\sin(\theta_i)) \right| i\in \{1,2\} \]
+So we have
+\[ (\Delta s)^2 = c^2(\Delta t)^2 -(\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2 = -(\Delta x)^2 - (\Delta y)^2 \]
+Note that movement is solely in the $x$ direction and moreover, the speed of the photons in the $z$ direction is $c$ so $\Delta z$ = $ct$, which cancels the first term.
+Calculating gives:
+\[ (\Delta s)^2 = -(\Delta x)^2 - (\Delta y)^2  = \frac{d^2}{4}(\cos\theta_2-\cos\theta_1)^2 - \frac{d^2}{4}(\sin\theta_2-\sin\theta_1)^2 =\]\[ -\frac{d^2}{4}\left(-2\sin\left(\frac{\theta_2-\theta_1}{2}\right)\sin\left(\frac{\theta_1+\theta_2}{2}\right)\right)^2 - \frac{d^2}{4}\left(2\sin\left(\frac{\theta_2-\theta_1}{2}\right)\cos\left(\frac{\theta_1+\theta_2}{2}\right)\right)^2   \]
+\[ = -d^2\sin^2\left(\frac{\theta_2-\theta_1}{2}\right)\left[\cos^2\left(\frac{\theta_1+\theta_2}{2}\right) + \sin^2\left(\frac{\theta_1+\theta_2}{2}\right)\right] = -d^2\sin^2\left(\frac{\theta_2-\theta_1}{2}\right) \]
+If we had a metal cookie cutter instead of a photon-based one, the $c\Delta t$ and $\Delta z$ terms would no longer cancel. 
+\section*{Problem 7-3-b}
+We can begin our analysis by looking at the Lorentz transform of two points in the factory frame. Two points ideally suited for such an analysis are the cutting events at the front of cookie and that at the very back of the cookie (as seen in the direction of motion). Since these occur at the same time, we may say $t=0$ and thus the Lorentz transform simply becomes:
+\[ x_1' = \gamma \frac{d}{2}, ct_1' = -\gamma\beta\frac{d}{2} \]
+\[ x_2' = -\gamma \frac{d}{2}, ct_2' = \gamma\beta\frac{d}{2} \]
+These correspond to the two pictures in the graph (uploaded together with this pset). Now, clearly, at time $-\gamma\beta\frac{d}{2}$, the other point (let's call it $p_2$) must be $v_y\gamma\beta\frac{d}{2}$ above the $y$ axis and $v_x\gamma\beta\frac{d}{2}$ offset from the point where it will eventually hit. We require that $c^2 = v_x^2+v_y^2$ and we know that the ring of photons must come in from the right, so it must be offset to the right. Connecting the two points in the two diagrams, the shape of the ring of photons becomes very clear: The circle is tilted so that the front of the cutter is cut before the back of the cookie (and since the cutter is also moving in the $x$ direction we get  the elliptical shape). It is somewhat instructive to consider the analogy between this situation and a tilt in a plane generating conic section where a circle becomes an ellipse by slight tilt of the plane in one dimension. 
+\section*{Appendix I}
+This script is written in Julia (julialang.org):
+\begin{verbatim}
+#  t    x
+coords =
+[  0    0;
+   0  120;
+  30  -10;
+ 150   90]
+
+function lorentz_transform(cs,event1,event2)
+    local gamma
+    #speed of light in x/t
+    c = 1
+    #relative spped of reference frame to statdium frame
+    v = (cs[event2,2] - cs[event1,2])/(cs[event2,1] - cs[event1,1])
+    beta = v/c
+    gamma = 1/sqrt(1-(v^2/c^2))
+    println([v beta gamma]);
+    cs*[gamma -gamma*beta; -gamma*beta gamma]
+end
+
+#Events (also corresponds to velocities):
+#        C    F    B    b
+events=[1 3; 2 4; 1 4; 3 4]
+for i in 1:size(events,1)
+    coords_prime = lorentz_transform(coords,events[i,1],events[i,2])
+    println(coords_prime)
+    for i in 1:size(events,1)
+        v = (coords_prime[events[i,1],2] - coords_prime[events[i,2],2])/
+            (coords_prime[events[i,1],1] - coords_prime[events[i,2],1])
+        println("Velocity of object moving from "*string(events[i,1])*" to "
+        *string(events[i,2])*": $v")
+    end
+end
+\end{verbatim}
+\end{document}

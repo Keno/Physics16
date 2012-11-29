@@ -1,0 +1,128 @@
+\include{prelude}
+\section*{Problem 1a)}
+From the conservation of energy, we know that we must have 
+\[ m\gamma' - m\gamma = E_p - \rho Ax  \]
+where $E_p$, the total energy of the photons, and $\gamma'$ are determined at the at some $\delta t$ and where we $x$ to be the distance traveled by the ramjet in that amount of time. Written another way, we have (with $E$ being the energy of the ramjet)
+\[ \Delta E =  \Delta E_p - \rho A \Delta x \]
+or in the infinitesimal limit,
+\[\frac{dE}{dt}= \frac{E_p}{dt} - \rho A v \]
+Now notice that for the photons $\Delta E_p=-\Delta p_p$ (since the photons are going in the negative direction). $\Delta p=-\Delta p_p$ by the conservation of momentum and thus $\Delta E_p=\Delta p$ and thus we have:
+\[ \frac{dE}{dt}-\frac{dp}{dt}=-\rho A v \]
+Now, taking the time derivative of the expressions for $E$ and $p$ gives:
+\[ \frac{dE}{dt} = \frac{d}{dt}\left[\frac{m}{\sqrt{1-v^2}}\right] = \frac{mv}{(1-v^2)^{\frac{3}{2}}} \frac{dv}{dt} \]
+and similarly
+\[ \frac{dp}{dt} = \frac{d}{dt}\left[\frac{mv}{\sqrt{1-v^2}}\right] = 
+\frac{m\sqrt{1-v^2}-\frac{-mv^2}{\sqrt{1-v^2}}}{1-v^2} = 
+m\dfrac{\frac{1-v^2+v^2}{\sqrt{1-v^2}}}{1-v^2} = \frac{m}{(1-v^2)^{\frac{3}{2}}}  \frac{dv}{dt} \]
+So $\frac{dE}{dt} = v \frac{dp}{dt}$ and from above we get
+\[ \frac{dE}{dt}-\frac{dp}{dt}=-\rho A v \]
+\[ (v-1)\frac{dp}{dt}=-\rho A v \]
+\[ \frac{dp}{dt} = \frac{\rho A v}{1-v} \]
+and we have found the force as desired. 
+\section*{Problem 1b)}
+We have 
+\begin{multicols}{4}
+\noindent
+\[ P_i = (\gamma_i m, \gamma_i m v_0) \]
+\[ P_f = (\gamma_f m, \gamma_f m v_f) \]
+\[ P_g = (\rho A x, 0) \]
+\[ P_\gamma = (E_\gamma, -E_\gamma) \]
+\end{multicols}
+Where we consider the second entry of the tuple to be the coefficient of some unit vector $\hat{n}$ in the direction of $\vec{v}$.
+Now, by conservation of momentum:
+\[  E_\gamma = \gamma_f m v_f - \gamma_i m v_0 \].
+We can now use conservation of energy to get
+\[ \gamma_i m + \rho A x= \gamma_f m + E_\gamma \]
+\[ \iff \gamma_i m +  \frac{\rho A x}{m} = \gamma_f m + \gamma_f m v_f - \gamma_i m v_0 \]
+\[ \iff \gamma_i (1+v_0) + \rho A x = \gamma_f (1 + v_f) \]
+\[ \iff \frac{1+v_f}{\sqrt{1-v_f^2}}=\frac{1+v_0}{\sqrt{1-v_0^2}}+ \frac{\rho A x}{m}  \]
+Now the right hand side is just a constant, so let us first solve the problem in terms of that constant:
+\[ \frac{1+x}{\sqrt{1-x^2}}=a \]
+\[ \iff \sqrt{\frac{1+x}{1-x}}=a \]
+\[ \iff x = \frac{a^2-1}{1+a^2} = 1-\frac{2}{a^2+1} \]
+\[ \boxed{ v_f = 1-\dfrac{2}{\left(\frac{1+v_0}{\sqrt{1-v_0^2}}+ \frac{\rho A x}{m} \right)^2+1} } \]
+which for the sake of sanity I will not expand (as it would not result in any simplification). Note that we have $a^2_1>1$ at all points where $x>0$ so $0\leq v_f < 1$ (and we also have $-1 < v_f < 1$ for all $x$) which is what we would expect for a massive ramjet.
+\section*{Problem 2a)}
+At time $t$, the first particle is at position $\hat{e_1}t$ and the second particle is at position $\hat{e_2}t$, and there is a string connecting these two forming a triangle with the origin. By the law of cosines the length of the string (i.e. the length of the missing triangle side is):
+\[ L^2 = (\hat{e_1}t)^2 + (\hat{e_2}t)^2 - 2 t^2 \cos \theta = 2t^2 (1 - \cos\theta) \]
+so 
+\[ L = 2t\sin \frac{\theta}{2} \]
+\section*{Problem 2b)}
+Consider a vector diagram showing the velocities of the particles (when they are at the same point). Since $v_1=v_2=1$, this diagram will be the same as that in part a). What we want to find is the velocity perpendicular to the string, which in this diagram happens to be the vector from the origin to the middle of the string (which is the same as that given in the problem). More quantitatively, this means that $\vec{v_s}$ is the projection of $v_1$ along an axis $\theta/2$ away from $v_1$ since $v_1=v_2$ and thus we have
+\[ v_s = v\cos(\theta/2) = \cos(\theta/2) \]
+Calculating $\gamma_s$ yields:
+\[ \gamma_s = \frac{1}{\sqrt{1-\cos^2\left(\theta/2\right)}} = \frac{1}{sin\left(\theta/2\right)} = \sqrt{\frac{2}{1-\cos\theta}} \]
+\section*{Problem 2c)}
+Originally we have the 4-vectors at the origin of the quark and antiquark given by
+\begin{multicols}{2}
+\noindent
+\[ P_1 = (E_1, E_1 \hat{e_1}) \]
+\[ P_2 = (E_2, E_2 \hat{e_2}) \]
+\end{multicols}
+After some time $t$, we have
+\[ P'_1 = (E_1-A_1t)(1,\hat{e_1}) \]
+\[ P'_2 = (E_2-A_2t)(1,\hat{e_2}) \]
+\[ P_S = T L \gamma_s (1,\vec{v_s}) = T \left(2 t \sin\frac{\theta}{2}\right) \frac{1}{\sin \frac{\theta}{2}} \left(1,\frac{\hat{e_1}+\hat{e_2}}{2} \right) \]
+So we must have
+\[ P_1 + P_2 = P_1' + P_2' + P_S \]
+\[ (0,0) = t (2T-(A_1+A_2), (T-A_1)\hat{e_1} + (T-A_2) \hat{e_2}) 
+\]
+So, by this we must have $A_1 = A_2 = T$
+\section*{Problem 2d)}
+Without loss of generality, we will assume that $E_2\geq E_1$ to make explanation easier. 
+The quark will travel along $\hat{e_1}$ for some time $E_1/T$ and then turn around and then continue travel along $\hat{e_2}$. For the next time interval the quark and the anti-quark will travel in the same direction. However, the momentum of the string is non-parallel to $\hat{e_2}$ and thus energy will be transferred from particle 2 to particle 1 until particle 2 reaches $0$ energy and turn around until they meet again at time $\frac{E_1+E_2}{T}$. So we get
+\[ \vec{r} = \begin{cases} \hat{e_1} t & \mbox{ if } t\leq\frac{E_1}{T} \\
+\hat{e_1} t - \hat{e_2} (t - \frac{E_1}{T}) & \mbox{ if } t\leq\frac{E_1+E_2}{T} \end{cases} \]
+And similarly
+\[ p_1 = \begin{cases} (E_1 - Tt)(1,\hat{e_1}) & \mbox{ if } t\leq\frac{E_1}{T} \\
+ (Tt-E_1)(1,\hat{e_2}) & \mbox{ if } t\leq\frac{E_1+E_2}{T} \end{cases} \]
+\section*{Problem 2e)}
+The six independent dot product are
+\begin{align}
+(w_1-w_0)\cdot (w_1-w_0) & \qquad
+(w_2-w_0)\cdot (w_1-w_0) &
+(w_3-w_0)\cdot (w_1-w_0) &\\
+(w_2-w_0)\cdot (w_2-w_0) &\qquad
+(w_3-w_0)\cdot (w_2-w_0) &
+(w_3-w_0)\cdot (w_3-w_0) &
+\end{align}
+For the original zero-momentum frame we have (where positions correspond to the position of the dot product above)
+\begin{align}
+0 & \qquad\qquad\qquad\qquad
+2 \frac{E_0^2}{T^2} &
+2 \frac{E_0^2}{T^2} &\\
+0&\qquad\qquad\qquad\qquad
+2 \frac{E_0^2}{T^2} &
+4 \frac{E_0^2}{T^2} &
+\end{align}
+And in the frame given by $\hat{e_1},\hat{e_2}$ (note that $\omega_0=(0,0)$ also in the new frame so the). So in the new frame the space-time events are:
+\begin{multicols}{2}
+\noindent
+\[ w_0-w_0 = (0,0) \]
+\[ w_1-w_0 = \left(\frac{E_1}{T},\hat{e_1}\frac{E_1}{T}\right) \]
+\[ w_2-w_0 = \left(\frac{E_2}{T},\hat{e_2}\frac{E_2}{T}\right) \]
+\[ w_3-w_0 = \left(\frac{E_1+E_2}{T},\hat{e_1}\frac{E_1}{T}+\hat{e_2}\frac{E_2}{T}\right) \]
+\end{multicols}
+\begin{align}
+0 & \qquad
+\frac{E_1E_2}{T^2} - \frac{E_1E_2}{T^2}\cos\theta = 2\frac{E_0^2}{T^2} &
+\frac{E_1^2+E_2E_1-E_1^2}{T^2} - \frac{E_1E_2}{T^2}\cos\theta = 2\frac{E_0^2}{T^2}   &\\
+0&\qquad
+\frac{E_1^2+E_2E_1-E_1^2}{T^2} - \frac{E_1E_2}{T^2}\cos\theta = 2\frac{E_0^2}{T^2} &
+\frac{E_1^2+2E_2E_1-E_1^2}{T^2} - \frac{E_1^2+E_2^2}{T^2} - 2\frac{E_1E_2}{T^2}\cos\theta = 4\frac{E_0^2}{T^2} &
+\end{align}
+\section*{Problem 3a)}
+Let us partition the interval $[a,b]$ into $N$ points at which we place clocks given by given by
+\[ \set{ \left. a+\frac{k(b-a)}{N} \right| 0 \leq k \leq N } \]
+Now, we may make $N$ arbitrarily large, so that Morin's time dilation equation holds to any desired degree of accuracy (and will hold exactly in the limit). So, we get for the time dilation factor from a clock at some point $k$ to that at $k+1$:
+\[ D_k = 1 + gh = 1 + \paren{ \frac{1}{a+\frac{k(b-a)}{N}} }\paren{\frac{b-a}{N}} = \frac{a+(k+1)(b-a)/N}{a+k(b-a)/N} \]
+Now, note that since we always go from one clock to the next, we may just multiply the $D_i$ factors and get
+\[ \prod_{0 \leq k \leq N} D_k \]
+Taking the log of that product, this turns into a telescoping series , the limit of which is just the first term minus the last term (under $\log$), so we get
+\[ = \dfrac{Na+(N-1)(b-a)}{Na+b-a} = \dfrac{a+(b-a)}{a} = \frac{b}{a} = \frac{a-a+b}{a} = 1 + \frac{b-a}{a} = 1+(b-a) \frac{1}{a} = 1 + hg \]
+or $1+\frac{hg}{c^2}$ as desired.
+\section*{Problem 3b)}
+We know that $g_r = \frac{1}{a}$, $g_f = \frac{1}{b}$. Now
+\[ (1+g_rh)(1-g_fh) = 1+g_rh - g_fh -g_rg_fh^2 = 1 + \frac{b-a}{a} - \frac{b-a}{b} - \frac{(b-a)^2}{ab} \]\[ = \frac{ab + b^2 - ab - ab + a^2 - (a^2-ab+b^2)}{ab} = \frac{ab}{ab} =1 \]
+as desired.
+\end{document}

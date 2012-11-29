@@ -25,3 +25,6 @@
 *.maf
 *.mtc
 *.mtc0
+*.png
+*.pdf
+.DS_store

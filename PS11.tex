@@ -1,0 +1,51 @@
+\include{prelude}
+\section*{Problem 1}
+Let us first define the origin of the non-inertial frame rotating with the bucket (we will also consider this the origin of the lab frame, though, since non-inertial frame does not undergo translation, it does not have a qualitative impact). The most natural choice for this point is just the center of the bottom of the bucket, for then we have $\vec{\omega} = \omega\hat{z}$ (assuming the rotation is counterclockwise). \par Now consider any sufficiently small portion of water of mass $m$ at position $\vec{r}$ (as measured from the middle of the bottom of the bucket). Then, we may write
+\[ m\vec{a} = \vec{F} - m\frac{d^2R}{dt^2} - m\vec{\omega}\times(\vec{\omega}\times\vec{r}) - 2m\vec{\omega}\times \vec{v}-m\frac{d\omega}{dt}\times \vec{r} \]
+\[ 0 = \vec{F} -  0 - m\vec{\omega}\times(\vec{\omega}\times\vec{r})  - 0 - 0\]
+\[ \frac{\vec{F}}{m} = \vec{\omega}\times(\vec{\omega}\times\vec{r}) = (\vec{\omega} \cdot \vec{r}) \vec{\omega}  - (\vec{\omega}\cdot\vec{\omega})\vec{r} \]
+Now, since we are only concerned with the shape of the surface, consider this small mass element to be at the surface of the water (let us assume it is at some height $h$). Considering only the $\hat{z}$ component of the force (the $x$ and $y$ components of the centrifugal will be canceled by a force coming from the walls of the bucket and are not important for the present consideration):
+\[  \frac{\vec{F}}{m} = (\vec{\omega}\cdot\vec{r})\vec{\omega}-(\vec{\omega}\cdot\vec{\omega})\vec{r} = 
+\left[(\vec{\omega}\cdot\vec{r})(\vec{\omega}\cdot \hat{z})-(\vec{\omega}\cdot\vec{\omega})(\vec{r}\cdot\hat{z})\right]\hat{z} + \omega^2(\vec{r}\cdot \hat{x}) \hat{x} = \omega^2 x \hat{x} \]
+Now, we know that this portion of mass is not moving and therefore the normal force must cancel both the centrifugal force and gravity, i.e. for a portion of mass on the surface of the bucket, a distance $x$ away from the $z$ axis (where $\hat{x}$ points radially outwards):
+\[ \vec{F_N} = mg\hat{z} - m \omega^2 x \hat{x} \]
+Now, the direction of the normal force, must always be normal to the surface of the water. Thus 
+\[ \frac{dh}{dx} = \frac{\omega^2x}{g} \]
+\[ h(x) = h(0) + \frac{(\omega x)^2}{2g} \]
+where $x$ is the distance from the $\hat{z}$ axis. From this we can see that the surface has a parabolic shape.
+\section*{Problem 2}
+The situation here is very much analogous to that as we may consider the 2planet to be a point mass at it's center of mass and thus we have where $r=(a\cos\theta, a\sin\theta)$
+\[ \frac{\vec{F_{tidal}}}{G_2Mm} - \frac{-\vec{R}+\vec{r}}{|\vec{R}+\vec{r}|^2}-\frac{-\vec{R}}{|\vec{R}|^2} \]
+Performing similar approximations as in the 3-gravity case:
+\[ \frac{\vec{F_{tidal}}}{G_2Mm} \approx -\frac{\vec{R}+\vec{r}}{R^2}\left(1-\frac{2\vec{R}\cdot\vec{r}}{R^2}\right)+\frac{\vec{R}}{R^2}\]
+\[ \vec{F_{tidal}} \approx \frac{G_2Mm}{R^2}(2\hat{R}(\hat{R}\cdot \vec{r}) - \vec{r}) = \frac{G_2Mm}{R^2} (cos\theta,-\sin\theta) \]
+\section*{Problem 3a)}
+For our principal axes, we will choose $\hat{e}_3$, the symmetry axis of the top, $\hat{e_2}$, the axis perpendicular to $\hat{e_3}$ and coplanar with $\hat{e}_3$ and $\hat{z}$ and $\hat{e_1} = \hat{e}_2\times \hat{e_3}$. Let us now find the projections of $\vec{\omega}$ along these axes:
+\[ \omega_1 = 0 \]
+\[ \omega_2 = \Omega_p\cos\theta \]
+\[ \omega_3 = \Omega_p\sin\theta + \Omega_r\]
+The momentum tensor is 
+\[
+I = \begin{pmatrix}
+2mr^2&0&0\\
+0&2mr^2&0\\
+0&0&4ml^2
+\end{pmatrix}
+\]
+and the torque is
+\[ \tau = -mgl \hat{e_3}\times\hat{z} = mgl \cos\theta \hat{e_1} \]
+Thus we may use Euler's equation to write
+\[ mgl\cos\theta = (I_3-I_2)\omega_3\omega_2 = (4ml^2-2mr^2)(\Omega_p^2\cos\theta\sin\theta + \Omega_r\Omega_p \cos\theta) \]
+\[ gl = 2(l^2-2r^2)(\Omega_p^2\sin\theta+\Omega_r\Omega_p) \]
+\section*{Problem 3b)}
+Let us consider the interial frame with axes given by $\hat e_3$ and two axis $\hat e_2$ and $\hat e_1$ going through masses $2$,$4$ and $1$,$3$ respectively. In this inertial frame, we may write:
+$m\vec{a} = \vec{F} = \vec F_g + \vec F_{rod}$. Thus
+\[ \vec F_{rod} = mg\hat e_2 - m\vec{a} = mg\hat e_2 - m \frac{d\vec{v}}{dt} = mg \hat e_2 - m \frac{d}{dt} (\vec \omega \times \vec r) \]
+\[ =  mg\hat e_2 - m \left( \dot{\vec \omega} \times \vec r + \vec{\omega} \timesß \dot \vec{r} \right) = mg\hat e_2 - m \left( \dot{\vec{\omega_r}} \times \vec r + \vec{\omega} \times \vec{v} \right) \]
+\[ =  mg\hat e_2 - m \left( \dot{\vec{\omega_r}} \times \vec{r} + \vec{\omega} \times \left(\vec \omega\times \vec{r} \right)\right) = mg\hat e_2  -m \left( \dot{\vec{\omega_r}} \times \vec{r} + (\vec\omega\cdot \vec r) \vec\omega - (\vec\omega\cdot\vec\omega) \vec r \right) \]
+Now, at $t=0$, we have $\dot{\vec{\omega_r}} = \Omega_r \Omega_p \hat{e_3} \times \hat{e_2} = - \Omega_r\Omega_p \hat e_1$, $\vec r_1 =  l\hat{e_3} + r\hat{e_1}$, $\vec{r_2} = l\hat{e_3} + r\hat{e_2}$.
+\[ F_1 = mg\hat{e_2} - m \left[ l\Omega_r\Omega_p \hat{e_2} + l\Omega_r \vec \omega - \Omega_p^2\Omega_r^2 \vec{r}  \right]\]
+\[ = r \Omega_r^2\Omega_p^2 \hat{e_1} + [mg-2l\Omega_r\Omega_p]\hat{e_2}  + l\Omega_r^2(\Omega_p^2-1)\hat{e_3} \]
+\[ F_2 = mg\hat{e_2} - m\left[l\Omega_r\Omega_p(\hat{e_2}-\hat{e_3}) + (r\Omega_p+l\Omega_r)\vec \omega-\Omega_p^2\Omega_r^2\vec r \right] \]
+\[ = [mg + r\Omega_p^2\Omega_r^2 - 2l\Omega_r\Omega_p - r\Omega_p^2 ] \hat{e_2} + [l\Omega_r^2\Omega_P^2-l\Omega_r^2-r \Omega_r\Omega_p]  \hat{e_3}  \]
+\end{document}

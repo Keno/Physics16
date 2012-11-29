@@ -1,0 +1,121 @@
+\title{Physics 16: Problem Set 8}
+\include{prelude}
+\maketitle
+\begin{center}
+Collaborators: Aftab Chitawala, Connor Harris
+\end{center}
+\section*{Problem 8-1-a}
+Throughout this problem we will make use of Energy momentum 4-vectors, so let's get them out of the way and write them all out:
+\[ P_1 = (E_1,\sqrt{E_1^2-m_1^2},0,0) \]
+\[ P_2 = (m_2,0,0,0) \]
+\[ P_0 = (E_0=E_1+m_2,p_0=\sqrt{E_1^2-m_1^2},0,0) \]
+\[ P_3 = (E_3,p_0,p_0\tan \theta,0) \]
+\[ P_4 = (E_4,0,-p_0\tan\theta,0) \]
+We can now easily find the energy of particle 4. By conservation,
+\[ P_3+P_4 = P_0 \]
+\[ \so P_3=P_0-P_4 \]
+\[ \so m_3^2 = m_0^2 - 2E_4E_0 +m_4^2 \]
+\[ \boxed{\so  E_4 = \frac{m_0^2+m_4^2-m_3^2}{2E_0} =  \frac{m_1^2 + 2E_1m_2 + m_2^2 + m_4^2 - m_3^2}{2(E_1+m_2)}} \]
+\section*{Problem 8-1-b}
+Let an $x'$ denote a variable in the zero-momentum frame corresponding to the variable $x$ in the lab frame. In particular, we want to find $E_3'$. Recall that the zero momentum frame simply means that $p'_3=-p'_4$, so $(p'_3)^2=(p'_4)^2=p'^2$. Now, we know that
+\[ m_3^2 + p'^2 = E_3'^2 \]
+\[ m_4^2 + p'^2 = E_4'^2 \]
+Furthermore we must have
+\[ E_3' + E_4' = E_0' = m_0 \]
+(by conservation of momentum if the total momentum is $0$ after the collision it must also be $0$ before which means that $p'_0=0$ and $E_0' = m_0$).
+So we have 
+\[ E_4' = m_0 - E_3' \]
+\[ E_4'^2 = m_0^2 - 2E_3m_0 + E_3'^2 \]
+\[ E_3' = \frac{(E_3'^2-E_4'^2) + m_0^2}{2m_0} \]
+However, subtracting our  original two equations we get that
+\[ E_3'^2-E_4'^2 = \]
+Plugging that back in, we get
+\[ \boxed{ E_3' = \frac{m_3^2-m_4^2+m_0^2}{2m_0} = \frac{m_3^2 - m_4^2 + m_1^2+m_2^2+2E_1m_2}{2\sqrt{m_1^2+m_2^2+2E_1m_2}}} \]
+\section*{Problem 8-1-c}
+To solve this problem, consider the time in the particle 0 frame that passes while the particle is decaying. In the Q\&A, we have found this quantity to be:
+\[ t = T\frac{m_0}{E_0} \]
+Now, to go from the particle 0 frame to the particle 3 frame, we simply multiply by $\gamma=\frac{E'_3}{m_3}$, where 
+\[ E_3' = \frac{m_3^2-m_4^2+m_0^2}{2m_0} \]
+as we found in part b)
+So
+\[ \boxed{ t' = T\frac{m_0}{E_0}\frac{E'_3}{m_3} = \frac{m_3^2-m_4^2+m_0^2}{2m_3E_0} = \frac{m_1^2+m_2^2+2E_1m_2}{2m_3(E_1+m_2)} }\]
+\section*{Problem 8-2}
+Note that since the vector is an angle $\theta$ away from the $x$ axis and an angle $\frac{\pi}{2} - \theta$ away from the $y$ axis, the collision must happen in the x-y plane. Now, 
+before the collision the 4-vectors are just $(E,E,0,0)$ and $(E,0,E,0)$, but after the collision (and applying conservation of energy and momentum we get):
+\[ P_1=(E_1,E_1\cos\theta,E_1\sin\theta,0) \]
+\[ P_2=(2E-E_1,E-E_1\cos\theta, E-E_1\sin\theta,0) \]
+Since the photons are still massless, we must have
+\[ 0 = P_2^2 \]
+\[ 0 = (2E-E_1)^2 - (E-E_1\cos\theta)^2 - (E-E_1\sin\theta)^2 \]\[ = 4E^2 - 4EE_1 + E_1^2 - E^2 + 2EE_1\cos\theta - E_1^2\cos^2\theta - E^2 + 2EE_1\sin\theta - E_1^2\sin^2\theta \]\[
+= 2E^2 + 2EE_1(\cos\theta+\sin\theta - 2) \]
+\[ \boxed{ E_1 = \frac{E}{2-\cos\theta-\sin\theta }} \]
+\section*{Problem 8-3-a}
+The three space ship before docking have 4-vectors:
+\[ A = (\frac{5m}{3},\frac{4m_3}{3},0,0) \]
+\[ B = (\frac{5m}{3},0,\frac{4m_3}{3},0) \]
+\[ C = (\frac{5m}{3},-\frac{4m_3}{3},0,0) \]
+So the 4-vector for the combined ship is:
+\[ A+B+C = (5m,0,\frac{4m}{3},0) \]
+and the mass is 
+\[ M^2 = (A+B+C)^2 = (25-\frac{16}{9})m = \frac{209}{9} m \]
+\[ \boxed{ M = \frac{\sqrt{209}}{3} m } \]
+\section*{Problem 8-3-b}
+Recall the Lorentz transformation of an Energy-Momentum 4-vector moving in the $x$ direction:
+\[
+\begin{pmatrix}
+E_1' \\ p_x' \\ p_y' \\ p_z'
+\end{pmatrix} = \begin{pmatrix}
+\gamma & - \gamma\beta & 0 & 0 \\
+ - \gamma\beta & \gamma & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 1 \\
+\end{pmatrix} \begin{pmatrix}
+E_1 \\ p_x \\ p_y \\ p_z
+\end{pmatrix}
+\]
+where $\gamma = \frac{5}{3}$ and $\beta=\frac{4}{5}$ to go from the lab frame to the frame of $A$. 
+Now, to find the energy of $C$, in A's frame, we calculate 
+\[ E_C' = \gamma E_C - \gamma\beta p^C_x = \left(\frac{5}{3}\right)^2 m -\frac{4}{3}\left(-\frac{4}{3}\right)m = \frac{41}{9} m \]
+To find the speed of $B$ we need to do a little more work, though we again start with the Lorentz Transformation to obtain
+\[ P_B' = \begin{pmatrix}
+\frac{25}{9}m \\ -\frac{20}{9}m \\ \frac{4}{3}m \\ 0 
+\end{pmatrix} \]
+Now, 
+\[ |v| = \sqrt{\frac{p_x^2+p_y^2}{E_B^2}} = \frac{4\sqrt{34}}{25} \]
+\section*{Problem 8-4-a}
+Since we are bound by the conservation of energy and momentum , we will reach a maximum of the energy of the $\pi+$ particle as the energy of the photon goes to $0$ (we could also make the energy of the $\pi_0$ particle go to $m_{\pi_0}$ and counterbalance with the photon, but that would make things more messy, so we'll stick with that way). Now, the energy in the two particle scattering problem is the same problem as the one we solved in 1a) (except that the particle is at rest so the energy and mass term agree), so we get:
+\[ \max E_{\pi_+} = \frac{m_k^2 + m_{\pi+}^2 - m_{\pi_0}^2}{2m_k} \]
+\section*{Problem 8-4-b}
+Let us define a new quantity 
+\[ P_K = P_{\pi+} + P_{\pi_0} \]
+By the conservation of energy, we must have
+\[ P_K = (m_k-E_\gamma,-E_\gamma,0,0) \]
+Squaring the above, we get 
+\[ P_K^2 = (m_k-E_\gamma)^2 - E_\gamma^2 = m_k^2 -  2m_kE_\gamma \]
+Or 
+\[ E_\gamma = \frac{m_k^2-P_K^2}{2m_k} \]
+So to maximize $E_\gamma$ (which is our objective), we now just need to minimize $P_K^2$. However note that $P_K^2$ is an invariant quantity in any frame and so we may go to the momentum frame where me may easily minimize it by placing both particles at rest to find 
+\[ P_K^2 = m_{\pi+}^2 + 2 m_{\pi+} m_{\pi_0} + m_{\pi_0}^2 \]
+Plugging this back in we get our maximum
+\[ E_\gamma = \frac{m_k^2-m_{\pi+}^2 - 2 m_{\pi+} m_{\pi_0} - m_{\pi_0}^2 }{2m_k} \]
+Note that this method also justifies our more intuitive assumption that we must take the momentum to $0$ is we want to maximize the energy of the pion in part a).
+\section*{Problem 8-5}
+Since the momenta of the final three particles are all orthogonal, we can use them to define a coordinate system, in which our 4-vectors for these particles are:
+\[ P_3 = (E,\sqrt{E^2-m_3^2},0,0) \]
+\[ P_4 = (E,0,\sqrt{E^2-m_4^2},0) \]
+\[ P_5 = (E,0,0,\sqrt{E^2-m_5^2}) \]
+By conservation of energy and momentum we must have
+\[ P_1+P_2 = P_3+P_4+P_5 = (3E,\sqrt{E^2-m_3^2},\sqrt{E^2-m_4^2},\sqrt{E^2-m_5^2}) \]
+And  since $P_2 = (m_2,0,0,0)$, we have
+\[ P_1 = (3E-m_2,\sqrt{E^2-m_3^2},\sqrt{E^2-m_4^2},\sqrt{E^2-m_5^2}) \]
+Now, since $P_1^2 = m_1^2$, we may and shall write
+\[ m_1^2 = 9E^2-6Em_2 + m_2^2 - E^2+m_3^2- E^2+m_4^2-E^2+m_5^2 \]
+\[ 6E^2 - 6Em_2 + m_2^2 + m_3^2 + m_4^2 + m_5^2 - m_1^2 = 0 \]
+\[ E^2-Em_2 + \frac{m_2^2 + m_3^2 + m_4^2 + m_5^2 - m_1^2}{6} = 0 \]
+Which we may easily solve by the quadratic formula:
+\[ \boxed{ E = \frac{m_2}{2} \pm \sqrt{\frac{m_2^2+2m_1^2}{12} - \frac{m_3^2 + m_4^2 + m_5^2}{6}} } \]
+Note that there is no real solutions if 
+\[ \frac{1}{2}m_2^2+m_1^2 < m_3^2 + m_4^2 + m_5^2 \]
+one solution if the two are equal and two solution for $E$ in all other cases. Furthermore note that $E$ is always positive (as we would expect, so this result makes sense). 
+
+\end{document}

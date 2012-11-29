@@ -1,0 +1,73 @@
+\title{Physics 16 Problem Set 1}
+\include{prelude}
+\maketitle
+\section*{Problem 1-1}
+We want to employ dimensional analysis to derive an equation for $v$ as a function of $R$,$\rho$,$S$. To do so it is of utility to write down the dimensions of each of the variables involved:
+\begin{eqnarray}
+v = \dfrac{1}{time}
+R = (length) \\
+\rho = \dfrac{(mass)}{(length)^3}
+S = \dfrac{(force)}{(length)} = \dfrac{(mass)}{(time)^2}
+\end{eqnarray}
+
+We can clearly see that the $v \propto \sqrt{S}$ all that remains is to cancel out mass ($v \propto \sqrt{\frac{S}{\rho}}$) and length ($v \propto \sqrt{\frac{SR^3}{\rho}}$). Finally introducing a constant of proportionality gives us
+\[ v=C\sqrt{\dfrac{SR^3}{\rho}} \]
+\section*{Problem 1-2}
+We will assume a very simple bock stacking in imposing that every block's center of mass needs to lie on the previous block (we're constructing the stack "top-down". Calling the block length $l$, we see that the fist block ($x_cm = \frac{1}{2}l$ may be at most $\frac{1}{2}$ offset from the previous block's center off mass (or left edge from left edge). The x coordinate of the new center for mass of blocks stacked in such a way is $x_{cm_{1+2}}=\frac{\frac{1}{2}l+\frac{3}{2}l}{2}=\frac{1}{4}l$, so the left edge of the second block may be at most $\frac{1}{4}l$ apart from the left edge of the third block. Continuing in such a way, we eventually get that for the $i$ block, the sum of all ofsets is equal to $\sum\limits_{n=1}^i \frac{1}{2n}=\frac{1}{n}\sum\limits_{n=1}^i \frac{1}{n}$ which is half the harmonic series. In particular note that for $i=$, the maximum possible offset is $\frac{1}{2}+\frac{1}{4}+\frac{1}{6}+\frac{1}{8}=\frac{24}{25}$ and the series goes to $\infty$ as $i\to\infty$ (since it's an harmonic series).
+\section*{Problem 1-3-a}
+The frictional force needs to have dimensions $\frac{(mass)(length)}{(time)^2}$. Note that the velocity has dimensions $\frac{(length)}{(time)}$. Furthermore, we note that the dimensions of $\beta$ must be simply $1$ (since there's no unit of the exponent. 
+However, $\alpha$ still needs to cancel the additional exponent to the dimensions of $v$ introduced by $\beta$ and therefore the dimensions of alpha are: 
+\[\dfrac{(mass)}{(time)}\left(\dfrac{s}{m}\right)^\beta\]
+\section*{Problem 1-3-b}
+We first study the case where
+\[ F_f = -\alpha \]
+In this case the deceleration due to friction will be
+\[ a = -\frac{\alpha}{m} \]
+, the velocity
+\[ v = -\frac{\alpha}{m}t + v_0 \]
+and the position
+\[ v = -\frac{\alpha}{2m}t^2 + v_0t + x_0 \].
+In particular note that unlike the $\beta = 1$ case, the velocity will reach $0$ at $t=\frac{v_0m}{\alpha}$, i.e. in finite time (it still travels a finite amount of space).
+\section*{Problem 1-3-c}
+The velocity decreases to $0$ in finite time, and thus the object travels a finite distance in this finite amount of time (the reason for this is that for $v'=-v^\beta$, we need not have $v^\beta<v$ if $\beta<1$, so in a certain time $v$ will come to a stop).
+\section*{Problem 1-3-d}
+Our task is to solve the general problem \[ mv' = -\alpha v^\beta \]
+We will first apply separation of variables to obtain
+\[ v'v^{-\beta} = -\frac{\alpha}{m} \]
+ Now, for $\beta \notin \{0,1\}$, we obtain
+ \[ \dfrac{v(t)^{-\beta+1}}{-\beta+1}=-\frac{\alpha}{m}t+C_v \]
+ or 
+ \[ v(t) = \sqrt[\beta-1]{\frac{1}{(1-\beta)\left(\frac{\alpha}{m}t+C_v\right)}} = \left((1-\beta)\left(\frac{\alpha}{m}t+C_v\right)\right)^{\frac{1}{-\beta+1}} \]
+ If we actually want the constant to represent $v(0)$, we can write this as
+ \[ v(t) = \left(v_0^{1-\beta}-\dfrac{\alpha(1-\beta)}{m}t\right)^{\frac{1}{1-\beta}} \]
+ To summarize this result with the results from above we can say
+ \[ v(t) = \begin{cases} -\frac{\alpha}{m}\ t + v_0 &\mbox{if } \beta = 0 \\ 
+-v_0e^{-\frac{\alpha}{m} t} & \mbox{if }  \beta = 1 \\
+\left(v_0^{1-\beta}-\dfrac{\alpha(1-\beta)}{m}t\right)^{\frac{1}{1-\beta}} & \mbox{if } \beta \notin \{0,1\} \end{cases}  \]
+The change in behavior between at $\beta = 1$ from terminating in finite time to to not terminating is easily explained by the change in the sign of the exponential and the coefficient. For $\beta<1$, $v$ will be $0$ at time 
+\[ t = \dfrac{v_0^{1-\beta}m}{\alpha(1-b)} \]
+(i.e. a finite point in time). For $\beta>1$ the sign of the exponent flips (meaning the inside is inverted), however, since the sign of the coeffiecient of $t$ flips at the same time the denominator of the newly inverted expression will go to $\infty$ rather than $0$ (as it used to for $\beta < 1$), so the entire expression will eventually go to $0$ as $t\to\infty$ (though it will take infinite amounts of time).
+\section*{Problem 1-3-e}
+Simply integrating the expression we obtained for $v(t)$ in the previous part of the problem, we get
+ \[ x(t) = \begin{cases} -\frac{\alpha}{2m}\ t^2 + v_0t + x_0 &\mbox{if } \beta = 0 \\ 
+\frac{mv_0}{\alpha}e^{-\frac{\alpha}{m} t} + x_0 & \mbox{if }  \beta = 1 \\
+ x_0 + \frac{m v_0^{2-\beta}}{\alpha(2-\beta)} + \dfrac{\left(-v_0^{1-\beta}+m\dfrac{\alpha(1-\beta)}{m}t\right)}{\alpha(2-\beta)}^{\frac{2-\beta}{1-\beta}} & \mbox{if } \beta \notin \{0,1,2\} \end{cases}  \]
+ We already know that $x(t)$ must be finite in the limit for $\beta\leq 1$, since $v(t)$ hits $0$ in finite time furthermore note that for $1 < \beta$, the integral is of the form $\int \frac{1}{x^(\beta-1)}$ and by the p integral test it converges for  $1<\beta<2$ diverges for $2\leq \beta$. To find the distance traveled for the first case, we can take the time at which $v=0$ (which is $t=\frac{v_0m}{\alpha}$; see above), so the distance traveled for $\beta=0$ is:
+ \[ x_{\beta=0} = \frac{v_0^2m}{2\alpha} + x_0 \]
+ We can do the same thing for $0<\beta<1$ (as it terminates in finite time), so for $t= \dfrac{v_0^{1-\beta}m}{\alpha(1-\beta)}$ we get
+ \[ x_{0<\beta<1} = x_0 + \dfrac{mv_0^{2-\beta}}{\alpha(2-\beta)}\]
+For $\beta = 1$, we need to take the limit as $t\to\infty$ which gives us:
+\[\lim\limits_{t\to\infty} x_{\beta=1} =\frac{mv_0}{\alpha} \]
+Finally for $1<\beta<2$, we  also get
+\[ \lim\limits_{t\to\infty} x_{1<\beta<2} = x_0 + \dfrac{mv_0^{2-\beta}}{\alpha(2-\beta)} \]
+as the denominator under the exponent goes to $-\infty$ (and thus the whole expression goes to $0$.
+\section*{Problem 1-3-f}
+We want to integrate $dx=\dfrac{v dv}{a}=\frac{mv^{1-\beta}}{\alpha}$, gives us 
+\[ x = \frac{mv^{2-\beta}}{\alpha(2-\beta)}\]
+for v which go to $0$.
+As expected, this evaluates to 
+ \[ x_{\beta=0} = \frac{v_0^2m}{2\alpha} \]
+ \[ x_{\beta=1} = \frac{mv_0}{\alpha} \]
+ \[ x_{1<\beta<2} = x_{0<\beta<1} =  \frac{mv^{2-\beta}}{\alpha(2-\beta)} \]
+ There are no problems at $\beta = 1$. In this case we know that $v$ will always approach $0$ rather than having to deal with two different cases (one in which $t$ is finite and one in which it is inifinite - which happens precisely at the $\beta=1$ boundary.
+\end{document}

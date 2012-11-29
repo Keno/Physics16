@@ -1,0 +1,943 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     36621,        934]
+NotebookOptionsPosition[     35401,        888]
+NotebookOutlinePosition[     35801,        905]
+CellTagsIndexPosition[     35758,        902]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"A1", " ", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "0", ",", "0"}], "}"}], "]"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A2", " ", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", "0"}], "}"}], "]"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A3", " ", ":=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"Sqrt", "[", "3", "]"}], ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", 
+        RowBox[{"Sqrt", "[", "3", "]"}]}], ",", "0"}], "}"}], "]"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A4", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"2", 
+        RowBox[{
+         RowBox[{"Sqrt", "[", "3", "]"}], "/", "3"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", "1"}], "/", 
+        RowBox[{"Sqrt", "[", "6", "]"}]}]}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"Sqrt", "[", "3", "]"}]}], "/", "3"}], ",", 
+       RowBox[{
+        RowBox[{"-", "1"}], "/", 
+        RowBox[{"Sqrt", "[", "6", "]"}]}]}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"Sqrt", "[", "6", "]"}], "/", "3"}]}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"Sqrt", "[", "3", "]"}]}], "/", "3"}], ",", 
+       RowBox[{
+        RowBox[{"-", "1"}], "/", 
+        RowBox[{"Sqrt", "[", "6", "]"}]}]}], "}"}], "]"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"A5", ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "2"}], ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", "0"}], "}"}], "]"}], ",", 
+    RowBox[{"Sphere", "[", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "0"}], "}"}], "]"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "A0_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", "=", "A0"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Centers", " ", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "1"}], "]"}], "]"}], ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "2"}], "]"}], "]"}], ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "3"}], "]"}], "]"}]}], "}"}], "&"}], "/@", 
+       "A"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"CenterOfMass", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"Total", "[", "Centers", "]"}], "/", 
+       RowBox[{"Length", "[", "Centers", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Graphics3D", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"A", ",", "\[IndentingNewLine]", 
+           RowBox[{"Arrow", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"3", ",", "2", ",", "2"}], "}"}]}], "}"}], "]"}], ",", 
+           
+           RowBox[{"Text", "[", 
+            RowBox[{"\"\<x\>\"", ",", 
+             RowBox[{"{", 
+              RowBox[{"3", ",", "2", ",", "2"}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Arrow", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"2", ",", "3", ",", "2"}], "}"}]}], "}"}], "]"}], ",", 
+           
+           RowBox[{"Text", "[", 
+            RowBox[{"\"\<y\>\"", ",", 
+             RowBox[{"{", 
+              RowBox[{"2", ",", "3", ",", "2"}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Arrow", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"2", ",", "2", ",", "3"}], "}"}]}], "}"}], "]"}], ",", 
+           
+           RowBox[{"Text", "[", 
+            RowBox[{"\"\<z\>\"", ",", 
+             RowBox[{"{", 
+              RowBox[{"2", ",", "2", ",", "3"}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"Min", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], "-", 
+                  "2"}], ",", "0", ",", "0"}], "}"}]}], ",", 
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"Max", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], "+", 
+                  "2"}], ",", "0", ",", "0"}], "}"}]}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{
+                  RowBox[{"Min", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], "-", 
+                  "2"}], ",", "0"}], "}"}]}], ",", 
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{
+                  RowBox[{"Max", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], "+", 
+                  "2"}], ",", "0"}], "}"}]}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Tube", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0", ",", 
+                 RowBox[{
+                  RowBox[{"Min", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "3"}], "]"}], "]"}], "]"}], "-", 
+                  "2"}]}], "}"}]}], ",", 
+              RowBox[{"CenterOfMass", "+", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0", ",", 
+                 RowBox[{
+                  RowBox[{"Max", "[", 
+                   RowBox[{"Centers", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"All", ",", "3"}], "]"}], "]"}], "]"}], "+", 
+                  "2"}]}], "}"}]}]}], "}"}], "]"}], ","}], 
+          "\[IndentingNewLine]", "}"}], ",", 
+         RowBox[{"ViewPoint", "\[Rule]", "vp"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"vp", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "Infinity"}], ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"Infinity", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "Infinity"}], "}"}]}], "}"}]}], 
+        "}"}]}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{
+       "\"\<~/Documents/Physics16/\>\"", "<>", "#1", " ", "<>", "\"\<-\>\"", "<>", 
+        RowBox[{"IntegerString", "[", "i", "]"}], "<>", "\"\<.png\>\""}], ",", 
+       RowBox[{"#2", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "#2", "]"}]}], "}"}]}], "]"}], "&"}], " ", "@@@",
+   " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", ",", 
+      RowBox[{"f", "[", 
+       RowBox[{"Symbol", "[", "A", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"A", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<A1\>\"", ",", "\"\<A2\>\"", ",", "\"\<A3\>\"", ",", "\"\<A4\>\"", 
+        ",", "\"\<A5\>\""}], "}"}]}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.561951034028023*^9, 3.561951040146639*^9}, {
+   3.561951074365283*^9, 3.5619511179998093`*^9}, {3.5619511648810368`*^9, 
+   3.561951202110821*^9}, {3.561951325355991*^9, 3.561951586184565*^9}, {
+   3.561951694498746*^9, 3.561951821851506*^9}, {3.561951868820136*^9, 
+   3.5619519032018433`*^9}, {3.561951976464027*^9, 3.56195203300147*^9}, {
+   3.561952069727707*^9, 3.5619521169665413`*^9}, {3.561952174259851*^9, 
+   3.5619521878403597`*^9}, {3.5619522873890057`*^9, 3.561952339099946*^9}, {
+   3.5619526370100327`*^9, 3.561952638097301*^9}, {3.561952715870119*^9, 
+   3.5619527992163687`*^9}, {3.561952850173222*^9, 3.561952881628211*^9}, {
+   3.561952914995123*^9, 3.561953058017473*^9}, {3.561953144810499*^9, 
+   3.5619531497758827`*^9}, {3.561953266233995*^9, 3.5619532752273407`*^9}, {
+   3.5619533111635857`*^9, 3.561953311338048*^9}, {3.561953373395355*^9, 
+   3.561953385091365*^9}, {3.561953416919948*^9, 3.5619535048477173`*^9}, {
+   3.561953572643635*^9, 3.561953579988703*^9}, {3.561953675513483*^9, 
+   3.561953866469494*^9}, {3.561953910310541*^9, 3.561954221066291*^9}, {
+   3.561954291448245*^9, 3.561954297722043*^9}, {3.561954437796389*^9, 
+   3.561954509223407*^9}, 3.561954575004373*^9, {3.561954731826989*^9, 
+   3.56195477845853*^9}, {3.561954812699226*^9, 3.561954825489705*^9}, {
+   3.561954861734717*^9, 3.561955107196331*^9}, {3.561955172818613*^9, 
+   3.561955176014442*^9}, {3.561955248832782*^9, 3.561955365205509*^9}, {
+   3.5619554135957947`*^9, 3.5619554137828293`*^9}, {3.561955542902178*^9, 
+   3.5619558244241*^9}, {3.56195589255087*^9, 3.561955943465672*^9}, {
+   3.561955978135338*^9, 3.561955995798993*^9}, {3.561956256460239*^9, 
+   3.561956256738988*^9}, {3.561956306784335*^9, 3.561956343006762*^9}, {
+   3.56196041737628*^9, 3.561960418688548*^9}, {3.5619604602498913`*^9, 
+   3.56196048799482*^9}, {3.561960533568631*^9, 3.561960538084146*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"~/Documents/Physics16/A1-1.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A1-2.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A1-3.png\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"~/Documents/Physics16/A2-1.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A2-2.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A2-3.png\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"~/Documents/Physics16/A3-1.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A3-2.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A3-3.png\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"~/Documents/Physics16/A4-1.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A4-2.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A4-3.png\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"~/Documents/Physics16/A5-1.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A5-2.png\"\>", 
+     ",", "\<\"~/Documents/Physics16/A5-3.png\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.56196042590445*^9, 3.561960496029161*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", ",", 
+      RowBox[{"f", "[", 
+       RowBox[{"Symbol", "[", "A", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"A", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<A1\>\"", ",", "\"\<A2\>\"", ",", "\"\<A3\>\"", ",", "\"\<A4\>\"", 
+        ",", "\"\<A5\>\""}], "}"}]}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"A1\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       Graphics3DBox[{{SphereBox[{-3, 0, 0}], SphereBox[{-1, 0, 0}], 
+          SphereBox[{1, 0, 0}], SphereBox[{3, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-5, 0, 0}, {5, 0, 0}}], 
+         TubeBox[{{0, -2, 0}, {0, 2, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 
+          DirectedInfinity[-1], 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-3, 0, 0}], SphereBox[{-1, 0, 0}], 
+          SphereBox[{1, 0, 0}], SphereBox[{3, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-5, 0, 0}, {5, 0, 0}}], 
+         TubeBox[{{0, -2, 0}, {0, 2, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{
+          DirectedInfinity[1], 0, 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-3, 0, 0}], SphereBox[{-1, 0, 0}], 
+          SphereBox[{1, 0, 0}], SphereBox[{3, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-5, 0, 0}, {5, 0, 0}}], 
+         TubeBox[{{0, -2, 0}, {0, 2, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 0, 
+          DirectedInfinity[1]}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"A2\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       Graphics3DBox[{{SphereBox[{-1, 1, 0}], SphereBox[{1, 1, 0}], 
+          SphereBox[{1, -1, 0}], SphereBox[{-1, -1, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[{{0, -3, 0}, {0, 3, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 
+          DirectedInfinity[-1], 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-1, 1, 0}], SphereBox[{1, 1, 0}], 
+          SphereBox[{1, -1, 0}], SphereBox[{-1, -1, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[{{0, -3, 0}, {0, 3, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{
+          DirectedInfinity[1], 0, 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-1, 1, 0}], SphereBox[{1, 1, 0}], 
+          SphereBox[{1, -1, 0}], SphereBox[{-1, -1, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[{{0, -3, 0}, {0, 3, 0}}], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 0, 
+          DirectedInfinity[1]}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"A3\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       Graphics3DBox[{{SphereBox[{-1, 0, 0}], SphereBox[{1, 0, 0}], 
+          SphereBox[
+           NCache[{0, 3^Rational[1, 2], 0}, {0, 1.7320508075688772`, 0}]], 
+          SphereBox[
+           NCache[{0, -3^Rational[1, 2], 0}, {0, -1.7320508075688772`, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[
+          NCache[{{0, -2 - 3^Rational[1, 2], 0}, {
+            0, 2 + 3^Rational[1, 2], 0}}, {{0, -3.732050807568877, 0}, {
+            0, 3.732050807568877, 0}}]], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 
+          DirectedInfinity[-1], 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-1, 0, 0}], SphereBox[{1, 0, 0}], 
+          SphereBox[
+           NCache[{0, 3^Rational[1, 2], 0}, {0, 1.7320508075688772`, 0}]], 
+          SphereBox[
+           NCache[{0, -3^Rational[1, 2], 0}, {0, -1.7320508075688772`, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[NCache[{{0, -2 - 3^Rational[1, 2], 0}, {
+            0, 2 + 3^Rational[1, 2], 0}}, {{0, -3.732050807568877, 0}, {
+            0, 3.732050807568877, 0}}]], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{
+          DirectedInfinity[1], 0, 0}], ",", 
+       Graphics3DBox[{{SphereBox[{-1, 0, 0}], SphereBox[{1, 0, 0}], 
+          SphereBox[
+           NCache[{0, 3^Rational[1, 2], 0}, {0, 1.7320508075688772`, 0}]], 
+          SphereBox[
+           NCache[{0, -3^Rational[1, 2], 0}, {0, -1.7320508075688772`, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], TubeBox[{{-3, 0, 0}, {3, 0, 0}}], 
+         TubeBox[NCache[{{0, -2 - 3^Rational[1, 2], 0}, {
+            0, 2 + 3^Rational[1, 2], 0}}, {{0, -3.732050807568877, 0}, {
+            0, 3.732050807568877, 0}}]], TubeBox[{{0, 0, -2}, {0, 0, 2}}]},
+        ViewPoint->{0, 0, 
+          DirectedInfinity[1]}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"A4\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       Graphics3DBox[{{
+          SphereBox[
+           NCache[{0, 2 3^Rational[-1, 2], -6^Rational[-1, 2]}, {
+            0, 1.1547005383792517`, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{-1, -3^Rational[-1, 2], -6^
+              Rational[-1, 
+                2]}, {-1, -0.5773502691896258, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{0, 0, -6^Rational[-1, 2]}, {0, 0, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{1, -3^Rational[-1, 2], 0}, {1, -0.5773502691896258, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[NCache[{{-3, 0, Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}, {
+            3, 0, Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{-3, 
+             0, -0.30618621784789724`}, {3, 0, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, -2 - 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}, {
+            0, 2 + 2 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}}, {{
+            0, -2.5773502691896257`, -0.30618621784789724`}, {
+            0, 3.1547005383792515`, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, 0, -2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2] - 6^
+             Rational[-1, 2]}, {
+            0, 0, 2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{
+            0, 0, -2.7144345083117605`}, {0, 0, 1.6938137821521027`}}]]},
+        ViewPoint->{0, 
+          DirectedInfinity[-1], 0}], ",", 
+       Graphics3DBox[{{
+          SphereBox[
+           NCache[{0, 2 3^Rational[-1, 2], -6^Rational[-1, 2]}, {
+            0, 1.1547005383792517`, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{-1, -3^Rational[-1, 2], -6^
+              Rational[-1, 
+                2]}, {-1, -0.5773502691896258, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{0, 0, -6^Rational[-1, 2]}, {0, 0, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{1, -3^Rational[-1, 2], 0}, {1, -0.5773502691896258, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[
+          NCache[{{-3, 0, Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}, {
+            3, 0, Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{-3, 
+             0, -0.30618621784789724`}, {3, 0, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, -2 - 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}, {
+            0, 2 + 2 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}}, {{
+            0, -2.5773502691896257`, -0.30618621784789724`}, {
+            0, 3.1547005383792515`, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, 0, -2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2] - 6^
+             Rational[-1, 2]}, {
+            0, 0, 2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{
+            0, 0, -2.7144345083117605`}, {0, 0, 1.6938137821521027`}}]]},
+        AutomaticImageSize->True,
+        ImageSize->{185.27374376808524`, 179.1175653756405},
+        ViewPoint->{-0.050680049065823664`, -1.9967205373895054`, \
+-0.10265782090835454`},
+        ViewVertical->{0.17280347886988992`, 
+         0.048357562738641266`, -1.0330390155723759`}], ",", 
+       Graphics3DBox[{{
+          SphereBox[
+           NCache[{0, 2 3^Rational[-1, 2], -6^Rational[-1, 2]}, {
+            0, 1.1547005383792517`, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{-1, -3^Rational[-1, 2], -6^
+              Rational[-1, 
+                2]}, {-1, -0.5773502691896258, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{0, 0, -6^Rational[-1, 2]}, {0, 0, -0.4082482904638631}]], 
+          SphereBox[
+           NCache[{1, -3^Rational[-1, 2], 0}, {1, -0.5773502691896258, 0}]]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[NCache[{{-3, 0, Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}, {
+            3, 0, Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{-3, 
+             0, -0.30618621784789724`}, {3, 0, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, -2 - 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}, {
+            0, 2 + 2 3^Rational[-1, 2], Rational[-1, 4] 
+             Rational[3, 2]^Rational[1, 2]}}, {{
+            0, -2.5773502691896257`, -0.30618621784789724`}, {
+            0, 3.1547005383792515`, -0.30618621784789724`}}]], 
+         TubeBox[NCache[{{
+            0, 0, -2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2] - 6^
+             Rational[-1, 2]}, {
+            0, 0, 2 + Rational[-1, 4] Rational[3, 2]^Rational[1, 2]}}, {{
+            0, 0, -2.7144345083117605`}, {0, 0, 1.6938137821521027`}}]]},
+        AutomaticImageSize->True,
+        ImageSize->{199.44994496594828`, 192.17141092447395`},
+        ViewPoint->{0.11241517264467965`, -1.2077244009510313`, 
+         1.5902089800736063`},
+        ViewVertical->{0.11473302248471164`, 0.8321570430101621, 
+         0.625434989118003}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"A5\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       Graphics3DBox[{{SphereBox[{0, 0, 0}], SphereBox[{0, -2, 0}], 
+          SphereBox[{0, 2, 0}], SphereBox[{2, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[NCache[{{Rational[-3, 2], 0, 0}, {
+            Rational[9, 2], 0, 0}}, {{-1.5, 0, 0}, {4.5, 0, 0}}]], 
+         TubeBox[NCache[{{Rational[1, 2], -4, 0}, {Rational[1, 2], 4, 0}}, {{
+            0.5, -4, 0}, {0.5, 4, 0}}]], 
+         TubeBox[NCache[{{Rational[1, 2], 0, -2}, {Rational[1, 2], 0, 2}}, {{
+            0.5, 0, -2}, {0.5, 0, 2}}]]},
+        ViewPoint->{0, 
+          DirectedInfinity[-1], 0}], ",", 
+       Graphics3DBox[{{SphereBox[{0, 0, 0}], SphereBox[{0, -2, 0}], 
+          SphereBox[{0, 2, 0}], SphereBox[{2, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[NCache[{{Rational[-3, 2], 0, 0}, {
+            Rational[9, 2], 0, 0}}, {{-1.5, 0, 0}, {4.5, 0, 0}}]], 
+         TubeBox[
+          NCache[{{Rational[1, 2], -4, 0}, {Rational[1, 2], 4, 0}}, {{
+            0.5, -4, 0}, {0.5, 4, 0}}]], 
+         TubeBox[NCache[{{Rational[1, 2], 0, -2}, {Rational[1, 2], 0, 2}}, {{
+            0.5, 0, -2}, {0.5, 0, 2}}]]},
+        ViewPoint->{
+          DirectedInfinity[1], 0, 0}], ",", 
+       Graphics3DBox[{{SphereBox[{0, 0, 0}], SphereBox[{0, -2, 0}], 
+          SphereBox[{0, 2, 0}], SphereBox[{2, 0, 0}]}, 
+         Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], 
+         Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], 
+         Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+         Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+         Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+         TubeBox[NCache[{{Rational[-3, 2], 0, 0}, {
+            Rational[9, 2], 0, 0}}, {{-1.5, 0, 0}, {4.5, 0, 0}}]], 
+         TubeBox[NCache[{{Rational[1, 2], -4, 0}, {Rational[1, 2], 4, 0}}, {{
+            0.5, -4, 0}, {0.5, 4, 0}}]], 
+         TubeBox[NCache[{{Rational[1, 2], 0, -2}, {Rational[1, 2], 0, 2}}, {{
+            0.5, 0, -2}, {0.5, 0, 2}}]]},
+        ViewPoint->{0, 0, 
+          DirectedInfinity[1]}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.5619558028998013`*^9, 3.561955825711673*^9}, {
+   3.561955893362612*^9, 3.56195594400686*^9}, 3.561955982631681*^9, 
+   3.561956030968704*^9, 3.561956258410522*^9, {3.561956315663033*^9, 
+   3.561956344578266*^9}, 3.561960248513411*^9, 3.5619605088135433`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"z", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.561959199768421*^9, 3.561959207731802*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.561959208322757*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"e1", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Cos", "[", 
+     RowBox[{"3", "x"}], "]"}], ",", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"3", "x"}], "]"}], ",", "0"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], " ", 
+    RowBox[{"Cross", "[", 
+     RowBox[{"e1", ",", "z"}], "]"}]}], "+", 
+   RowBox[{
+    RowBox[{"Cos", "[", "x", "]"}], "z"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"e3", "=", 
+  RowBox[{"Cross", "[", 
+   RowBox[{"e1", ",", "e2"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.561959209017313*^9, 3.561959228405786*^9}, {
+  3.5619592759950037`*^9, 3.561959276755438*^9}, {3.561959398224434*^9, 
+  3.561959439118576*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Cos", "[", 
+    RowBox[{"3", " ", "x"}], "]"}], ",", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"3", " ", "x"}], "]"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.561959278204359*^9, {3.561959402642663*^9, 3.561959407822707*^9}, 
+   3.5619594407093*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"3", " ", "x"}], "]"}]}], " ", 
+    RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+   RowBox[{"Cos", "[", "x", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.561959278204359*^9, {3.561959402642663*^9, 3.561959407822707*^9}, 
+   3.561959440711315*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", "x", "]"}], " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Cos", "[", "x", "]"}]}], " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox[
+       RowBox[{"Cos", "[", 
+        RowBox[{"3", " ", "x"}], "]"}], "2"]}], " ", 
+     RowBox[{"Sin", "[", "x", "]"}]}], "-", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], " ", 
+     SuperscriptBox[
+      RowBox[{"Sin", "[", 
+       RowBox[{"3", " ", "x"}], "]"}], "2"]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.561959278204359*^9, {3.561959402642663*^9, 3.561959407822707*^9}, 
+   3.5619594407129307`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cross", "[", 
+  RowBox[{"e1", ",", "z"}], "]"}]], "Input",
+ CellChangeTimes->{{3.561959281698193*^9, 3.561959294265736*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"3", " ", "x"}], "]"}], ",", 
+   RowBox[{"-", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.56195929470895*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", " ", "[", 
+  RowBox[{"Dot", "[", 
+   RowBox[{"e2", ",", "e3"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.561959300996413*^9, 3.561959346242283*^9}, {
+  3.561959392305375*^9, 3.561959397239902*^9}, {3.561959709907015*^9, 
+  3.561959744511026*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.561959347889544*^9, {3.5619597147211323`*^9, 3.5619597450385113`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.561959350595386*^9, 3.561959356128083*^9}, 
+   3.561959400663126*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", "x", "]"}], " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Cos", "[", "x", "]"}]}], " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"3", " ", "x"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox[
+       RowBox[{"Cos", "[", 
+        RowBox[{"3", " ", "x"}], "]"}], "2"]}], " ", 
+     RowBox[{"Sin", "[", "x", "]"}]}], "-", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], " ", 
+     SuperscriptBox[
+      RowBox[{"Sin", "[", 
+       RowBox[{"3", " ", "x"}], "]"}], "2"]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.561959356562984*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.561960437029464*^9}],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    SphereBox[
+     NCache[{0, 2 3^Rational[-1, 2], 0}, {0, 1.1547005383792517`, 0}]], 
+    SphereBox[
+     NCache[{-1, -3^Rational[-1, 2], 0}, {-1, -0.5773502691896258, 0}]], 
+    SphereBox[NCache[{0, 0, 3^Rational[1, 2]}, {0, 0, 1.7320508075688772`}]], 
+    SphereBox[
+     NCache[{1, -3^Rational[-1, 2], 0}, {1, -0.5773502691896258, 0}]]}, 
+   Arrow3DBox[{{2, 2, 2}, {3, 2, 2}}], Text3DBox["\<\"x\"\>", {3, 2, 2}], 
+   Arrow3DBox[{{2, 2, 2}, {2, 3, 2}}], Text3DBox["\<\"y\"\>", {2, 3, 2}], 
+   Arrow3DBox[{{2, 2, 2}, {2, 2, 3}}], Text3DBox["\<\"z\"\>", {2, 2, 3}], 
+   TubeBox[NCache[{{-3, 0, Rational[1, 4] 3^Rational[1, 2]}, {
+      3, 0, Rational[1, 4] 3^Rational[1, 2]}}, {{-3, 0, 0.4330127018922193}, {
+      3, 0, 0.4330127018922193}}]], 
+   TubeBox[NCache[{{
+      0, -2 - 3^Rational[-1, 2], Rational[1, 4] 3^Rational[1, 2]}, {
+      0, 2 + 2 3^Rational[-1, 2], Rational[1, 4] 3^Rational[1, 2]}}, {{
+      0, -2.5773502691896257`, 0.4330127018922193}, {
+      0, 3.1547005383792515`, 0.4330127018922193}}]], 
+   TubeBox[NCache[{{0, 0, -2 + Rational[1, 4] 3^Rational[1, 2]}, {
+      0, 0, 2 + Rational[5, 4] 3^Rational[1, 2]}}, {{
+      0, 0, -1.5669872981077808`}, {0, 0, 4.165063509461096}}]]},
+  AutomaticImageSize->True,
+  ImageSize->{418.06977095972, 423.25431504200463`},
+  ViewPoint->{1.918260533641075, 0.5514583168466735, 0.12716229730425355`},
+  ViewVertical->{-0.1898333863635069, 
+   0.8307277222409927, -0.6050484213659223}]], "Input"]
+},
+WindowSize->{740, 718},
+WindowMargins->{{Automatic, 11}, {Automatic, 50}},
+TaggingRules->{"GraphicsSelectionType" -> {}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 22, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 12085, 316, 358, "Input"],
+Cell[12667, 340, 1079, 24, 133, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13783, 369, 419, 13, 27, "Input"],
+Cell[14205, 384, 15108, 306, 1407, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29350, 695, 210, 5, 43, "Input"],
+Cell[29563, 702, 125, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29725, 710, 732, 21, 58, "Input"],
+Cell[30460, 733, 310, 9, 27, "Output"],
+Cell[30773, 744, 481, 15, 27, "Output"],
+Cell[31257, 761, 793, 26, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32087, 792, 148, 3, 27, "Input"],
+Cell[32238, 797, 257, 8, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32532, 810, 290, 6, 27, "Input"],
+Cell[32825, 818, 123, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32985, 825, 118, 2, 27, "Input"],
+Cell[33106, 829, 716, 24, 33, "Output"]
+}, Open  ]],
+Cell[33837, 856, 68, 1, 27, "Input"],
+Cell[33908, 859, 1489, 27, 438, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,188 @@
+\title{Physics 16: Problem Set 10}
+\include{prelude}
+%\maketitle
+\begin{center}
+Physics 16 Problem Set 10 \par
+Keno Fischer \par
+Collaborators: Aftab Chitalwala, Connor Harris, Mark Arildsen, Lucian Wang, Ross Rheingans-Yoo
+\end{center}
+\section*{Problem 1-a)}
+In all three cases, the boxes are spinning about themselves, but are rotated in a different direction at the same time. In A, for instance, we can see that the red dot, which represents the center of the biggest side of the box always remains in the $x-y$ plane. Furthermore, the green dot, which represents the center of the smallest side, in this case will rotate about the axis through the red dot and will do so once for every three rotations of the red dot. The direction of the rotation what I will describe as "counterclockwise" for bot the red and the green dot (as determined by their instantaneous direction in the appropriate plane at $t=0$ - or in some instantaneous principal axis frame)  \par
+The motion in $B$ is very similar, except that the the red dot stays in the $x-z$ plane and is moving clockwise. The green dot is doing exactly the same thing with respect to the red one.
+\par
+The motion in $C$ is somewhat different as the green and the red dot have exchanged behavior. The green dot is now staying in the $y-z$ plane, while the red dot is rotating around it. The green dot is still moving counterclockwise and the red dot is still moving clockwise though. 
+\section*{Problem 1-b)}
+It is easy to see the principal axis of our box, by considering the symmetry involved. If we place the origin of our coordinate system at the center of mass of the object and make the axis parallel to the edges of the box, there will certainly be mirror symmetry about all the different axes and thus the non-diagonal terms will vanish. Our task thus comes down to finding vectors from the center of the box that are normal to the sides (i.e. parallel to some edge). Since we know that one of these normal vectors will always stay in the $x-y$ plane and with the given initial condition, we can easily see that one of the principal axis will be given by:
+\[ \hat{e_1} = (\cos 3 \Omega t,\sin 3 \Omega t,0) \]
+Then, the projection in the $x-y$ plane of one of the other sides/principal axes (in the animation it's the one with the green dot), needs to necessarily be orthogonal to $\hat{e_1}$, so we may write
+\[ \hat{e_2} = a \hat{e_1} \times \hat{z} + b \hat{z} \]
+The problem thus comes down to what these coefficients are. This question is easily answered however by considering the motion of the "green dot axis". It is just a rotation about the $\hat{e_1}$ of period $\Omega$ (when the period of $\hat{e_1}$ was $3\Omega$), so:
+\[ \hat{e_2} = \sin (\Omega t)  \hat{e_1} \times \hat{z} + \cos(\Omega t) \hat{z} \] Having thus found two of the principal axis, the third is easily obtained;
+\[ \hat{e_3} = \hat{e_1} \times \hat{e_2} \]
+Expanding and writing all of these out, we finally get
+\[ \hat{e_1} = (\cos 3 \Omega t,\sin 3 \Omega t,0)  \]
+\[ \hat{e_2} = (\sin(\Omega t) \sin(3 \Omega t), \cos(3 \Omega t) \sin(\Omega t), \cos(\Omega t) ) \]
+\[ \hat{e_3} = (\cos(\Omega t) \sin(3 \Omega t), -\cos(\Omega t) \cos (3\Omega t), -\sin\Omega t) \]
+\section*{Problem 2 Preliminaries}
+All of these problems involve a great amount of symmetry and unless otherwise noted, can be easily solved by simple application of the parallel axis theorem along one axis and the superposition principle. In Every case, the matrix of calculations is given. Application of the parallel axis theorem are apparent from a term of the for $(\frac{2}{5}+r^2)$ where r is the distance from the axis under consideration, since $\frac{2}{5} MR^2$ is the moment of inertia about any axis of the solid sphere. All other summations and multiplications are applications of the superposition principle.  The graphs given show the problem in the $x-z$,$y-z$,and $x-y$ planes respectively and and the three axis are drawn through them to more easily Illustrate where the values of $r$ (which is the distance from the appropriate axis, as drawn through the center of mass) are coming from.
+\section*{Problem 2-a)}
+\newcommand{\graphss}[3]{
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{#1-1}
+\label{fig:#1-1}
+\caption{#2 x-z plane}
+\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{#1-2}
+\label{fig:#1-2}
+\caption{#2 y-z plane}
+\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{#1-3}
+\label{fig:#1-3}
+\caption{#2 x-y plane}
+\end{subfigure}
+#3
+\end{figure}
+}
+\newcommand{\graphs}[2]{\graphss{#1}{ #2 }{}}
+\graphs{A1}{2-a)}
+\[I = \begin{pmatrix}4\cdot\frac{2}{5}MR^2 & 0 & 0 \\
+0 & MR^2 2((1+\frac{2}{5})+(3^2+\frac{2}{5})) & 0 \\
+0 & 0 & MR^2 2((1+\frac{2}{5})+(3^2+\frac{2}{5})) 
+\end{pmatrix} = \frac{2}{5}MR^2 \begin{pmatrix} 4 & 0 & 0\\
+0 & 54 & 0 \\
+0 & 0 & 54 \end{pmatrix}\]
+\section*{Problem 2-b)}
+\graphs{A2}{2-b)}
+\[ \begin{pmatrix} 4 (\frac{2}{5} + 1) MR^2 & 0 & 0 \\
+0 & 4 (\frac{2}{5} + 1) MR^2 & 0 \\
+0 & 0 & 4 (\frac{2}{5} + \sqrt{2}^2) MR^2
+\end{pmatrix} = \frac{2}{5}MR^2 \begin{pmatrix} 14 & 0 & 0\\
+0 & 14 & 0 \\
+0 & 0 & 24 \end{pmatrix}\]
+\section*{Problem 2-c)}
+\graphs{A3}{2-c)}
+\[ \begin{pmatrix} 2 (\frac{2}{5} + (\frac{2}{5}+\sqrt{3}^2)) MR^2 & 0 & 0 \\
+0 & 2(\frac{2}{5} + (\frac{2}{5}+1)) MR^2 & 0 \\
+0 & 0 & 2 ((1+\frac{2}{5}) + (\frac{2}{5}+\sqrt{3}^2)) MR^2
+\end{pmatrix} = \frac{2}{5} 	`MR^2 \begin{pmatrix} 19 & 0 & 0\\
+0 & 9 & 0 \\
+0 & 0 & 24\end{pmatrix}\]
+\section*{Problem 2-d)}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{A4-1}
+\label{fig:A4-1}
+\caption{2d) x-z plane}
+\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{A4-2}
+\label{fig:A4-2}
+\caption{2d)  y-z plane}
+\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{A4-3}
+\label{fig:A4-3}
+\caption{2d) x-y plane}
+\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+\includegraphics[width=\textwidth]{A4-4}
+\label{fig:A4-4}
+\caption{Nice rotation}
+\end{subfigure}
+\end{figure}
+This problem is somewhat more problematic as the center of mass is offset from the x-y plane of the center. However, looking at it from the right angle, we can see the this problem essentially reduces to a problem of two sets of stacked spheres, offset from the axis of interest by $MR^2$.
+\[ \begin{pmatrix} 4(\frac{2}{5}+1)& 0 & 0 \\
+0 & 4(\frac{2}{5}+1)& 0 \\
+0 & 0 & 4(\frac{2}{5}+1)
+\end{pmatrix} =
+MR^2 \begin{pmatrix}
+\frac{28}{5} & 0 & 0 \\
+0 & \frac{28}{5} & 0 \\
+0 & 0 & \frac{28}{5}
+\end{pmatrix}
+\]
+\section*{Problem 2-e)}
+\graphs{A5}{2-e)}
+Setting our first origin at the middle sphere of the $T$, we may  calculate the relative center of mass: $\frac{MR}{4M} = \frac{1}{4} R$. For convenience, let us label the balls that are in line $1$, $2$ and $3$ and the single ball outside ball $4$. Note that we have reflectional symmetry about both the $y-x$ plane and the $z-x$ plane (centered at the center of mass). Thus $y$, $x$ and $z$ must again be our principal axes and we may again use the parrallel axis and superposition theorems:
+\[MR^2 \begin{pmatrix}
+2(\frac{2}{5}+(\frac{2}{5}+2^2)) & 0 & 0 \\ 
+0 & 3(\frac{2}{5} + \left(\frac{1}{2}\right)^2) + \frac{2}{5} + \left(\frac{3}{2}\right)^2  & 0 \\ 
+0 & 0 & (\frac{2}{5} + \left(\frac{1}{2}\right)^2) + (\frac{2}{5} + \left(\frac{3}{2}\right)^2) + 2 (\frac{2}{5} + \left(\sqrt{\frac{17}{4}}\right)^2)
+\end{pmatrix}
+\]\[= \begin{pmatrix}
+\frac{48}{5} & 0 & 0 \\
+0 & \frac{23}{5} & 0 \\
+0 & 0 & \frac{63}{5}
+\end{pmatrix}\]
+\section*{Problem 3a)}
+The principal axes in this problem will be just the $x,y,z$ axes centered at the origin. We can easily see this by symmetry, but perhaps, more qualitatively: 
+\[ I = m\begin{pmatrix} 
+\sum (y^2 + z^2) & - \sum xy & - \sum zx \\
+- \sum xy & \sum (x^2+z^2) & -\sum yz \\
+- \sum zx & -\sum yz & \sum (y^2 + x^2) 
+\end{pmatrix} \]
+\[ = m\begin{pmatrix}
+l_y^2&0&0\\
+0&l_x^2&0\\
+0&0&l_x^2+l_y^2
+\end{pmatrix} \]
+Now we know that
+\[ \vec{L} = I \vec{\omega} \]
+\[ \vec{\tau} = \frac{dL}{dt} = L \times \omega \]
+Now, note that the rod is frictionless, so there is no possible way for it to exert a force parallel to the rod on the frame. And thus we also have
+\[ | \tau | = |F||r| \]
+or 
+\[ |F| = \frac{|\tau|}{|r|}. \]
+So let us do the calculation:
+\[ \vec{\omega} = \omega \begin{pmatrix}
+-\cos \theta \\ \sin \theta \\ 0
+\end{pmatrix} \]
+\[ L = I \vec{\omega} = m\omega \begin{pmatrix}
+- l_y^2 \cos \theta \\ l_x^2\sin \theta \\ 0
+\end{pmatrix} \]
+\[\tau = \vec{L} \times \vec{\omega} =\begin{pmatrix} 
+l_y^2 \sin \theta \end{pmatrix} = (-l_y^2 \cos \theta\sin \theta + l_x^2 \sin\theta\cos\theta)\hat{z}  = m\omega^2 (l_x^2-l_y^2) \sin\theta\cos\theta \hat{z} \]
+Now,
+\[ |\vec{F}|=\dfrac{m\omega^2 (l_x^2-l_y^2) \sin \theta \cos\theta}{|r_1|} \]
+with direction perpendicular to $\vec{r_1}$ (pointing to below the rod, since it's pointing in the $\hat{z}$, not the $-\hat{z}$ direction). The magnitude of the force at at $-\vec{r_1}$ is equal, but the direction is directly opposite.
+\section*{Problem 4-a)}
+Recall that the velocity for a point mass at $\vec{r}$ is given by
+\[ \vec{v} = \vec{v_{cm}}+\vec{\omega} \times \vec{r} \]
+, but
+\[ L = I\vec{\omega} \]
+, so
+\[ \vec{v}  = (I^{-1} L) \times \vec{r} \].
+Note that the center of mass is at the origin by symmetry, so
+let us thus first find the moment of inertia tensor (where we assume  the balls to be point masses).
+\[ I = m\begin{pmatrix} 
+\sum (y^2 + z^2) & - \sum xy & - \sum zx \\
+- \sum xy & \sum (x^2+z^2) & -\sum yz \\
+- \sum zx & -\sum yz & \sum (y^2 + x^2) 
+\end{pmatrix}  \]\[
+= m\begin{pmatrix}  4a^2 & 0 & 0 \\
+0 & 4a^2 + 32 a^2 & 0 \\
+0 & 0 & 32 a^2 
+\end{pmatrix}
+\]
+Taking the inverse we find
+\[ I^{-1} = \frac{1}{m}\begin{pmatrix}  \frac{1}{4a^2} & 0 & 0 \\
+0 & \frac{1}{36a^2} & 0 \\
+0 & 0 & \frac{1}{32 a^2} 
+\end{pmatrix}\]
+From QA-3, we have
+\[ \vec{L} = mv\begin{pmatrix}
+a \\ 0 \\ 4a
+\end{pmatrix} \]
+So 
+\[ I^{-1}  \vec{L}  = v\begin{pmatrix} \frac{1}{4a} \\
+0  \\
+\frac{1}{8 a} 
+\end{pmatrix}\]
+Now, we may calculate the velocity of the center of mass easily by considering, $\vec{v_{cm}} = \frac{\vec{p}}{M} = (0,\frac{mv}{4m+m_0},0)$
+So for $r_1=(4a,0,-a)$, we have $\vec{v_1}=v(0,\frac{m}{4m+m_0}+\frac{3}{4},0)$, for $\vec{r_2}=(0,0,a)$, we have $\vec{v_2}=v(0,\frac{m}{4m+m_0}-\frac{1}{4},0)$, for $\vec{r_3}=(-4a,0,-a)$, we have $\vec{v_3}=v(0,\frac{m}{4m+m_0}-\frac{1}{4},0)$, and $\vec{v_4}=(0,\frac{mv}{4m+m_0},0)$.
+\end{document}

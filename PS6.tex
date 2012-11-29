@@ -1,0 +1,151 @@
+\title{Physics 16: Problem Set 6}
+\include{prelude}
+\maketitle
+\begin{center}
+Collaborators: Abel Corver, Connor Harris, Mark Arildsen
+\end{center}
+\section*{Problem 6-1-a}
+If we consider $M[N]$ to be the action of a Lagrangian, then the Lagrangian must be $\frac{d}{dt} M[N]$ i.e.
+\[ \Lagr = \dot{N}P(N,\dot{N},t) \]
+For which the Euler-Lagrange equation
+\[ \frac{d}{dt}\frac{\partial \Lagr}{\partial \dot{N}} = \frac{\partial 
+\Lagr}{\partial N} \]
+becomes
+\[ \frac{d}{dt} \left[ P(N,\dot{N},t)+\dot{N}\frac{\partial P}{\partial \dot{N}} \right] = \dot{N}\frac{\partial P}{\partial N} \] 
+And for $P(N,\dot{N},t) = P_0-Bt-C\dot{N}$:
+\[ B-C\ddot{N} - C\ddot{N} = 0 \]
+This implies that
+\[ N(t) = -\frac{B}{4C}t^2 + Et + F\]
+Where $E$ and $F$ are determined by the initial conditions.
+In particular we must have $F=0$ since $N(0) = 0$. Now
+\[ N(t_c) = -\frac{B}{4C}t_c^2 + Et_c = N_0 \]
+or 
+\[ E = N_0 + \frac{B}{4C}t_c \]
+So finally
+\[ N(t) = \frac{B}{4C}(t_c t-t^2) + \frac{N_0}{t_c} t \]
+and
+\[ \dot{N}(t) = \frac{B}{2C}\left(\frac{t_c}{2}-t\right) + \frac{N_0}{t_c} \]
+Now
+\[ M[N] = \int_0^{t_c} \dot{N}(t)\left(P_0 - B_t - C \dot{N} \right) dt = P_0 N(t_c) - B \int_0^{t_c} \dot{N} t  dt -  C \int_0^{t_c} \dot{N}^2 dt \]
+\[ \int \dot{N} t dt  =  \int \left[ \frac{B}{2C}\left(\frac{t_c t}{2}-t^2\right) + \frac{N_0}{t_c} t \right] dt = \frac{B}{2C}\left(\frac{t_c t^2}{4}-\frac{t^3}{3}\right) + \frac{N_0}{2t_c} t^2   \]
+\[ \int \dot{N}^2 dt = \frac{B^2}{4C^2}\int \left[t^2 - t_c t + \frac{t_c^2}{4} \right] + \frac{BN_0}{C}\int \left[\frac{t}{t_c} - \frac{1}{2} \right] + \frac{N_0^2}{t_c^2} t \]\[ =
+  \frac{B^2}{4C^2} \left[ \frac{t^3}{3} - \frac{t_c t^2}{2} + \frac{t_c^2}{4}t \right ] + \frac{BN_0}{2C} \left[ \frac{t^2}{t_c} - t \right ] + \frac{N_0^2}{t_c^2} t  \]
+Evaluating at $t=0$ gives $0$ for both, so plugging it in evaluated at $t=t_c$ gives
+\[ M[N] = P_0 N_0 + \frac{B^2}{48 C} t_c^3 - \frac{B N_0 t_c}{2} - \frac{C N_0^2}{t_c} \]
+\section*{Problem 6-1-b}
+We consider
+\[ M[N] = -\int_0^{t_c} \left[ C \left(\dot{N}(t)+\frac{Bt}{2C}+\alpha\right)^2 \right] dt + \beta(\alpha) \]
+Let us first expand the term inside the integral
+ \[  -\int_0^{t_c} \left[ C \left(\dot{N}(t)+\frac{Bt}{2C}+\alpha\right)^2 \right] =
+ - C \int_0^{t_c} \dot{N}^2 dt
+ - B \int_0^{t_c} \dot{N} t dt
+ - 2C\alpha N_0
+ - \frac{B^2}{12 C} t_c^3
+ - \frac{B\alpha}{2} t_c^2
+ - \alpha^2 C t_c
+ \]  
+ Note that this looks very similar to the equation in 1a). In fact, all we need is that:
+ \[ -2C\alpha N_0 - \frac{B^2}{12 C} t_c^3 - \frac{B\alpha}{2}t_c^2  - \alpha^2 t_c + \beta(\alpha) = P_0N_0 \]
+ or 
+ \[ \beta(\alpha) =  P_0N_0 + 2C\alpha N_0 + \frac{B^2}{12 C} t_c^3 + \frac{B\alpha}{2}t_c^2 + \alpha^2 C t_c \]
+\section*{Problem 6-1-c}
+\[ \dot{N}(t) = \frac{B}{2C}\left(\frac{t_c}{2}-t\right) + \frac{N_0}{t_c} \]
+Letting 
+\[ \alpha = - \frac{B t_c}{4C} - \frac{N_0}{t_c} \]
+Satisfies the condition that 
+\[ \dot{N}(t)+\frac{Bt}{2C}+\alpha = 0 \]
+In 6-1-b we did not use the fact that $N$ satisfies the Euler-Lagrange equations and we found that $\beta(a)$ is always positive. Thus finding the maximum comes down to finding the $N$ that minimizes the integral (since that is negative). Now, since the integrand is always positive, we know that solutions which satisfy the Euler-Lagrange Equations (for which the integral is 0) will minimize the integral and thus maximize $M[N]$
+\section*{Problem 6-1-d}
+Let us consider the equation for the amount of money we obtain for a particular strategy $M[n]$ that satisfies the Euler Lagrange equations:
+\[ M[N] = P_0 N_0 + \frac{B^2}{48 C} t_c^3 - \frac{B N_0 t_c}{2} - \frac{C N_0^2}{t_c} \]
+Note that at first larger $B$ will yield a lower overall amount of money, but as soon as $B$ gets relatively large (not changing any of the other constants), the amount of money we receive will grow exponentially. This seems rather surprising at first, but notice that the ration $\frac{C}{B}$ indicates something about the impact our purchase will have on the market. If we have little impact on the market, it is very sensible to buy at a high price (before that large $t$ takes effect) which would thus increase the amount of money we get.
+\section*{Problem 6-2-a}
+In the zero momentum frame, we have the two discs traveling towards each other at velocity $\frac{v}{2}$. Now consider the angular momentum about the center of mass when the pucks are a distance $r$ away (with their centers $\frac{b}{2}$ above or below the x axis) moving at $\frac{v}{2}$. Now, since $v$ is parallel to the axis, for each disk is
+\[ L_{disk} = \vec{r}\times m\vec{\frac{v}{2}}  = \frac{bmv}{4} \]
+So 
+\[ L_{total} = \frac{bmv}{2} \]
+After the collision, we have
+\[ L_{total} = I\omega \]
+where $I=3mr^2$ so
+\[ \omega = \frac{bv}{6r^2} \]
+\section*{Problem 6-2-b}
+Before the collection we have a translational Kinetic energy of
+\[ K = \frac{mv^2}{4} \]
+and zero rotational kinetic Kinetic energy. And after the collision we zero translational kinetic energy and a rotational kinetic energy of 
+\[ K'_{rot} = \frac{1}{2}I\omega^2 = \frac{b^2v^2m}{24 r^2} \]
+So the total energy converted to heat is
+\[ K-K'_{rot} = \frac{mv^2}{4} (1 - \frac{b^2}{6r^2}) \]
+Note that the energy will always be positive since $b^2 < 4r^2$.
+\section*{Problem 6-3-a}
+At the end of the dashed line, there will be a frictional force counteracting the impulse in the $\hat{y}$ direction. Let $J$ be the magnitude of that frictional impulse. Since, assuming negligible deformation, this impulse acts on the edge of the puck (i.e. at a distance $R$) rather than the center of mass, there will be a torque induced in addition to the change in $v^y$.  This torque $\tau = r F$ so the angular impulse will be $\int r F dt = r J$
+\[ J = \Delta p = m[v_i^y - v_f^y] \]
+as well having a change in angular momentum in 
+\[ J = \frac{\Delta L}{r} = \frac{I}{r}\omega_i - \omega_f] \]
+so calling the change in $v^y$, $\Delta v^y$ and the change in $\omega$, $\Delta \omega$, we have
+\[ \Delta v^y = \frac{I}{r m} \Delta \omega = \frac{r}{2} \Delta \omega \]
+\section*{Problem 6-3-b}
+For the frictional force to do almost no work, the superpuck may not travel any significant amount of time on the wall since $W= \int F_f dy$. This is the case if $v'^x$ is large enough to bring it away from the wall very quickly (i.e. it is very "bouncy"). 
+\section*{Problem 6-3-c}
+We have the following equations
+\[v_i^x = - v_f^x \]
+\[v_i^y - v_f^y = \frac{r}{2} [\omega_i - \omega_f] \]
+\[ \frac{m}{2}[ (v_i^y)^2 + (v_i^x)^2 - (v_f^x)^2 -  (v_f^y)^2 ] = \frac{mr^2}{4} \left[  (\omega_f)^2 - (\omega_i)^2 \right] \]
+\[ \so (v_i^y)^2 - (v_f^y)^2 = \frac{r^2}{2}\left[ (\omega_f)^2 - (\omega_i)^2 \right] \]
+ (note that the last transformation involved the first equation).
+We may now factor the last equation to obtain
+\[ (v_i^y - v_f^y) (v_i^y + v_f^y) = \frac{r^2}{2} (\omega_f - \omega_i) (\omega_i + \omega_f) \]
+or 
+\[  \frac{v_i^y - v_f^y}{\omega_f - \omega_i} = \frac{r^2}{2} \frac{\omega_i + \omega_f}{v_i^y + v_f^y} \] 
+Now we know from the second equation that
+\[ \frac{v_i^y - v_f^y}{\omega_i - \omega_f} = \frac{r}{2} \]
+so 
+\[ \frac{\omega_i + \omega_f}{v_i^y + v_f^y} = -\frac{1}{r} \]
+Solving the first for $v_f^y$ gives
+\[ v_f^y = \frac{r}{2} (\omega_f-\omega_i) + v_i^y \]
+and the second equation for
+Solving the first for $\omega_f$ gives
+\[ \omega_f = \frac{-v_i^y-v_f^y}{r} - \omega_i \]
+We can now use the two equation to obtain our final expressions: 
+\[ \omega_f = -\frac{4}{3}\frac{v_i^y}{r} - \frac{1}{3}\omega_i \]
+\[ v_f^y = \frac{1}{3}v_i^y -  \frac{2}{3} r \omega_i \]
+In fact, let us write this in matrix form:
+\[ \begin{bmatrix} v_f \\ r \omega_f \end{bmatrix} = \frac{1}{3}\begin{bmatrix}
+1 & -2 
+\\ -4 & -1
+\end{bmatrix} \begin{bmatrix} v_i \\ r \omega_i \end{bmatrix} \]
+\section*{Problem 6-3-d}
+We can almost use our matrix from before again. However, there is one small change in that the change of perspective (it's basically the same thing mirrored) changed the which direction of $\omega_i$ is positive and which negative for the sake of our problem. We can easily adapt our matrix by introducing and additional $-$ for the angular velocity. Let us write the matrix for the bounce on the right side as
+\[ M= \frac{1}{3}\begin{bmatrix}
+1 & -2 
+\\ -4 & -1
+\end{bmatrix}\]
+Then we have for the bounce on the left side 
+\[ N = \begin{bmatrix}
+1 & 0
+\\ 0 & -1
+\end{bmatrix} M \begin{bmatrix}
+1 & 0
+\\ 0 & -1
+\end{bmatrix} = \frac{1}{3}\begin{bmatrix}
+1 & 2 
+\\ 4 & -1
+\end{bmatrix} \]
+Thus to have the ball return on the same path, we need
+\[ MN x_0 = -N x_0 \]
+or 
+\[ (M+\mathbb{I}) N x_0 = 0 \]
+Now 
+\[(M+\mathbb{I}) N = \frac{1}{9} \begin{bmatrix}
+-4 & 10
+\\ 4 & -10
+\end{bmatrix} \]
+Clearly we have the particle traveling back on the same trajectory if and only if \[ v_i^y = \frac{5\omega_i r}{2} .\]
+\section*{Problem 6-3-e}
+We are looking for a path with three bounces that will return the ball to a given initial position. Let $x_i$ be that initial position in the $y$ direction and let $d$ be distance from the rightmost wall to the middle wall. Since $v_x$ always has the same magnitude, we can use it to introduce time as $v_x/d$. Now, to get back to the initial position, the total variation in $y$ needs to be $0$ over    
+the path, so we can write (for three bounces):
+\[\begin{bmatrix} 0 \\ \frac{v_i^x}{d} \theta \end{bmatrix} = \left( \frac{x_i}{d} \left[\mathbb{I}+NMN\right] + \left[ N + MN \right] \right) \begin{bmatrix} v_i^y\\ \omega_i \end{bmatrix}    \]
+where we don't care about the $\theta$. Calculating the matrices and writing out the equation for $v_i^y$ gives
+\[ 0 = \frac{1}{27} \frac{x_i}{d} [4 v_i^y - 10 \omega_i r] - \frac{1}{9}  [4 v_i^y - 10 \omega_i r] \]
+\[ 0 =  \frac{1}{9} \left[ \frac{1}{3}\frac{x_i}{d} - 1\right][4 v_i^y - 10 \omega_i r] \]
+So we either have $4 v_i^y - 10 \omega_i r=0$ which corresponds to the solution in 6-3-d) or we have $\frac{1}{3}\frac{x_i}{d} - 1$ (i.e. the particle is three times as far away from the rightmost wall as the middle wall is). In that case all initial conditions that lead to three bounces will return the ball to its original position.
+\end{document}

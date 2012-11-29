@@ -1,0 +1,112 @@
+\include{prelude}
+\section*{Problem 3-1a}
+We have particle moving radially away from the origin. At time $t_0$, let this particle be at some position $r_0 \hat{r}$. On this particle we have a force given by 
+\[ F(\vec{r}) = \frac{A\vec{r}}{r^\beta} \]
+Since all the vector-valued quantities in this problem are along $\hat{r}$, we may reduce all vectors to scalars (with positive scalars in the direction of $\hat{r}$). Therefore we may just write
+\[ F(r) = \frac{A}{r^{\beta-1}} \]
+Integrating this to find the potential difference between two points $r$ and $r_0$, we get
+\[ U_0 - U=  \int\limits_{r_0}^r -Ar^{1-\beta} dr = \frac{1}{2-\beta} A(r^{2-\beta}-r_0^{2-\beta}) \]
+Now, since $F$ is conservative, we may apply the conservation of energy:
+\[  \frac{1}{2-\beta} A(r^{2-\beta}-r_0^{2-\beta})  = U_0-U = K-K_0 = \frac{m}{2}(v^2-v_0^2) \]
+Then we have
+\[ v^2 = \left(\frac{A}{2-\beta}\right)\left(\frac{2}{m}\right)(r^{2-\beta} - r_0^{2-\beta}) + v_0^\beta \]
+\[ \frac{dr}{dt} = v = \sqrt{\left(\frac{A}{2-\beta}\right)\left(\frac{2}{m}\right)(r^{2-\beta} - r_0^{2-\beta}) + v_0^2} \]
+Now the following integral gives the time taken to get from our starting position at $r_0$ to $r=\infty$:
+\[ \int_{t_0}^{t_\infty} dt = \int_{r_0}^{\infty} \dfrac{dr}{\sqrt{\left(\frac{A}{2-\beta}\right)\left(\frac{2}{m}\right)(r^{2-\beta} - r_0^{2-\beta}) + v_0^2} } \]
+Specifically note that if the integral on the right converges, the time $t_\infty$ at which we will have $r=\infty$ will be finite. If it diverges, the mass will not reach infinity in a finite amount of time. 
+In analyzing this integral it is useful to write it as 
+\[ \int_{r_0}^\infty \dfrac{dr}{\sqrt{Br^{2-\beta}+C}} \]
+where $B=\frac{2A}{m(2-\beta)}$ is a positive constant and $C=-\frac{2A}{m(2-\beta)} r_0^2 + v_0^2$ is also a constant. We will consider three cases:
+\begin{enumerate}
+\item $\beta>2$:
+In this case $r^{2-\beta}$ will go to $0$ as $r\to\infty$. This means that the integral will be dominated by $\int_{r_0}^\infty \dfrac{dr}{\sqrt{C}}$ (more formally one can see that this integral fails the improper integral analog of the $n-th$ term test for infinite series). 
+\item $\beta=2$: Note that in this case the force is given by 
+$\frac{A}{r} $, so our original characterization of the potential is invalid in this case.
+We get instead 
+\[ U_0 - U = -\int_{r_0}^r \frac{A}{r} dr = A[\ln(r) - \ln(r_0)\]
+And we get
+\[ \int_{t_0}^{t_\infty} dt = \int_{r_0}^\infty \dfrac{dr}{\sqrt{\frac{2A}{m}(\ln(r)-\ln(r_0)) + v_0^2}} \]
+Note that this integral gets larger than
+\[
+\int_{r_0}^\infty \frac{1}{\sqrt{r}}
+\] 
+since the terms inside the integral will get larger for all $r$ greater than some finite $r'$ (since $\ln r$ goes to $\infty$ more slowly than $r$). Thus the original integral diverges for $\beta = 2$
+\item $0\leq \beta < 2$:
+Note that by the limit comparison test. $\int_{r_0}^\infty \frac{dr}{\sqrt{Br^{2-\beta}+C}}$ converges if and only if $\int_{r_0}^\infty  \frac{dr}{r^{1-\frac{\beta}{2}}}$ converges (since $\lim_{r\to \infty} \frac{\sqrt{Br^{2-\beta}+C}}{r^{1-\frac{\beta}{2}}} = \sqrt{B} > 0$). Now, by the p-series test $\int_{r_0}^\infty  \frac{dr}{r^{1-\frac{\beta}{2}}}$ diverges for $1\leq 1-\frac{\beta}{2}$, which is clearly the case for $\beta>0$.
+\item $\beta<0$:
+Note that in this case we have
+\[ \frac{1}{\sqrt{Br^{2-\beta}+C}} < \frac{r^{-\frac{\alpha}{2}} }{\sqrt{B}} \]
+where $0 < \alpha = 2-\beta$. Note that 
+\[ \int_{r_0}^\infty r^{-\frac{\alpha}{2}} \]
+converges when $1<\frac{\alpha}{2}$ or $2<2-\beta$ and diverges otherwise. Then, by the integral comparison test, our integral converges for $\beta<0$
+\end{enumerate}
+In conclusion, a mass reaches infinity in finite time if $\beta<0$.
+\section*{Problem 3-2-a}
+Note that the position of the center of mass at $t=0$ is given by 
+\[ x_{cm} \dfrac{m_1x_1(0)+m_2x_2(0)}{m_1+m_2} = 0 \]
+Furthermore, since the total momentum is $0$, the velocity of the center of mass must be $0$. 
+Now, since momentum is conserved we have 
+\[ m_1 x_1(t) + m_2 x_2(t) = 0 \]
+\[ x_1(t) = - \frac{m_2}{m_1} x_2(t) \]
+\section*{Problem 3-2-b}
+Let $F_1$ denote the force on object 1 due to the spring. We will solve for $x_1$, but since $x_1$ and $x_2$ are trivially related, we implicitly also get the equation for $x_2$. 
+Now, 
+\[ F_1 = k(x_2-x_1) \]
+Note that we do not need to account for the relaxed length of the spring as $x_2$ and $x_1$ are measured as displacement from the equilibrium position (so when $x_2=x_1$, the spring is relaxed). Using the linear relation between $x_1$ and $x_2$ from a), we get 
+\[ F_1 = k\left(-\frac{m_1}{m_2}x_1 - x_1\right) = -kx_1\left(1+\frac{m_1}{m2}\right) \]
+\[ \ddot{x}_1 + \frac{k}{m1}\left(1+\frac{m_1}{m2}\right)x_1 = 0 \]
+Which is just a simple harmonic oscillator given by 
+\[ x_1(t) = A\cos(\omega t + \phi) \]
+\[ A = \sqrt{x_1(0)^2+\left(\frac{v_1(0)}{\omega}\right)^2} \]
+\[ \phi = \arctan\left(-\frac{v_1(0)}{x_1(0)\omega}\right) \]
+\[ \omega = \sqrt{k\left(\frac{1}{m_1}+\frac{1}{m_2}\right)} \]
+\section*{Problem 3-2-c}
+Note that since there is no external force on the system, momentum is conserved and thus the velocity of the center of mass is constant and its position is given by 
+\[ x_{cm}(t) = \dfrac{m_1x_1(0)+m_2x_2(0)}{m_1+m_2} + \dfrac{m_1v_1(0)+v_2x_2(0)}{m_1+m_2} t\]
+Note that giving up our initial condition is essentially equivalent to changing the frame of reference. Thus we may just say
+\[ x_1(t) = x_1'(t) + x_{cm}(t) = \dfrac{m_1x_1(0)+m_2x_2(0)}{m_1+m_2} + \dfrac{m_1v_1(0)+v_2x_2(0)}{m_1+m_2} t +  A\cos(\omega t + \phi) \]
+\[ x_2(t) = x_2'(t) + x_{cm}(t) = \dfrac{m_1x_1(0)+m_2x_2(0)}{m_1+m_2} + \dfrac{m_1v_1(0)+v_2x_2(0)}{m_1+m_2} t - \frac{Am_1}{m_2}\cos(\omega t + \phi) \]
+\section*{Problem 3-2-d}
+An impulse is just a change in momentum (of the first object in our case). Therefore, we will call the state just after the impulse has completed $t=0$. Now $m_1v_1(0) = P$, $x_1(0)=x_2(0)=v_2(0)=0$. In particular we may say $v_1(0) = \frac{P}{m_1}$ and plugging these initial conditions into the equations found in part $d)$ gives:
+\[ x_1(t) = \frac{P t}{m_1+m_2} + \frac{P}{\omega m_1}\cos(\omega t-\frac{pi}{2}) = \frac{P}{m_1+m_2} + \frac{P}{\omega m_1}\sin(\omega t) \]
+\[ x_2(t) =  \frac{P t}{m_1+m_2} - \frac{P}{\omega m_2}\sin(\omega t) \]
+\section*{Problem 3-2-e}
+The two blocks will be sliding into the direction they were forced into by the impulse. While doing so, they will oscillate with equal amplitude and frequency and their phase will be exactly opposite of each other (meaning they accelerate towards each other and then at the same time stop accelerating and start accelerating in the opposite direction).
+Let us first take the derivative of $x_1(t)$ and $x_2(t)$ as we will require it to calculate momentum and energy:
+\[ v_1(t) = \frac{P}{2m} + \frac{P}{m}\cos(\omega t) \]
+\[ v_1(t) = \frac{P}{2m} - \frac{P}{m}\cos(\omega t) \]
+Now,
+\[ E_1(t) = \frac{1}{2}m(v_1(t))^2  = \frac{P^2}{m}\left[\frac{1}{8}+\frac{1}{4}+\frac{1}{2}\cos^2(\omega t)\right] \]
+\[ E_2(t) = \frac{1}{2}m(v_1(t))^2  = \frac{P^2}{m}\left[\frac{1}{8}-\frac{1}{4}+\frac{1}{2}\cos^2(\omega t)\right] \]
+\[ V(t) = \frac{1}{2}k(x_1(t)-x_2(t))^2 = \frac{2k P^2}{\omega^2 m^2} \sin^2(\omega t) = \frac{2k P^2}{k \frac{2}{m} m^2} \sin^2(\omega t) = \frac{P^2}{m}\sin^2(\omega t)  \]
+Now note that the total energy is just
+\[ E = E_1(t)+ E_2(t) + V(t) = \frac{P^2}{m}\left(\frac{1}{4}+\sin^2(\omega t) + cos^2(\omega t)\right) = \frac{P^2}{m} = \frac{5P^2}{4m} \]
+which is constant in time and thus total energy is conserved. 
+Now, for momentum 
+\[ p_1(t) = mv_1(t) = \frac{P}{2}+P\cos(\omega t) \]
+\[ p_2(t) = mv_2(t) = \frac{P}{2}-P\cos(\omega t) \]
+So 
+\[ p_1(t) + p_2(t) = P \]
+which is also constant in time and thus conserved.
+\section*{Problem 3-3-a}
+We will use the following Ansatz:
+\[ x(t) = A t\sin(\omega_d t) \]
+Then 
+\[ x'(t) = A\sin(\omega_d t) + A\omega_d t \cos(\omega_d t) \]
+\[ x''(t) = 2A\omega_d\cos(\omega_d t) - A\omega_d^2 \sin(\omega_d t)  =  2A\cos(\omega_d t) - A\frac{K}{\mu}\sin(\omega_d t)  \]
+Plugging this into our equation of motion 
+\[ \mu x''(t)+Kx'(t) = 2A\mu\omega_d\cos(\omega_d t) \]
+We know also that we want this to also equal $F_0 \cos(\omega_d t)$.
+\[ A =  \frac{F_0}{2\sqrt{K \mu}} \]
+And a particular solution to the equations of motion is
+\[ x(t) = \frac{F_0}{2\mu\omega_d} t\sin(\omega_d t) = \frac{F_0}{2\sqrt{K \mu}} t \sin\left(\sqrt{\frac{K}{\mu}}  t\right)  \]
+Note that this is the particular solution for $v(0)=0$, $x(0)=0$ (since that implies the amplitude of the homogeneous solution is $0$), but those are the initial conditions given in this problem and thus it is the desired $x(t)$
+\section*{Problem 3-3-b}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.48\textwidth]{3-3-b}
+\label{fig:3-3-a}
+\caption{Plot of $x(t)$, with $t$ in units of $\omega_d$ and $t$ x in units of $\frac{F_0}{\mu\omega_d}$}
+\vspace{40pt}
+\end{wrapfigure}
+The motion of $t>0$ will be oscillatory, but ever increasing in amplitude (until it hits the walls, but we didn't specify any walls, so we'll just assume infinitely long spring on an infinite line). This is clearly not possible for the swing set as the amplitude is constrained to the circle the swing set can go. Furthermore as this angle/amplitude gets large, our cart cannot be compared to the swing set anymore, as the small angle approximation breaks down. A plot of $(x)$ is shown in Figure 1.
+\end{document}

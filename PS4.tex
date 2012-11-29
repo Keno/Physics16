@@ -1,0 +1,81 @@
+\include{prelude}
+\section*{Problem 4-1-a}
+We have two point particles, both with mass $m$, one of which travels at speed $v$, the other one of which is at rest. During the collision, a certain fraction $\epsilon$ of the is lost to heat (in particular (1-$\epsilon$) remains in kinetic energy). After the collision, both particles travel at speed $v'$. We define a coordinate system in such a way that the x axis is in the direction of $\hat{v}$. Then we must have the final momentum in the $y$ direction be 0. With $\omega$ begin the angle between the $x-axis$ and the first particle and $\phi$ being the same for the second particle.
+\[ mv = mv' \cos \omega+ mv' \cos \phi \]
+\[ 0 = mv' \sin \omega+ mv' \sin \phi \]
+\[ \frac{1}{2} m v^2 = (1-\epsilon)m v'^2 \]
+Note that from the second equation we must have $\theta=\phi$. Putting this into the first equation we get
+\[ v=2v'[\cos\omega] \]
+Furthermore we know that $\theta = 2\omega$ and after squaring and applying the half-angle formula, we get  
+\[ v^2=4v'^2[\cos^2(\omega)] \]
+\[ v^2=2v'^2[\cos\theta + 1]\]
+\[\cos\theta = 2\frac{v^2}{v'^2} - 1 \]
+Now from the energy equation, we get
+\[ v' = v \sqrt{\frac{1}{2-2\epsilon}} \]
+which is one of the desired equations. Plugging that into the above equation, we get
+\[ \cos\theta = \frac{1}{1-\epsilon} -1 \]
+\section*{Problem 4-1-b}
+Note that $\cos \theta$ may only take values between $-1$ and $1$ and thus we must have $0\leq \epsilon \leq \frac{1}{2}$. Now consider again the conservation of energy from above. If $\epsilon>\frac{1}{2}$, we have $v'^2>\frac{1}{2}v^2$  which would imply that the final kinetic energy is larger than the initial kinetic energy which is obviously impossible. 
+\section*{Problem 4-2-a}
+The ramjet is losing mass at a rate of 
+\[ \frac{dm}{dt} = -\kappa\]
+We will now consider the sate of of the system at some point $t$ and at a point $t+dt$ that is infinitesimally later in time. We get
+\[ p_{jet}(t) + p_{air}(t) = p_{jet}(t+dt)+p_{air}(t+dt) + p_{fuel}\]
+For clarity, we will define the positive direction in the direction of the jet (i.e. a positive sign means travelling in that direction, a negative sign means travelling against it). This for example means that the velocity $u$ is negative. Let us now come back to the above equation for the conservation of momentum:
+\[ m(t)v(t)+0=\left[m(t)+dm \right](v(t)+dv) + (\rho A (v(t)+dv) dt)u-u dm \]
+Note that we have used that $m(t+dt)=m(t)+dm$, and similarly for $v$.
+\[ 0 = m(t)dv + v(t) dm + dmdv + (\rho A v(t) u(t))dt + \rho A dvdt -  u(t)dm \]
+\[ \frac{dv}{dt} = -\dfrac{(v(t)-u(t))\frac{dm}{dt} + (\rho A + \frac{dm}{dt})dv + \rho A v(t)u(t) }{m(t)} \]
+Now note that $dv$ is infinitesimal and thus drops out of the equation and we get
+\[ \dot{v}(t) = \frac{dv}{dt}(t)= -\dfrac{u\kappa +(\rho A u -\kappa )v(t)}{m(t)} \]
+Note since $u$ is negative the acceleration will always be positive which makes sense since we expect the rocket to be accelerating in the positive direction.
+\section*{Problem 4-2-b}
+Let us again consider the conservation of momentum between $t_0$ and $t_0+dt$. 
+\[ p_{jet}(t_0) + p_{air}(t_0) = p_{jet}(t_0+dt)+p_{air}(t_0+dt) + p_{fuel} \]
+Now in our new frame, the velocity of the air is no longer zero, so let us introduce $v_{air} = -v_{original}(t_0)$, where $v_{original}$ is the velocity of the ramjet in our original frame of reference. In this frame of reference is sucked in at a rate of $\rho A(v(t)-v_{air}(t))$ and leaves the the rocket at a speed of $u+v_{air}$
+\[ 0 + \rho A(0-v_{air})dt v_{air} = (m(t)+dm)dv + \rho A(v(t)+dv-v_{air})(u+v_{air})dt -dm(u+v_{air}) \]
+\[ 0 = \rho A[ v^2_{air} + v(t)u + v(t)v_{air} + udv + v_{air}dv - uv_{air} - v^2_{air} ]dt + m(t)dv + dmdv - udm - v_{air}dm  \]
+However, note that $v(t_0)=0$ and thus we get
+\[ \frac{dv}{dt} = -\dfrac{\rho A[ udv + v_{air}dv - uv_{air}  ] + \frac{dmdv}{dt} - u\frac{dm}{dt} - v_{air}\frac{dm}{dt}}{m(t)} \]
+Note that again the terms involving just the infinitesimal number $dv$ drop from the equation and we get:
+\[ \frac{dv}{dt} = -\dfrac{\rho Auv_{air} +  u\kappa + v_{air}\kappa}{m(t)}  \]
+\[ \dot{v}(t_0) = -\dfrac{[\kappa -\rho Au]v_{air} +  u\kappa}{m(t_0)} \]
+\section*{Problem 4-2-c}
+From 4-2-a we get 
+\[ \frac{dp}{dt}(t_0) = m(t_0)\dot{v}(t_0) + \dot{m}(t_0)v(t_0)= -\kappa v(t_0) -u\kappa - (\rho A u -\kappa )v(t_0)\]
+and from 4-2-b, we get 
+\[ \frac{dp}{dt}(t_0) = m(t_0)\dot{v}(t_0) + \dot{m}(t_0)v(t_0)  = 0 -(\kappa - \rho A u)v_{air} -  u\kappa \]
+However, since we defined the $v_{air}$ in the second reference frame is just $-v(t_0)$ in the first reference frame, these two are equivalent except for a factor of $-\kappa v(t_0)$. The reason for this difference is that $F=\frac{dp}{dt}$ if and only if the system does not exchange  mass with the momentum. As to which of the two expresses the force, recall that force is defined as $F=ma=m(t_0)\dot{v}(t_0)$ which is equal to the quantity of $\frac{dp}{dt}$ in the second frame.
+\section*{Problem 4-2-d}
+Let us again go back to the original frame of reference. Then for $\kappa=0$, we have 
+\[ \dot{v}(t) = \frac{-\rho A u v(t)}{m} \]
+Note that $m(t)$ is just $m$ now since virtually no fuel is ejected (granted, in a nuclear ramjet a small amount of mass will be converted into energy, by that amount of mass is almost negligible when compared to the fuel ejected by conventional jets). However, note that this is not beneficial in terms of the acceleration of the jet, because one is losing both the factor in the acceleration that reduces the mass as well as the one that increases the acceleration (due to the reactionary force when the fuel goes out the back of the ramjet). Technically this also means the nuclear ramjet is less efficient in terms of how much energy is need to bring it to a certain speed, since spent fuel is not ejected. Of course, the energy density of nuclear materials can be much higher than that of conventional fuels (by multiple thousands of orders of magnitude), so that issue may not be of importance.
+\section*{Problem 4-2-e}
+Again, for the nuclear ramjet we have (ignoring change in mass due to the nuclear reaction),
+\[ \dot{v}(t) = \frac{-\rho A u v(t)}{m} \]
+This can be easily solved:
+\[ \frac{\dot{v}}{v} = -\frac{\rho A u}{m} \]
+So,
+\[ v(t) = e^{-\frac{\rho A u}{m} t} + v_0 - 1 \]
+\section*{Problem 4-3}
+Consider a planet of radius $R$ and mass density $\rho$. Now, a particle of mass $m$ travels in a parabolic orbit around this planet. Now, by the conservation of energy, the energy at $r=\infty$ and at it's closest approach, where $r = \frac{L^2}{2m\alpha}$. However, since the orbit is parabolic, the kinetic energy at $r=\infty$ is zero and the potential energy is zero by definition. Thus we have (since we want the particle to skim the surface. 
+\[ 0 = \frac{1}{2}m v^2 -  \frac{\alpha}{R}\]
+Now, as $v$ is tangential, we have $v=\omega r$:
+\[ 0 = \frac{1}{2}m \omega^2 R^2 -  \frac{\alpha}{R} \]
+Now, note that we can write $M=\rho \frac{4}{3}\pi R^3$, so $\alpha=\frac{4}{3}\pi \rho G m R^3$
+\[ \omega = \sqrt{\frac{2\alpha}{mR^3}} = 2\sqrt{\frac{2\pi \rho G}{3}} \]
+\section*{Problem 4-4-a}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.48\textwidth]{4-4}
+\label{fig:2-1-a}
+\caption{Two possible hyperbolic orbits for values of $\frac{m\alpha}{L_2}=2$ and $\epsilon=1.2$. Asymptotes are shown}
+\vspace{40pt}
+\end{wrapfigure}
+The analysis basically stays the same, except that we now need to define 
+\[ z = \frac{1}{r} \frac{m\alpha}{L^2} \]
+Which gives us the following equation for $\frac{1}{r}$:
+\[ \frac{1}{r} = \frac{m\alpha}{L^2} (\epsilon \cos\theta - 1) \]
+Note that we have assumed in our derivation that $V(r) = \frac{\alpha}{r}$. This assumption for a positive potential however assumes that $r\geq 0$ at all times (otherwise we would have a contradiction at the point at $(r,\theta)$ and $(-r,\theta)$ are the same point, but would have different potentials). Thus only values for $r\geq 1$ are allowed. Now, for $\epsilon=1$, the only ``allowed'' value of $\theta$ is $\theta=0$ at which point the particle must be at $r=\infty$ and can therefore not have a parabolic orbit. For, ant $\epsilon>1$ however, there exists an open interval of allowed values of $\theta$ which must lead to hyperbolic orbits by the same reasoning as before (the equation for the conic section is the same as before since $(k-\epsilon x)^2=(\epsilon x-k)^2$).  The rightmost curve in Figure 1 corresponds to this solution. 
+\section*{Problem 4-4-b}
+As was mentioned earlier, the solutions to the two problems of attractive and repulsive potential are equivalent in the sense that they give rise to the same equation for the parabola. However, they by no means describe the same orbit. In both cases, we have the condition that $r>0$, which limits the allowed values of $\theta$, which are (in this particular graph) values to the right of both asymptotes for the repulsive potential and values to the left of both asymptotes for the attractive potential. Notice that this very much makes intuitive sense, since in the attractive case the particle is "slingshotted" around the planet, while in the repulsive case, the particle never gets as close to the planet (as velocity and force are working against each other , unlike in the other case). 
+\end{document}

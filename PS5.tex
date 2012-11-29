@@ -1,0 +1,168 @@
+\title{Physics 16: Problem Set 5}
+\include{prelude}
+\maketitle
+\begin{center}
+Collaborators: Mark Arildsen, Aftab Chitalwala, Connor Harris, Roman Berens \par
+All graphs were created by me. 
+\end{center}
+\section*{Problem 5-1a)}
+Since there is no external potential in our system the, the Lagrangian is just equal to the kinetic energy of the bead on the rod (first in Cartesian coordinates):
+\[  \Lagr(x,\dot{x},y,\dot{y},t) = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) \]
+Now, to change this to coordinates of $l,\dot{l}$, note that we have
+\[ x(t) = l(t) \cos(\theta(t)) \]
+\[ y(t) = l(t) \sin(\theta(t)) \]
+Taking the derivative gives:
+\[ \dot{x}(t) = \dot{l} \cos(\theta(t)) - l(t) \dot{\theta}(t) \sin(\theta(t)) \]
+\[ \dot{y}(t) = \dot{l} \sin(\theta(t)) + l(t) \dot{\theta}(t) \cos(\theta(t)) \]
+Now, we know from above that
+\[ tan(\theta(t)) = \frac{vt}{a} \]
+Taking the derivative of both sides fives
+\[ \frac{\dot{\theta}(t)}{\cos^2(\theta(t))} = \frac{v}{a} \]
+and thus we have
+\[  \dot{\theta}(t) = \frac{v}{a} \cos^2(\theta(t)) \]
+Now putting everything together we have
+\[ \dot{x}^2 + \dot{y}^2 = \dot{l}^2 + \frac{l^2v^2}{a^2} \cos^4(\theta) [ \cos^2(\theta) + \sin^2(\theta)] = \dot{l}^2 +  \frac{l^2v^2}{a^2} \cos^4(\theta) \]
+since the cross therms cancel (note that is equivalent to adding the radial and tangential kinetic energies). Now note the we may write
+\[ \cos(\theta) = \frac{a}{\sqrt{a^2+v^2t^2}} \]
+and thus we have
+\[ \dot{x}^2 + \dot{y}^2 = \dot{l}^2 + \frac{l^2v^2a^2}{(a^2+v^2t^2)^2}\]
+
+which gives us
+\[ \Lagr(l,\dot{l},t) = \frac{m}{2}\left[\dot{l}^2 + \frac{l^2v^2a^2}{(a^2+v^2t^2)^2} \right] \]
+
+\section*{Problem 5-1b)}
+The Euler-Lagrange equation is:
+\[ \frac{d}{dt}\left(\frac{\partial \Lagr}{\partial \dot{l}}\right)=\frac{\partial \Lagr}{\partial l} \]
+\[ \ddot{l} = \frac{lv^2a^2}{(a^2+v^2t^2)^2} \]
+\section*{Problem 5-1c)}
+We will verify that $l_1 = \sqrt{a^2+v^2t^2}$ is indeed a solution to the Euler-Lagrange equation. 
+For that purpose let us first calculate $\ddot{l_1}$:
+\[ \ddot{l_1} = \frac{d}{dt} \frac{tv^2}{\sqrt{a^2+t^2v^2}} = \frac{a^2v^2}{(a^2+v^2t^2)^\frac{3}{2}} = \frac{a^2v^2}{l_1^3} \]
+Plugging this into the Euler-Lagrange equation, we get
+\[ \frac{a^2v^2}{l_1^3} = 3 \frac{l_1a^2v^2}{(a^2+v^2t^2)^2} \]
+\[ 1 = \frac{l_1^4}{(a^2+v^2t^2)^2} \]
+Note note that $(a^2+v^2t^2)=l_1^2$ and we have
+\[ 1 =\frac{l_1^4}{l_1^4} = 1 \]
+and thus $l_1$ satisfies the Euler Lagrange equation
+\section*{Problem 5-1d)}
+Let $l_2 = \sqrt{a^2+v^2t^2}\arctan\left(\frac{vt}{a}\right)$ be another solution to the Euler Lagrange equation. Now we know that for any second order linear differential equation (such as the one obtained by the Euler-Lagrange equation), the solution is is a two dimensional vector space over the field functions. Now since $l_1$ and $l_2$ are linearly independent and they are solutions of the differential equation, the must form a basis for the solution space and thus any element in the solution space (i.e. any solution of the differential equation) is given by
+\[ l = \sqrt{a^2+v^2t^2}\left[c_1 + c_2 \arctan\left(\frac{vt}{a}\right)\right] \]
+where $c_1, c_2$ are arbitrary real constants. 
+\section*{Problem 5-2a)}
+We will first find all the pieces of the Lagrangian and then put it all together at the end. In particular, we need:
+\begin{enumerate}
+\item Kinetic Energy of the cart
+\item Kinetic Energy of us on the cart
+\item Potential Energy of the spring
+\end{enumerate}
+For the kinetic energy of the cart, we simply have
+\[ \frac{1}{2} \mu \dot{x}^2 \]
+For the kinetic energy of ourselves on the cart, first notice that our position is given with respect to the center of the cart and thus the actual displacement (let's call it $y$) with respect to the laboratory frame is given by:
+\[ y = x+l\sin\omega_d t \]
+So we get for the kinetic energy
+\[  \frac{m}{2}\dot{y}^2 = \frac{m}{2}\left[\dot{x} + l\omega_d\cos \omega_d t\right]^2  = \frac{m}{2}\left[\dot{x}^2 + 2\dot{x}l\omega_d\cos \omega_d t +  l^2\omega_d^2\cos^2 \omega_d t \right]  \]
+Now, the potential energy coming from the springs is just $\frac{K}{4}x^2$for each of the spring which gives us a total potential of potential of 
+\[ \frac{K}{2}x^2 \]
+Putting all of this together gives us a Lagrangian of 
+\[ \Lagr(x,\dot{x},t)  = \frac{1}{2}\left((\mu+m) \dot{x}^2+ 2m(\dot{x} + l\omega_d\cos\omega_d t) l\omega_d\cos\omega_d t
+ - Kx^2\right) \]
+\section*{Problem 5-2b)}
+ \[ \frac{d}{dt}\left(\frac{\partial \Lagr}{\partial \dot{x}}\right)=\frac{\partial \Lagr}{\partial x} \]
+Let us first find $\frac{\partial \Lagr}{\partial \dot{x}}$, we get:
+\[ \frac{\partial \Lagr}{\partial \dot{x}} = (\mu+m)\dot{x} + ml\omega_d\cos\omega_d t \]
+Taking the derivative with respect to time gives
+\[ \frac{d}{dt}\left(\frac{\partial \Lagr}{\partial \dot{x}}\right)=
+(\mu + m)\ddot{x} - ml\omega_d\sin \omega_d t \]
+Next, let us find $\frac{\partial \Lagr}{\partial x}$:
+\[\frac{\partial \Lagr}{\partial x}  = -Kx \]
+which gives us the final Euler Lagrange equation
+\[  (\mu + m)\ddot{x} - ml\omega_d\sin \omega_d t  = -Kx \]
+or, written in standard form
+\[ \ddot{x} + \frac{K}{\mu + m} x = \frac{m}{\mu + m}l\omega_d\sin \omega_d t \]
+\section*{Problem 5-2c)}
+\newcommand{\comt}{\cos\omega_d t}
+\newcommand{\somt}{\sin\omega_d t}
+\newcommand{\om}{\omega_d}
+We will show that $x(t) = At\cos \omega_d t + B\sin\omega_d t + C\cos \omega_d t$ is a general solution to the Euler-Lagrange  equation. We will first compute $\dot{x}$ and $\ddot{x}$:
+\[ \dot{x} = A\comt - At\om\somt + B\om\comt - C\om\somt  \]
+\[ \ddot{x} = -A\om\somt - A\om\somt - At\om^2\comt - B\om^2\somt - C\om^2\comt  \]\[ =  -\left[ (2A\om+B\om^2)\somt + (At\om^2 +C\om^2)\comt \right] \]
+Putting everything into the differential equation (and writing everything on the same side, we get):
+\[ -\left[ (A+A\om+B\om^2)\somt + (At\om^2 +C\om^2) \right] + \frac{K}{\mu+m} (At\cos \omega_d t + B\sin\omega_d t + C\cos \omega_d t) - \]\[ \frac{m}{\mu+m} l\om \somt =  0\]
+\newcommand{\kmmu}{\frac{K}{\mu+m}}
+Grouping by terms of $\comt$ and $\somt$:
+\[ \left[-(A+A\omega_d+B\omega_d^2)+\kmmu B - \frac{m}{\mu+m}l\om\right]\somt \]\[+
+\left[ -(At\om^2 + C\om^2) + \kmmu(At + C) \right] \comt
+ = 0\]
+ Now notice that
+ \[ \om = \sqrt{\kmmu} \]
+ and thus all the $\comt$ terms and all the terms involving $B$ cancel and we get (since we want the solution to hold for all $t$:
+ \[ -2A\om - \frac{m}{\mu + m}l\omega_d = 0 \] 
+\newcommand{\Aconst}{-\frac{1}{2}\frac{m}{\mu + m}l\om}
+\[ A = \Aconst \]
+
+So we see that the most general solution to the Euler-Lagrange equation is
+\[ x(t) = \Aconst t \comt + B\somt+ C\comt \]
+which is encouraging, since we expect two free variables for the general solution to a second-order differential equation. Let us know go on to find $B$ and $C$ for our initial conditions ($x(t) = 0$, $\dot{x}(t) = 0$)
+\[ x(0) = (0) + (0) + C \so C = 0 \]
+\[ \dot{x}(0) = \Aconst - (0) + B\om - (0) \so B = \frac{1}{2}\frac{m}{\mu + m}l \]
+\newcommand{\Bconst}{\frac{1}{2}\frac{m}{\mu + m}l}
+\section*{Problem 5-2d)}
+\section*{Problem 5-2e)}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.48\textwidth]{5-2-d}
+\label{fig:2-1-a}
+\caption{Plots of $x(t)$ (blue) and $y(t)$ with units of $\om$ on the x-axis and units of $1$ on the y-axis}
+\vspace{50pt}
+\end{wrapfigure}
+At the beginning the position of me on the cart and the position of the cart are very much in phase, but as time goes on, they move to a phase angle of $pi$ (that is to be expected as the $At$ term takes over). This very much mirrors what happens on a real swing set. At the beginning, the swing follows the action of your legs almost immediately, but as time goes on, we tend to leave our legs stretched or contracted until shortly after the swing has reached its maximum point, extending it shortly afterwards. Note however, that on a real swing set, there is friction that increases with angular velocity and thus the Amplitude will not grow exponentially. \newpage
+\section*{Problem 5-2f)}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics[width=\textwidth]{5-2-d-force}
+\label{fig:2-1-a}
+\caption{Force vs time}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth}
+\includegraphics[width=\textwidth]{5-2-d-power}
+\label{fig:2-1-a}
+\caption{Power vs time}
+\end{subfigure}
+\caption{Graphs for problem }
+\end{figure}
+Recall that $F=ma$ and that our position in the laboratory frame of reference is given by
+\[ y(t) = x(t) + l\somt \]
+And since the force that I exert is negative the force exerted on me, all we need to do is compute:
+\[ F(t) =-m\ddot{y} = -m(\ddot{x} - l\om^2\somt) \]
+Recall our equation for $\ddot{x}$ from above:
+\[ \ddot{x} = -\left[ (2A\om+B\om^2)\somt + (At\om^2 +C\om^2)\comt \right] \]
+Plugging in our values for $A,B,C$ gives
+\[ \ddot{x} = +\frac{1}{2}\frac{m}{\mu +m}l\om^2\somt+ \frac{1}{2}\frac{m}{m+\mu}l\om^3 t\comt \]
+And thus
+\[ F(t) = - \frac{ml\om^2}{2} \left( \left( \frac{m}{\mu + m}-2\right)\somt + \om t\frac{m}{m+\mu}\comt\right) \]
+Now $P=F\dot{x}$ (since we're exerting force on the cart). Plugging values into the value $\dot{x}$ from above 
+\[ \dot{x}(t) = \left(\Aconst+\Bconst \om\right) \comt - \left(\Aconst\right) \om t\somt \]
+\[ = \frac{1}{2}\frac{m}{\mu + m}l \omega_d^2 t \somt \]
+So 
+\[ P(t) = - \frac{ml^2\om^4}{4}  \left( \left( \left(\frac{m}{\mu + m}\right)^2-2\frac{m}{\mu + m}\right)\sin^2 \om t + \om t\left(\frac{m}{\mu + m}\right)^2\comt\somt \right) \]
+\section*{Problem 5-2g)}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=\textwidth]{5-2-g-force}
+\label{fig:2-1-a}
+\caption{Force vs time}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=\textwidth]{5-2-g-power}
+\label{fig:2-1-a}
+\caption{Power vs time}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=\textwidth]{5-2-g-displacement}
+\label{fig:2-1-a}
+\caption{Displacement of the cart (blue) and me (purple)}
+\end{subfigure}
+\end{figure}
+The rapidly decreasing amplitude (in the absence of friction) implies that we directly counteract the motion of the swing set. On a real wing this mean throwing our feet backwards after we reach the highest point on the swing back and forwards on the other side. It feel rather counter-intuitive on a real swing, but does get you to a hold really quickly.
+  \end{document}

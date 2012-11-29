@@ -1,0 +1,112 @@
+\include{prelude}
+\section*{Problem 2-1-a}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.48\textwidth]{2-1-a}
+\label{fig:2-1-a}
+\caption{Overdamped oscillation with $y=4,\Omega=2,A=2,B=-3$ Note that $|B|>|A|$ and that $sign(A)\neq sign(B)$, so $x$ crosses the origin once.
+}
+\vspace{40pt}
+\end{wrapfigure}
+In the overdamped case we have $x(t)$ given by:
+\[ x(t) = Ae^{-(y-\Omega)t} + Be^{-(y+\Omega)t} \]
+Note that the assertion is trivial if $sign(A)=sign(B)$ as $x(t)$ is then the superposition of two decaying exponentials with the same sign. Let us therefore analyze the case where $sign(A)\neq sign(B)$. Mathematically we may solve this by setting $x(t)=0$. Then we get
+\[ 0 =  Ae^{-(y-\Omega)t} + Be^{-(y+\Omega)t} \]
+\[ Ae^{-(y-\Omega)t} = -Be^{-(y+\Omega)t} \]
+\[ \dfrac{A}{B} = -\dfrac{e^{-(y+\Omega)t}}{e^{-(y-\Omega)t}} = -e^{-2\Omega t} \]
+\[ t = -\frac{1}{2\Omega} \ln\left(-\frac{A}{B}\right) \]
+This result is rather interesting. For one it shows that to have positive $t$, we need to have $|B|>|A|$ (corresponding to a large enough initial velocity towards the equilibrium position to not be damped in time) and that this may only occur once (for time is strictly increasing and the RHS is constant). Note that if $|A|=|B|$, the mass is originally at the origin.
+One such example of a damped spring that crosses the origin once is given in Figure 1. A perhaps more physical explanation of why the object may cross the origin only once (and not more) is that if it were to cross the origin at some point, it needs to come to rest on the other side, before turning around and we already know that an overdamped object released from rest will not cross the equilibrium point again.
+\section*{Problem 2-1-b}
+The case of critically damped case is somewhat similar in that for $sign(A)=sign(B)$, $x\neq 0, \forall t$. Solving for $t$ when $sign(A)\neq sign(B)$  in the same way we did in 2-1-a. gives:
+\[ 0 = e^{-\gamma t}(A+Bt) \]
+\[ t = -\frac{A}{B} \]
+This shows that just like in the overdamped case, an object in a critically damped case may cross the equilibrium position position once. The constraints in this case are somewhat simpler mathematically however in that $sign(A)\neq sign(B)$ is the only constraint. Physically the situation is sill very similar to that in 2-1-a.
+\section*{Problem 2-2-a}
+Let $\vec{r_1},\vec{r_2}$ denote the position of the two fixed spring ends and let $\vec{x}$ denote the position of the object of mass $m$. Since the relaxed length of the springs is zero we may write the forces acting on $x$ as:
+\[ \vec{F_1} = (\vec{r_1} - \vec{x}) K \]
+\[ \vec{F_2} = (\vec{r_2} - \vec{x}) K \]
+Now, the total force acting on the object is:
+\[ \vec{F} = m\vec{a} = \left(\vec{r_1} + \vec{r_2} - 2\vec{x}\right) K \]
+For the purpose of convenience, let us write $\vec{r}= -\frac{\vec{r_1} + \vec{r_2}}{2} + \vec{x}$. Note that $\frac{d\vec{r}}{dt}=\frac{d\vec{x}}{dt}$. The same is true for $\vec{a}$, the second derivative of $\vec{r}$ and $\vec{x}$. 
+Note that there is no cross-dimensional terms in the system of differential equations and the solution is equivalent to that of a harmonic oscillator in one dimension (with the scalar quantity replaced by the vector and every function acting on the elements of the vector individually). :
+\[ \vec{a} + \frac{2K}{m}\vec{r} = 0 \]
+\[ \vec{r} = \vec{A}\sin(\omega t+\vec{\phi}) \]
+where $\omega=\sqrt{\frac{2K}{m}}$. Since the "kick" is not further specified, we will consider an event that brings the mass from rest at the equilibrium position (which is at $\vec{r}=\vec{0}$)  to some velocity $v_0$ in an infinitely small amount of time (an approximation which should be close enough). Our set of initial conditions is therefore 
+\[ \vec{r} = \vec{0} \so \vec{x_0}=\dfrac{\vec{r_1}+\vec{r_2}}{2} \]
+\[ \vec{v_0} \]
+Note that this implies that $\vec{r_0}=\vec{0} $. Therefore we must have $\vec{\phi}=\vec{0}$. Furthermore, from the derivative of $x$, we get that $\vec{v}=\frac{\vec{A}}{\omega}\cos(\omega t)$, so we must have $\vec{A}=v_0\omega$.
+Putting this all together we have 
+\[ \vec{r} = \vec{v_0}\sqrt{\frac{2K}{m}}\sin\left(\sqrt{\frac{2K}{m}}t\right) \]
+\[ \vec{x} = \vec{v_0}\sqrt{\frac{2K}{m}}\sin\left(\sqrt{\frac{2K}{m}}t\right)  + \frac{\vec{r_1}+\vec{r_2}}{2} \]
+Note that we may regard this as $n$ (where $n$ is the number of dimensions) different harmonic oscillators of equal frequency, but different amplitude. This makes intuitive sense as it means that, in the absence of friction, the object will return to the same positions over and over again.
+\section*{Problem 2-2-b}
+Our method from 2-2-a generalizes nicely to $n$ springs. First let $r_n$ be the position of the $n$-th spring and let $K_n$ be its spring constant. Every spring exerts a force $F_n$ on the object where
+\[ F_n = (\vec{r_n} - \vec{x})K_n \]
+The total force being
+\[ F = m\vec{a} = (\sum K_n\vec{r_n} - \vec{x}\sum K_n) \]
+Letting 
+\[ \vec{r} = -\dfrac{\sum K_n\vec{r_n}}{\sum K_n} + \vec{x} \]
+allows us to use the same solution as above for $\vec{r}$ (since the initial conditions are the same in this frame):
+\[ \vec{r} = \vec{v_0}\sqrt{\frac{\sum K_n}{m}}\sin\left(\sqrt{\frac{\sum K_n}{m}}t\right) \]
+\[ \vec{x} = \vec{v_0}\sqrt{\frac{\sum K_n}{m}}\sin\left(\sqrt{\frac{\sum K_n}{m}}t\right) + \dfrac{\sum K_n\vec{r_n}}{\sum K_n}  \]
+which again can be seen as separate oscillators (one for each dimension) of equal frequency but different amplitude.
+\section*{Problem 2-3-a}
+Let 
+\[ x(t)=\dfrac{a_0}{\Gamma \omega_0}\left(\sin \omega_0 t -\frac{\omega_0}{\omega}e^{-\Gamma t/2}\sin \omega t\right) \]
+Then 
+\[ x(0) = 0 \]
+\[ \dot{x}(t) = \frac{a_0}{\Gamma}\cos\omega_0 t + \frac{a_0}{2\omega} e^{-\Gamma t/2}\sin \omega t - \frac{a_0}{\Gamma}e^{-\Gamma t/2}\cos \omega t \]
+\[ \dot{x}(0) =0\]
+\section*{Problem 2-3-b}
+We already know $x$ and $\dot{x}$, so what remains to do is find $\ddot{x}$, which we may easily find by differentiation of $\dot{x}$:
+\[ \ddot{x} = -\frac{a_0\omega_0}{\Gamma}\sin \omega_0 t - \frac{a_0\Gamma}{4\omega}e^{-\Gamma t/2}\sin \omega t + a_0 e^{-\Gamma t/2}\cos \omega t + \frac{a_0\omega}{\Gamma} e^{-\Gamma t/2} \sin \omega t \]
+Plugging this into the equation
+\[ \ddot{x} + \Gamma\dot{x} + \omega_0^2 x \]
+gives 
+\[ -\frac{a_0\omega_0}{\Gamma}\sin \omega_0 t - \frac{a_0\Gamma}{4\omega}e^{-\Gamma t/2}\sin \omega t + a_0 e^{-\Gamma t/2}\cos \omega t + \frac{a_0\omega}{\Gamma} e^{-\Gamma t/2} \sin \omega t \]
+\[ + a_0\cos\omega_0 t + \frac{a_0\Gamma}{2\omega} e^{-\Gamma t/2}\sin \omega t -  a_0e^{-\Gamma t/2}\cos \omega t \]
+\[ + \dfrac{a_0\omega_0}{\Gamma}\left(\sin \omega_0 t -\frac{\omega_0}{\omega}e^{-\Gamma t/2}\sin \omega t\right) \] 
+After canceling terms, we get
+\[ a_0\left(\frac{\Gamma}{4\omega} + \frac{\omega}{\Gamma} - \frac{\omega_0^2}{\Gamma\omega}\right) e^{-\Gamma t/2}\sin \omega t + a_0 \cos \omega_0 t \]
+\[ -a_0\dfrac{\Gamma^2+4\omega^2-4\omega_0^2}{4\Gamma\omega} e^{-\Gamma t/2}\sin \omega t + a_0 \cos \omega_0 t \]
+Now note that 
+\[ \omega = \sqrt{\omega_0^2-\frac{\Gamma^2}{4}} \]
+And thus the first term must be equal to zero giving us
+\[ \ddot{x} + \Gamma\dot{x} + \omega_0^2 x = a_0 \cos \omega_0 t \] 
+as desired. 
+\section*{Problem 2-3-c}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.48\textwidth]{2-3-c}
+\label{fig:2-3-c}
+\caption{Plot of $x(t)$ with $\Gamma_1 = 0.03\omega_0$ in blue and $0.05\omega_0$ in purple. The $x$ axis is in units of $\frac{1}{\omega_0}$ and the $y$ axis is in units of $\frac{a_0}{\omega_0^2}$.}
+\vspace{40pt}
+\end{wrapfigure}
+Though the determination of the point at which the two graphs diverge significantly is somewhat arbitrary (due to the notion of "significantly" being ill defined), a point somewhere around $t=\frac{50}{\omega_0}$ seems to be well suited. Putting this in units of $\frac{1}{\Gamma_2}$ we have $t = \dfrac{50}{\frac{\Gamma_2}{0.05}}=\frac{2.5}{\Gamma_2}$.
+\par
+For the second part of the problem, we consider the steady state solution, namely the solution as $e^{-\Gamma t/2}\to 0$. Plugging this into our equation for $x(t)$, we get
+\[ x_{t\to\infty}(t) \approx \frac{a_0}{\Gamma\omega_0}\sin \omega_0 t \]
+Notice that this is nicely visible as the steady state amplitude has a value of $\frac{1}{0.05}=20$ for $\Gamma_2$ (units of $\frac{a_0}{\omega-0^2}$, which corresponds nicely to the value visible on the graph.
+\section*{Problem 2-3-d}
+We will find the limit of $x(t)$ at some particular fixed $t$ as $\Gamma\to 0$.
+Recall our equation for $x(t)$:
+\[ x(t)=\dfrac{a_0}{\Gamma \omega_0}\left(\sin \omega_0 t -\frac{\omega_0}{\omega}e^{-\Gamma t/2}\sin \omega t\right) \]
+and the definition of $\omega$
+\[ \omega = \sqrt{\omega_0^2-\Gamma^2/4} \]
+Note that $\omega \to \omega_0$ as $\Gamma \to 0$. We will therefore consider
+\[ a_0\sin(\omega_0t) \lim\limits_{\Gamma\to 0} \frac{1-e^{-\Gamma t/2}}{\Gamma\omega_0} \]
+Notice that this is an indeterminate of the form $\frac{0}{0}$, so we may apply L'Hospitals rule and take the derivative with respect to $\Gamma$ of both the numerator and the denominator, so we get:
+\[ a_0\sin(\omega_0 t) \lim\limits_{\Gamma\to 0} \frac{t e^{-\Gamma t/2}}{2\omega_0} = \frac{a_0 t \sin(\omega_0 t)}{2\omega_0} \]
+\section*{Problem 2-3-e}
+From the previous problem we have 
+\[ x(t) = \frac{a_0 t \sin(\omega_0 t)}{2\omega_0} \]
+and we want to show that this is a particular solution to the general undamped  equation
+\[ \ddot{x} + \omega_0^2 x = a_0\cos \omega_0 t \]
+For that purpose, let us find $\ddot{x}$
+\[ \dot{x} = \dfrac{a_0 \sin(\omega_0 t)}{2\omega_0} + \dfrac{a_0 t \cos (\omega_0 t)}{2} \]
+\[ \ddot{x} = a_0\cos\omega_0 t - \frac{a_0 \omega_0}{2}\cos \omega_0 t \]
+Putting it all together, we get:
+\[ \ddot{x} + \omega_0^2 x  = a_0\cos\omega_0 t - \frac{a_0 \omega_0}{2}t \sin \omega_0 t + \frac{a_0 \omega_0 t \sin(\omega_0 t)}{2} =  a_0\cos \omega_0 t  \] 
+as desired.
+\section*{Problem 2-3-f}
+In the graphs in part c), we saw that for larger $\Gamma$, the function will reach the steady state faster, or in other words, the smaller, $\Gamma$, the longer it will take to reach the steady state. As $\Gamma \to 0$, the oscillator will never reach steady state, but instead the amplitude will keep growing indefinitely (thus the factor of $t$ in the solution from d) ). When looking at the graph in c) one can see that for small $t$, the amplitude grow roughly linear. Without $\Gamma$ this will continue for all of time.
+\end{document}
