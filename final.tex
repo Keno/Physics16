@@ -1,5 +1,27 @@
 \title{Physics 16 Final Project}
 \include{prelude}
+\paragraph{Question 3}
+\subparagraph{Part 1}
+We will assume that Shaun starts standing on the right side by the ramp. Now let us assume that he somehow manages to propel himself forward at some finite speed $v$ to enter the halfpipe (this seems somewhat difficult as he doesn't have arms, there is no friction and in general his motions are rather constrained in our idealizing, but he could perhaps have a friend throw a snowball at him). 
+Then his initial gravitational potential energy is equal to
+\[ E = mgy = mg(R+l) \]
+Now, at the bottom of the halfpipe (again invoking the assumption that $w<<R$, so that the skateboard is perfectly parallel to the bottom of the halfpipe - i.e. Shaun's feet are at at $y=0$), we may use conservation of energy to find Shaun's Potential and Kinetic Energy:
+\[ E_{PE} = mg(l-h) \]
+\[ E_{KE} = E - E_{PE} = mg[(R-\frac{w}{2})-l+h] \]
+Now, by moving his center of mass up by $h$, we have
+\[ E'_{PE} = mgl \]
+but the kinetic energy remains unchanged. Finally, we may find how high Shaun flies above the half pipe by calculating
+\[ \Delta H = \frac{E'_{PE}+E_{KE}-E}{mg} - \frac{w}{2} = h- \frac{w}{2}  \]
+\subparagraph{Part 2}
+According to our assumptions extending the bottom of the half pipe should not change the theoretical maximum of Shaun flying over the edge of the pipe. However, in our calculation, we assume the he stands up from the crouched position instantaneously. The longer bottom will give him more time to perform this action when it is most efficient (at the bottom of the pipe) and might thus be beneficial to the actual height reached (rather than the theoretical maximum).
+
+\subparagraph{Part 3a)}
+Since there is no friction, we know that the only forces acting on Shaun are the normal force and gravity. Now, consider the situation in which Shaun's center of mass is located some distance $z$ below the top of the half pipe. Then we know that
+\[ z=R\cos(\theta) \]
+\[ F_g = F_n\cos\theta \] 
+so the magnitude of $F_n$ is 
+\[ F_n = \frac{F_g}{\cos\theta} = \frac{RF_g}{z} \]
+
 
 
 \paragraph{Question 3 - 1}
@@ -15,7 +37,6 @@ I_\bot^i + I_\bot^o & 0 & 0 \\
 0 & I_\bot^i + I_\bot^0 & 0 \\
 0 & 0 & I_3^i + I_3^o
 \end{bmatrix}$$
-
 
 \subparagraph{Part 2.}  The general solution for a free symmetric top
 (Morin's equations 9.50 and 9.51) gives us the following general solution for
