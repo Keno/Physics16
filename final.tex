@@ -5,12 +5,33 @@
 \paragraph{Question 4.}
 
 \subparagraph{Part 1.}  Moment-of-inertia tensors simply add, so the
-total moment-of-inertia tensor is $$\overleftrightarrow{I}
+total moment-of-inertia tensor is $$\overleftrightarrow{I_\tot}
 = \overleftrightarrow{I^o} + \overleftrightarrow{I^i} =
-= \begin{bmatrix}
+\begin{bmatrix}
 I_\bot^i + I_\bot^o & 0 & 0 \\
 0 & I_\bot^i + I_\bot^0 & 0 \\
 0 & 0 & I_3^i + I_3^o
 \end{bmatrix}$$
+
+\subparagraph{Part 2.}  The general solution for a free symmetric top
+(Morin's equations 9.50 and 9.51) gives us the following general solution for
+the motion of the entire space station: $$\vec{\omega}
+= \parens{A \cos (\Omega t + \phi), A \sin (\Omega t
++ \phi), \omega_3}$$ $$\vec{L} = \parens{(I_\bot^i + I_\bot^o) A \cos
+(\Omega t + \phi), (I_\bot^i + I_\bot^o) A \sin (\Omega t + \phi),
+(I_3^o + I_3^i) \omega_3}$$ where $$\Omega = \parens{\frac{(I_3^o + I_3^i) -
+(I_\bot^o + I_\bot^i)}{I} \omega_3}$$ and $A$ is determined by the
+magnitude of the off-center component of $\vec{\omega}$.  We can set
+$\hat{x}, \hat{y}, \hat{z}$ in our coordinate system such that
+$\vec{\omega}$ oscillates about the $z$-axis and has a zero
+$\hat{y}$-component at $t=0$, allowing us to set $\phi = 0$.  Let $\theta$
+be the constant angle between $\omega_3$ and $\hat{z}$; this implies
+$\tan \theta = A (I_\bot^o + I_\bot^i)/(I_3^o + I_3^i)$.
+
+If the exterior and interior of the space station are disconnected,
+then they will thereafter behave as two independent free symmetric
+tops.  As the ratio of $I_\bot$ to $I_3$ differs for each, they will
+no longer necessarily precess around the original axis, and not
+necessarily with the original speed.
 
 \end{document}
