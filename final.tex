@@ -5,7 +5,9 @@
 \newcommand{\dif}[2]{\f{d#1}{d#2}}
 
 \include{prelude}
-\textbf{2-everyone)}  First, let us determine $x_1$ and $x_2$ in terms of $x$: Manipulating the given equations,
+\paragraph{Question 2}
+\subparagraph{2-Everyone}
+First, let us determine $x_1$ and $x_2$ in terms of $x$; manipulating the given equations,
 $$x_1(t)(\f{m_2}{m_1+m_2})-x_2(t)(\f{m_2}{m_1+m_2})=\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
 Adding this to the second equation gives us
 $$x_1(t)=x(t)+\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
@@ -43,7 +45,7 @@ $$b=\f{A}{\om_d}=C\f{K_1 m_2-K_2 m_1}{2(K_1+K_2)(m_1+m_2)}$$
 Now, we have completely described $x(t)$.  Our earlier equations relating $x_1$ and $x_2$ to $x$ still hold, so given our description of $x(t)$, we find that (for our calculated values of $A$ and $b$)
 $$x_1(t)=At \cos(\om_d t)+b\sin(\om_d t)+\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
 $$x_2(t)=At\cos(\om_d t)+b\sin(\om_d t)-\f{m_1}{m_1+m_2}C\sin(\om_d t)$$
-\\\\ \textbf{2-a)}  First, we relate $x_1$ and $x_2$:
+\subparagraph{2-a}  First, we relate $x_1$ and $x_2$:
 $$x_2(t)= x_1(t)-C\sin(\om_d) t$$
 Then, we compute the Lagrangian:
 $$L=T-V= \f 1 2 (m_1 \dot x_1^2 + m_2 (\dot x_1 - C\om_d \cos(\om_d t))^2)-\f 1 2 (K_1 x_1^2+K_2 (x_1-C \sin(\om_d t)^2))$$
@@ -52,7 +54,7 @@ $$\pdif L {\dot x_1}= m_1 \dot x_1 + m_2 (\dot x_1 - C \om_d \cos(\om_d t))$$
 $$\pdif L {x_1}=-(K_1 x_1+K_2(x_1-C\sin (\om_d t)))$$
 The Euler-Lagrange equation is then 
 $$  (m_1+m_2)\ddot x_1 + C m_2 \om_d^2 \cos(\om_d t)=-((K_1+K_2) x_1 - C K_2 \sin(\om_d t))$$
-\\\\ \textbf{2-b)}  The relation between $x_1$ and $x_2$ we will be using is
+\subparagraph{2-b}  The relation between $x_1$ and $x_2$ we will be using is
 $$x_1(t)=x_2(t) + C\sin(\om_d t)$$
 Therefore, the Lagrangian for the system is 
 $$L=T-V= \f 1 2 (m_2 \dot x_2^2 + m_1 (\dot x_2 + C\om_d \cos(\om_d t))^2)-\f 1 2 (K_2 x_2^2+K_1 (x_2+C \sin(\om_d t)^2))$$
