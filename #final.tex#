@@ -1,4 +1,4 @@
-\title{Physics 16 Final Project}
+<<<<<<< HEAD
 \include{prelude}
 
 
@@ -13,4 +13,11 @@ I_\bot^i + I_\bot^o & 0 & 0 \\
 0 & 0 & I_3^i + I_3^o
 \end{bmatrix}$$
 
+\subparagraph{Questio
+
 \end{document}
+=======
+\title{Physics 16 Final Project}
+\include{prelude}
+\end{document}
+>>>>>>> 6147a0e011b1c931e1af2500aae5bd0b3ef449f1
