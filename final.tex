@@ -1,5 +1,67 @@
 \title{Physics 16 Final Project}
+\newcommand{\f}{\frac} 
+\newcommand{\om}{\omega}
+\newcommand{\pdif}[2]{\f{\partial #1}{\partial #2}}
+\newcommand{\dif}[2]{\f{d#1}{d#2}}
+
 \include{prelude}
+\textbf{2-everyone)}  First, let us determine $x_1$ and $x_2$ in terms of $x$: Manipulating the given equations,
+$$x_1(t)(\f{m_2}{m_1+m_2})-x_2(t)(\f{m_2}{m_1+m_2})=\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
+Adding this to the second equation gives us
+$$x_1(t)=x(t)+\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
+Similarly, we have the other relation
+$$x_2(t)=x(t)-\f{m_1}{m_1+m_2}C\sin(\om_d t)$$
+Now, we calculate the Lagrangian in terms of $x_1$ and $x_2$ and then convert
+$$L=T-V=\f 1 2 m_1 \dot{x_1}^2+\f 1 2 m_2 \dot{x_2}^2-(\f 1 2 K_1 x_1^2+\f 1 2 K_2 x_2^2)$$
+$$L=\f 1 2 m_1(\dot x(t)+\f{m_2}{m_1+m_2} C\om_d \cos(\om_d t))^2+\f 1 2 m_2(\dot x(t) -\f{m_1}{m_1+m_2} C\om_d \cos(\om_d t))^2$$
+$$-(\f 1 2 K_1 (x(t)+\f{m_2}{m_1+m_2} C\sin(\om_d t))^2+\f 1 2 K_2 ( x(t)-\f{m_1}{m_1+m_2} C\sin(\om_d t))^2)$$
+Next, we set up the Euler-Lagrange equation.
+$$\pdif L x=-K_1 (x(t)+\f{m_2}{m_1+m_2}C\sin(\om_d t))-K_2 (x(t)-\f{m_1}{m_1+m_2} C\sin(\om_d t))$$
+$$=-(K_1+K_2) x(t)-\f{K_1 m_2-K_2 m_1}{m_1+m_2}C \sin(\om_d t)$$
+$$\pdif L {\dot x} = m_1 (\dot x(t)+\f{m_2}{m_1+m_2} C \om_d \cos(\om_d t))+m_2  (\dot x(t)-\f{m_1}{m_1+m_2} C \om_d \cos(\om_d t))$$
+$$= (m_1+m_2) \dot x(t)$$
+Our Euler-Lagrange equation is then
+$$\ddot x(t) (m_1+m_2)+ x(t) (K_1+K_2)=\f{K_2 m_1-K_1 m_2}{m_1+m_2} C \sin(\om_d t)$$
+The corresponding homogeneous equation has the general solution
+$$x(t)= a \sin(\om_d t)+b\cos(\om_d t)$$
+for $\om_d$ as defined in the prompt.  Therefore, to solve for the general solution to this differential equation, we only need to find a single solution.  Suppose we have an ansatz of
+$$x(t)=A t\cos(\om_d t)$$
+Then, 
+$$x'(t)= A\cos(\om_d t)-A\om_d t\sin(\om_d t)$$
+$$x''(t)=-2A\om_d \sin(\om_d t)-A\om_d^2 t \cos(\om_d t)$$
+Plugging this into the equation from earlier, we get
+$$(m_1+m_2)(-2A\om_d \sin(\om_d t)-A\om_d^2 t \cos(\om_d t))$$
+$$+(K_1+K_2)( A t \cos(\om_d t))=\f{K_2 m_1-K_1 m_2}{m_1+m_2} C \sin(\om_d t)$$
+We know that $\om_d^2 = \f{K_1+K_2}{m_1+m_2}$, so this equation is equivalent to
+$$(m_1+m_2)(-2A\om_d \sin(\om_d t))=\f{K_2 m_1-K_1 m_2}{m_1+m_2} C \sin(\om_d t)$$
+which is itself equivalent to the condition that
+$$A=C\f{K_1 m_2-K_2 m_1}{2\om_d(m_1+m_2)^2}=C\f{K_1 m_2-K_2 m_1}{2(K_1+K_2)^{\f 1 2}(m_1+m_2)^{\f 3 2}}$$
+Hence, our general solution to the differential equation is
+$$x(t)=A t\cos(\om_d t)+a \cos(\om_d t)+b\sin(\om_d t)$$
+where $A$ is the $A$ we just calculated, and $a$ and $b$ are not fixed.  Plugging in our first initial condition ($x(0)=0$) we get that $a=0$.  Therefore, $x(t)=At\cos(\om_d t)+b\sin(\om_d t)\rightarrow \dot x(t)=-At \om_d \sin(\om_d t)+ A\cos(\om_d t)+b\om_d\cos(\om_d t)$.  Plugging in our initial condition $\dot x(0)=0$ then tells us that
+$$b=\f{A}{\om_d}=C\f{K_1 m_2-K_2 m_1}{2(K_1+K_2)(m_1+m_2)}$$
+Now, we have completely described $x(t)$.  Our earlier equations relating $x_1$ and $x_2$ to $x$ still hold, so given our description of $x(t)$, we find that (for our calculated values of $A$ and $b$)
+$$x_1(t)=At \cos(\om_d t)+b\sin(\om_d t)+\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
+$$x_2(t)=At\cos(\om_d t)+b\sin(\om_d t)-\f{m_1}{m_1+m_2}C\sin(\om_d t)$$
+\\\\ \textbf{2-a)}  First, we relate $x_1$ and $x_2$:
+$$x_2(t)= x_1(t)-C\sin(\om_d) t$$
+Then, we compute the Lagrangian:
+$$L=T-V= \f 1 2 (m_1 \dot x_1^2 + m_2 (\dot x_1 - C\om_d \cos(\om_d t))^2)-\f 1 2 (K_1 x_1^2+K_2 (x_1-C \sin(\om_d t)^2))$$
+We then compute
+$$\pdif L {\dot x_1}= m_1 \dot x_1 + m_2 (\dot x_1 - C \om_d \cos(\om_d t))$$
+$$\pdif L {x_1}=-(K_1 x_1+K_2(x_1-C\sin (\om_d t)))$$
+The Euler-Lagrange equation is then 
+$$  (m_1+m_2)\ddot x_1 + C m_2 \om_d^2 \cos(\om_d t)=-((K_1+K_2) x_1 - C K_2 \sin(\om_d t))$$
+\\\\ \textbf{2-b)}  The relation between $x_1$ and $x_2$ we will be using is
+$$x_1(t)=x_2(t) + C\sin(\om_d t)$$
+Therefore, the Lagrangian for the system is 
+$$L=T-V= \f 1 2 (m_2 \dot x_2^2 + m_1 (\dot x_2 + C\om_d \cos(\om_d t))^2)-\f 1 2 (K_2 x_2^2+K_1 (x_2+C \sin(\om_d t)^2))$$
+We then compute
+$$\pdif L {\dot x_2}= m_2 \dot x_2 + m_1 (\dot x_2+ C \om_d \cos(\om_d t))$$
+$$\pdif L {x_2}=-(K_2 x_2+K_1(x_2+C\sin (\om_d t)))$$
+The Euler-Lagrange equation is then
+$$ (m_1+m_2) \ddot x_2-m_1 C \om_d^2 \sin(\om_d t)=-((K_1+K_2) x_2+C K_1 \sin(\om_d t))$$
+
 \paragraph{Question 3}
 \subparagraph{Part 1}
 We will assume that Shaun starts standing on the right side by the ramp. Now let us assume that he somehow manages to propel himself forward at some finite speed $v$ to enter the halfpipe (this seems somewhat difficult as he doesn't have arms, there is no friction and in general his motions are rather constrained in our idealizing, but he could perhaps have a friend throw a snowball at him). 
