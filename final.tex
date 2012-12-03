@@ -9,11 +9,41 @@
 \subparagraph*{Part 1-everyone-1}
 We will assume that in the cylindrical the speed of light is still equal to $c$ in all initial reference frames. However, as we will see, it is not necessarily true anymore that the any two initial reference are identical.  \par 
 In this universe, sending out a light pulse simultaneously will result in it coming back from both the $+x$ and the $-x$ direction, after two different time intervals $T_+$ and $T_-$. It is easy to see conceptually how such an asymmetry can arise in a cylindrical universe. Suppose our base ship is moving at some velocity $u$ in the $+x$ direction and sends out a light pulse at some time $t_0$. Since $c$ is finite, the ship will continue to travel in the $+x$ direction while the light travels all the way around. However, because of that, the light that was sent in the $-x$ direction will meet the ship earlier than the light sent into the $+x$ direction (since it had to travel less and both light pulses move at the same speed). \par 
+An interesting and very consequential consequence of this is that the second postulate of special relativity, no longer holds in its full generality as the values of $T_+$ and $T_-$ will be different for every reference frame (see the argument for why such a discrepancy may exist in the first place for a reasoning why this should be the case). In particular, there exists one very special from in which $T_+=T_-$. This frame could easily be called the total rest frame of the universe, since the asymmetry in $T_+$ and $T_-$ can be easily explained by objects moving relative to this reference frame. \par
+To do some more quantitative analysis, we may consider the strange new universe to be a restriction of regular 4-dimensional spacetime,  by taking one of the coordinates ($x$) modulo the circumference of the universe, i.e. we identify all points $(t,x \mod \lambda_c ,y,z)$ where $\lambda_c$ is the circumference of the universe . Note that the events of the base ship at some $t$ are simulatenous at all $x+n\lambda_c$, for $n\in \Z$. Consider thus the action of a pure boost in the x direction on an arbitrary point in 4-space
+\[
+(ct',x',y',z') = (\gamma(ct-\beta x),\gamma(x - \beta t),y,z) 
+\]
+but now any of the point $(t,x \mod \lambda_c ,y,z)$ refer to the same spacetime event, and thus we get the following equivalence to describe points in the boosted frame
+\[ (ct',x',y',z') \equiv (\gamma(ct-\beta (x+n\lambda_c)),\gamma(x+n\lambda_c - \beta t),y,z) = (ct'-\gamma\beta n \lambda_c,x'+\gamma n \lambda_c,y',z') \]
+for $n\in\Z$. This is true for all $v$, but let us choose it in such a way that the resulting frame will be the total rest frame. The result is very, very interesting, for the following reason: The same space time event happens again and again at different times and at different locations (as seen from the total rest frame frame). 
+
+Let us now consider the total rest frame and an object traveling at some speed $\beta$ therein. Then we have,
+\[ T_+ = \lambda_c(1+\beta) \]
+\[ T_- = \lambda_c(1-\beta) \]
+or equivalently
+\[ \beta = \frac{T_+-T_-}{T_++T_-} \]
+Note however that these are times in the total rest frame. 
+Now, the invariant interval between the emittance of the light pulse in the positive $-x$ direction and the reception of the light from the $x$ direction, we have
+\[ \Delta s_-^2 = \lambda_c^2(1-\beta)^2 - \lambda_c^2\beta^2 = \lambda_c^2 - 2\beta\lambda_c^2 \]
+and for the other invariant interval, we have 
+\[ \Delta s_+^2 = \lambda_c^2(1+\beta)^2 - \lambda_c^2\beta^2 = \lambda_c^2 + 2\beta\lambda_c^2 \]
+Note that this is just $(T'_+)^2$ and $(T'_-)^2$ in the $\beta$ frame (i.e. the delays we measure), Thus
+\[ \frac{(T'_+)^2 - (T'_-)^2}{(T'_+)^2 + (T'_-)^2} = \frac{4\beta\lambda_c^2}{2\lambda_c^2} = 2\beta \]
+So we may solve easily solve for $\beta$ in terms of given quantities. \par 
+We can now more easily determine which of the two twins should be older: The one with the larger relative velocity with respect to the total rest frame.
+So suppose our spaceship in the $\beta$ frame launches a probe at relative velocity $v$. Then by velocity addition, the velocity with respect to the total rest frame is
+\[ u=\frac{\beta+v}{1+v\beta} \]
+ 
+
+\begin{comment}
+We will assume that in the cylindrical the speed of light is still equal to $c$ in all initial reference frames. However, as we will see, it is not necessarily true anymore that the any two initial reference are identical.  \par 
+In this universe, sending out a light pulse simultaneously will result in it coming back from both the $+x$ and the $-x$ direction, after two different time intervals $T_+$ and $T_-$. It is easy to see conceptually how such an asymmetry can arise in a cylindrical universe. Suppose our base ship is moving at some velocity $u$ in the $+x$ direction and sends out a light pulse at some time $t_0$. Since $c$ is finite, the ship will continue to travel in the $+x$ direction while the light travels all the way around. However, because of that, the light that was sent in the $-x$ direction will meet the ship earlier than the light sent into the $+x$ direction (since it had to travel less and both light pulses move at the same speed). \par 
 A perhaps easier and more intuitive way to think about this is to recall the use of simultaneity of events in inertial reference frames: Given some local spacetime event in our initial reference frame, all those events are simultaneous which would be reached by a light pulse emitted directly at the original spacetime event. Thus at any given instant, our ship is simultaneous with a copy of itself, whose internal clock has already advanced by $T_+$ and is located at a distance of $T_+c$ in the $+x$ direction and another copy of itself whose internal clock has advanced by $T_-$ located a distance of $T_-$ in the $-x$ direction. \par 
 The analysis of the twin paradox becomes now rather routine: Suppose we are sending out a probe in the $+x$ direction. Then, to reach the ship in the positive $x$ direction, the probe has to move a distance of $T_+c$. Due to length contraction, according to a clock on the probe, the journey takes a total time of \[t=\frac{T_+c}{v\gamma} = T_+\sqrt{c^2/v^2-1}\], on the other hand, seen from the copy of the ship at $x=T_+x$, the probe is emitted by the ship in the middle, when the internal clock of the "copy" has already advanced by $T_+$. Thus the time as seen in the frame of the ship is given by
 \[ t_s = T_+(1+\frac{c}{v}) \]
-\subparagraph*{Remark}
-In this universe, the second postulate of special relativity, no longer holds in its full generality as the values of $T_+$ and $T_-$ will be different for every reference frame (see the argument for why such a discrepancy may exist in the first place for a reasoning why this should be the case). In particular, there exists one very special from in which $T_+=T_-$. This frame could easily be called the total rest frame of the universe, since the asymmetry in $T_+$ and $T_-$ can be easily explained by objects moving relative to this reference frame.
+\end{comment}
+
 \subparagraph*{Part 1a)}
 
 \emph{Angular momentum is not conserved.}  For a counterexample, restrict our consideration to the $xy$-``plane.''  Take a fixed reference point at coordinates $(x_0, y_0)$, and consider a solitary particle at rest at the coordinates $(x_0, y_0 + h)$.  We can define the notion of distance consistently for long slices in the $y$-direction with arbitrarily small $x$-dimension (that is, for essentially flat parts of the $xy$-space).
