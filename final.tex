@@ -3,8 +3,17 @@
 \newcommand{\om}{\omega}
 \newcommand{\pdif}[2]{\f{\partial #1}{\partial #2}}
 \newcommand{\dif}[2]{\f{d#1}{d#2}}
-
 \include{prelude}
+\paragraph{Question 1}
+\subparagraph*{Part 1-everyone-1}
+We will assume that in the cylindrical the speed of light is still equal to $c$ in all initial reference frames. However, as we will see, it is not necessarily true anymore that the any two initial reference are identical.  \par 
+In this universe, sending out a light pulse simultaneously will result in it coming back from both the $+x$ and the $-x$ direction, after two different time intervals $T_+$ and $T_-$. It is easy to see conceptually how such an asymmetry can arise in a cylindrical universe. Suppose our base ship is moving at some velocity $u$ in the $+x$ direction and sends out a light pulse at some time $t_0$. Since $c$ is finite, the ship will continue to travel in the $+x$ direction while the light travels all the way around. However, because of that, the light that was sent in the $-x$ direction will meet the ship earlier than the light sent into the $+x$ direction (since it had to travel less and both light pulses move at the same speed). \par 
+A perhaps easier and more intuitive way to think about this is to recall the use of simultaneity of events in inertial reference frames: Given some local spacetime event in our initial reference frame, all those events are simultaneous which would be reached by a light pulse emitted directly at the original spacetime event. Thus at any given instant, our ship is simultaneous with a copy of itself, whose internal clock has already advanced by $T_+$ and is located at a distance of $T_+c$ in the $+x$ direction and another copy of itself whose internal clock has advanced by $T_-$ located a distance of $T_-$ in the $-x$ direction. \par 
+The analysis of the twin paradox becomes now rather routine: Suppose we are sending out a probe in the $+x$ direction. Then, to reach the ship in the positive $x$ direction, the probe has to move a distance of $T_+c$. Due to length contraction, according to a clock on the probe, the journey takes a total time of \[t=\frac{T_+c}{v\gamma} = T_+\sqrt{c^2/v^2-1}\], on the other hand, seen from the copy of the ship at $x=T_+x$, the probe is emitted by the ship in the middle, when the internal clock of the "copy" has already advanced by $T_+$. Thus the time as seen in the frame of the ship is given by
+\[ t_s = T_+(1+\frac{c}{v}) \]
+\subparagraph*{Remark}
+In this universe, the second postulate of special relativity, no longer holds in its full generality as the values of $T_+$ and $T_-$ will be different for every reference frame (see the argument for why such a discrepancy may exist in the first place for a reasoning why this should be the case). In particular, there exists one very special from in which $T_+=T_-$. This frame could easily be called the total rest frame of the universe, since the asymmetry in $T_+$ and $T_-$ can be easily explained by objects moving relative to this reference frame.
+\subparagraph*{Part 1a)}
 \paragraph{Question 2}
 \subparagraph{2-Everyone}
 First, let us determine $x_1$ and $x_2$ in terms of $x$; manipulating the given equations,
@@ -77,7 +86,7 @@ where $\hat{z}$ is pointing into the plane. \par
 Now, we may easily find the velocity at the instantaneous moment before the rise $v_A$ by analyzing the energy (and thereby using the fact that energy is conserved in the absence of friction.
 \[ v_A=\sqrt{2\frac{KE_A}{m}} = \sqrt{2\frac{PE_0-PE_A}{m}} = \sqrt{2g(R-(l-h))}  \]
 We now that angular momentum is conserved in this instant and thus the speed afterwards $v_B$ is given by
-\[ v_B = \frac{r_A}{r_B} v_A = \left(1+\frac{h}{R-l}\right) \]
+\[ v_B = \frac{r_A}{r_B} v_A = \frac{l-h}{R-(l-h)} v_A = \left(1+\frac{h}{R-l}\right) v_a \]
 So we have
 \[ KE_B = KE_A\left(1+\frac{h}{R-l}\right)^2 \]
 \[ PE_B = mgl \]
@@ -88,7 +97,7 @@ To first order in small dimensionless quantities,
 so we get
 \[ d = l-R + R - l + 3h =3h \]
 \subparagraph{Part 2}
-According to our assumptions extending the bottom of the half pipe should not change the theoretical maximum of Shaun flying over the edge of the pipe. However, in our calculation, we assume the he stands up from the crouched position instantaneously. The longer bottom will give him more time to perform this action when it is most efficient (at the bottom of the pipe) and might thus be beneficial to the actual height reached (rather than the theoretical maximum).
+
 
 \subparagraph{Part 3a)}
 Since there is no friction, we know that the only forces acting on Shaun are the normal force and gravity. Now, consider the situation in which Shaun's center of mass is located some distance $z$ below the top of the half pipe. Then we know that
