@@ -66,16 +66,27 @@ $$ (m_1+m_2) \ddot x_2-m_1 C \om_d^2 \sin(\om_d t)=-((K_1+K_2) x_2+C K_1 \sin(\o
 
 \paragraph{Question 3}
 \subparagraph{Part 1}
-We will assume that Shaun starts standing on the right side by the ramp. Now let us assume that he somehow manages to propel himself forward at some finite speed $v$ to enter the halfpipe (this seems somewhat difficult as he doesn't have arms, there is no friction and in general his motions are rather constrained in our idealizing, but he could perhaps have a friend throw a snowball at him). 
-Then his initial gravitational potential energy is equal to
-\[ E = mgy = mg(R+l) \]
-Now, at the bottom of the halfpipe (again invoking the assumption that $w<<R$, so that the skateboard is perfectly parallel to the bottom of the halfpipe - i.e. Shaun's feet are at at $y=0$), we may use conservation of energy to find Shaun's Potential and Kinetic Energy:
-\[ E_{PE} = mg(l-h) \]
-\[ E_{KE} = E - E_{PE} = mg[(R-\frac{w}{2})-l+h] \]
-Now, by moving his center of mass up by $h$, we have
-\[ E'_{PE} = mgl \]
-but the kinetic energy remains unchanged. Finally, we may find how high Shaun flies above the half pipe by calculating
-\[ \Delta H = \frac{E'_{PE}+E_{KE}-E}{mg} - \frac{w}{2} = h- \frac{w}{2}  \]
+We will assume that Shaun starts in a horizontal position (i.e. the board is vertical) and that his center of mass is located at a height of $R$ above the bottom of the circle. Such an assumption is reasonable, because any other initial configuration would only add a constant term of additional energy which would not qualitatively affect the analysis below.
+
+Thus by the initial conditions we have that Shaun has initial energies of
+\[ KE_0 = 0 \]
+\[ PE_0 = mgR \]
+Now, note that we cannot just use the conservation of energy directly as there is work being done in the instance that Shaun rises and we do not now (yet) what the magnitude of this work is. To find said work, consider the angular momentum about the center of the circle (which must be equal before and after the instantaneous rise since the force is along the axis between the origin of the circle and Shaun's center of mass):
+\[ \vec{L_A} = \vec r \times \vec p = rmv \hat{z} \]
+where $\hat{z}$ is pointing into the plane. \par
+Now, we may easily find the velocity at the instantaneous moment before the rise $v_A$ by analyzing the energy (and thereby using the fact that energy is conserved in the absence of friction.
+\[ v_A=\sqrt{2\frac{KE_A}{m}} = \sqrt{2\frac{PE_0-PE_A}{m}} = \sqrt{2g(R-(l-h))}  \]
+We now that angular momentum is conserved in this instant and thus the speed afterwards $v_B$ is given by
+\[ v_B = \frac{r_A}{r_B} v_A = \left(1+\frac{h}{R-l}\right) \]
+So we have
+\[ KE_B = KE_A\left(1+\frac{h}{R-l}\right)^2 \]
+\[ PE_B = mgl \]
+Now, we may find the distance of Shaun ascend over the half pipe by comparing this new total energy with the potential energy at his highest ascend, so we get, 
+\[ d=\frac{KE_B+PE_B}{mg}-R = \left(R-l+h\right)\left(1+\frac{h}{R-l}\right)^2+l-R\]
+To first order in small dimensionless quantities, 
+\[ \left(R-l+h\right)\left(1+\frac{h}{R-l}\right)^2 = \left(R-l+h\right) \left(1+\frac{2h}{R-l}+\frac{h^2}{(R-l)^2}\right) \approx (R-l+h)+(2h) \]
+so we get
+\[ d = l-R + R - l + 3h =3h \]
 \subparagraph{Part 2}
 According to our assumptions extending the bottom of the half pipe should not change the theoretical maximum of Shaun flying over the edge of the pipe. However, in our calculation, we assume the he stands up from the crouched position instantaneously. The longer bottom will give him more time to perform this action when it is most efficient (at the bottom of the pipe) and might thus be beneficial to the actual height reached (rather than the theoretical maximum).
 
