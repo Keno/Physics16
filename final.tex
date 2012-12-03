@@ -3,6 +3,7 @@
 \newcommand{\om}{\omega}
 \newcommand{\pdif}[2]{\f{\partial #1}{\partial #2}}
 \newcommand{\dif}[2]{\f{d#1}{d#2}}
+\newcommand{\eqdef}{\equiv}
 \include{prelude}
 \paragraph{Question 1}
 \subparagraph*{Part 1-everyone-1}
@@ -109,38 +110,32 @@ so the magnitude of $F_n$ is
 
 
 \paragraph{Question 3 - 1}
-We will start by considering Shaun being positioned exactly horizontally (which we may assume since $w << R$in the upper right corner of the halfpipe.
+We will start by considering Shaun being positioned exactly horizontally (which we may assume since $w \ll R$ in the upper right corner of the halfpipe.
 
 \paragraph{Question 4.}
 
-\subparagraph{Part 1.}  Moment-of-inertia tensors simply add, so the
-total moment-of-inertia tensor is $$\overleftrightarrow{I_\tot}
+\subparagraph{Part 1.}  Moment-of-inertia tensors about the same point (in this case, the shared center of mass) simply add, so the total moment-of-inertia tensor is $$\overleftrightarrow{I}
 = \overleftrightarrow{I^o} + \overleftrightarrow{I^i} =
 \begin{bmatrix}
 I_\bot^i + I_\bot^o & 0 & 0 \\
-0 & I_\bot^i + I_\bot^0 & 0 \\
+0 & I_\bot^i + I_\bot^o & 0 \\
 0 & 0 & I_3^i + I_3^o
 \end{bmatrix}$$
 
-\subparagraph{Part 2.}  The general solution for a free symmetric top
-(Morin's equations 9.50 and 9.51) gives us the following general solution for
-the motion of the entire space station: $$\vec{\omega}
-= \parens{A \cos (\Omega t + \phi), A \sin (\Omega t
-+ \phi), \omega_3}$$ $$\vec{L} = \parens{(I_\bot^i + I_\bot^o) A \cos
-(\Omega t + \phi), (I_\bot^i + I_\bot^o) A \sin (\Omega t + \phi),
-(I_3^o + I_3^i) \omega_3}$$ where $$\Omega = \parens{\frac{(I_3^o + I_3^i) -
-(I_\bot^o + I_\bot^i)}{I_\bot^o + I_\bot^i }} \omega_3$$ and $A$ is determined by the
-magnitude of the off-center component of $\vec{\omega}$.  We can set
-$\hat{x}, \hat{y}, \hat{z}$ in our coordinate system such that
-$\vec{\omega}$ oscillates about the $z$-axis and has a zero
-$\hat{y}$-component at $t=0$, allowing us to set $\phi = 0$.  Let $\theta$
-be the constant angle between $\omega_3$ and $\hat{z}$; this implies
-$\tan \theta = A (I_\bot^o + I_\bot^i)/(I_3^o + I_3^i)$.
+\subparagraph{Part 2.}
 
-If the exterior and interior of the space station are disconnected,
-then they will thereafter behave as two independent free symmetric
-tops.  As the ratio of $I_\bot$ to $I_3$ differs for each, they will
-no longer necessarily precess around the original axis, and not
-necessarily with the original speed.
+Though $\vec{L} \eqdef \vec{L}^i + \vec{L}^o$ stays constant in a fixed space frame, the angular momenta $\vec{L}^i$ and $\vec{L}^o$ of the parts of the station do not necessarily stay constant, because each part of the station exerts a torque on the other part.  Fix a coordinate frame in space such that $\vec{L}$ points parallel to $\hat{z}$, $\hat{y}$ points parallel to $\hat{e}_2$, and the positive $xz$-quadrant contains $\vec{\omega}$. When the two parts separate, $\vec{L}^i$ and $\vec{L}^o$ thus define new axes of precession for the parts of the spaceship.  The separated parts begin to precess about these new axes, instantaneously changing the angles and possibly directions of precession.  The inner part precesses with angular velocity $\tilde{\omega}^i = L^i/I_\bot^i$ and the outer part precesses with angular velocity $\tilde{\omega}^o = L^o/I_{\bot}^o$, where $L^i$ without superscript is the magnitude of $\vec{L^i}$, and likewise for $L^o$.
+
+\subparagraph{Part 3.}
+
+The axes of symmetry $\hat{e}_3^i$ and $\hat{e}_3^o$ precess in circles with one point of exterior tangency at the breakup point and no other points of intersection.  The two parts of the space station will therefore align again after each component has completed an integer number of revolutions, which requires the quantity $\tilde{\omega}^i / \tilde{\omega}^o$ to be rational.
+
+For the remainder of this problem, let $\omega_3$ and $\omega_\bot$ be the components of $\vec{\omega}$ along $\hat{e}_3$ and $\hat{e}_1$, respectively.  We can compute the magnitudes of $\vec{L}^i$ and $\vec{L}^o$ just as well in the body frame as in the fixed frame.  In the body frame, we have $$\vec{L}^i = \overleftrightarrow{I^i}\vec{\omega} = \omega_\bot I^i_\bot \hat{e}_1 + \omega_3 I_3 \hat{e}_3$$ and thus $$L^i = \sqrt{\omega_\bot^2 (I_\bot^i)^2 + \omega_3^2 (I_3^i)^2}.$$  The formula for $L^o$ repeats this analysis, swapping superscript $o$ for superscript $i$.  Thus, the axes of symmetry of the two parts of the space station become parallel again only if $$\frac{\tilde{\omega}^i}{\tilde{\omega}^o} = \frac{L^o I^i_\bot}{L^i I^o_\bot} = \frac{I^i_\bot \sqrt{\omega_\bot^2 (I_\bot^o)^2 + \omega_3^2 (I_3^o)^2}}{I^o_\bot \sqrt{\omega_\bot^2 (I_\bot^i)^2 + \omega_3^2 (I_3^i)^2}}$$ is rational.  If we let $\theta$ be the angle formed by $\vec{\omega}$ in the $\hat{e}_1 \hat{e}_3$ plane (such that $\omega_3 = \omega \sin \theta$ and $\omega_\bot = \omega \cos \theta$), then we have this perhaps nicer-looking version of the same quantity: $$\frac{I^i_\bot \sqrt{(I^o_\bot )^2 \cos^2 \theta + (I^o_3)^2 \sin^2 \theta}}{I^o_\bot \sqrt{(I^i_\bot)^2 \cos^2 \theta + (I^i_3)^2 \sin^2 \theta}}.$$
+
+\subparagraph{Part 4.}  As the horizontal rods are massless and rigid, any torque exerted on the horizontal rods will be transferred to the inner control center.  To compute the torque, therefore, it suffices to compute $d\vec{L^i}/dt$ for $t = 0$ in the fixed space frame.  We apply the equation $d\vec{L}^i/dt = \partial \vec{L}^i/\partial t + \omega \times \vec{L}^i$.
+
+Consider the first term first.  We have $\vec{\omega} = \omega_\bot \cos (\Omega t + \phi) \hat{e}_1 + \omega_\bot \sin (\Omega t + \phi) \hat{e}_2 + \omega_3 \hat{e}_3$, where $\Omega = \omega_3 (I^i_3 - I^i_\bot)/I^i_\bot$.  Our choice of coordinate system gives us $\phi = 0$, so $\dot{\vec{\omega}}(0) = \omega_\bot \Omega \hat{e}_2$.  As $\vec{L}^i = \overleftrightarrow{I^i} \vec{\omega}$ in the body frame, evaluating $\partial \vec{L}^i/\partial t$ at $t = 0$ gives us $\overleftrightarrow{I^i} \dot{\vec{\omega}}(0) = I^i_\bot \Omega \omega_\bot \hat{e}_2 = (I^i_3 - I^i_\bot) \omega_\bot \omega_3 \hat{e}_2$.
+
+Now consider the second term.  We can take the cross product in the body frame, in which $\vec{L^i} = \overleftrightarrow{I^i} \vec{\omega}$ is still valid.  At $t = 0$, $\vec{\omega} = \omega_\bot \hat{e}_1 + \omega_3 \hat{e}_3$, so $\vec{L^i} = I^i_\bot \omega_\bot \hat{e}^1 + I^i_3 \omega_3 \hat{e}_3$ and $\omega \times \vec{L^i} = - (I^i_3 + I^i_\bot) \omega_\bot \omega_3 \hat{e}_2$.  This gives us our final answer for the torque: $$\boxed{\tau = - 2 I^i_\bot \omega_\bot \omega_e \hat{e}_2.}$$
 
 \end{document}
