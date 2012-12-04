@@ -132,7 +132,7 @@ $$ (m_1+m_2) \ddot x_2-m_1 C \om_d^2 \sin(\om_d t)=-((K_1+K_2) x_2+C K_1 \sin(\o
 
 \paragraph{Question 3}
 \subparagraph{Part 1}
-We will assume that Shaun starts in a horizontal position (i.e. the board is vertical) and that his center of mass is located at a height of $R$ above the bottom of the circle. Such an assumption is reasonable, because any other initial configuration would only add a constant term of additional energy which would not qualitatively affect the analysis below.
+We $\parens{will}$ assume that Shaun starts in a horizontal position (i.e. the board is vertical) and that his center of mass is located at a height of $R$ above the bottom of the circle. Such an assumption is reasonable, because any other initial configuration would only add a constant term of additional energy which would not qualitatively affect the analysis below.
 
 Thus by the initial conditions we have that Shaun has initial energies of
 \[ KE_0 = 0 \]
@@ -240,10 +240,28 @@ The axes of symmetry $\hat{e}_3^i$ and $\hat{e}_3^o$ precess in circles with one
 
 For the remainder of this problem, let $\omega_3$ and $\omega_\bot$ be the components of $\vec{\omega}$ along $\hat{e}_3$ and $\hat{e}_1$, respectively.  We can compute the magnitudes of $\vec{L}^i$ and $\vec{L}^o$ just as well in the body frame as in the fixed frame.  In the body frame, we have $$\vec{L}^i = \overleftrightarrow{I^i}\vec{\omega} = \omega_\bot I^i_\bot \hat{e}_1 + \omega_3 I_3 \hat{e}_3$$ and thus $$L^i = \sqrt{\omega_\bot^2 (I_\bot^i)^2 + \omega_3^2 (I_3^i)^2}.$$  The formula for $L^o$ repeats this analysis, swapping superscript $o$ for superscript $i$.  Thus, the axes of symmetry of the two parts of the space station become parallel again only if $$\frac{\tilde{\omega}^i}{\tilde{\omega}^o} = \frac{L^o I^i_\bot}{L^i I^o_\bot} = \frac{I^i_\bot \sqrt{\omega_\bot^2 (I_\bot^o)^2 + \omega_3^2 (I_3^o)^2}}{I^o_\bot \sqrt{\omega_\bot^2 (I_\bot^i)^2 + \omega_3^2 (I_3^i)^2}}$$ is rational.  If we let $\theta$ be the angle formed by $\vec{\omega}$ in the $\hat{e}_1 \hat{e}_3$ plane (such that $\omega_3 = \omega \sin \theta$ and $\omega_\bot = \omega \cos \theta$), then we have this perhaps nicer-looking version of the same quantity: $$\frac{I^i_\bot \sqrt{(I^o_\bot )^2 \cos^2 \theta + (I^o_3)^2 \sin^2 \theta}}{I^o_\bot \sqrt{(I^i_\bot)^2 \cos^2 \theta + (I^i_3)^2 \sin^2 \theta}}.$$
 
-\subparagraph{Part 4.}  As the horizontal rods are massless and rigid, any torque exerted on the horizontal rods will be transferred to the inner control center.  To compute the torque, therefore, it suffices to compute $d\vec{L^i}/dt$ for $t = 0$ in the fixed space frame.  We apply the equation $d\vec{L}^i/dt = \partial \vec{L}^i/\partial t + \omega \times \vec{L}^i$.
+\subparagraph{Part 4.}  As the horizontal rods are massless and rigid, any torque exerted on the horizontal rods will be transferred to the inner control center.  It therefore suffices to compute the torque on the control center using Euler's equations.  First, recall the following equations, where $\Omega \eqdef \omega_3 (I_3^t - I_\bot^t)/I_\bot^t$ (the $t$ stands for ``total,'' or both parts of the ship): $$\vec{\omega}(t) = \omega_\bot \cos (\Omega t) \hat{e}_1 + \omega_\bot \sin (\Omega t) \hat{e}_2 + \omega_3 \hat{e}_3$$  $$\dot{\vec{\omega}}(t) = - \Omega \omega_\perp \sin (\Omega t) \hat{e}_1 + \Omega \omega_\perp \cos (\Omega t) \hat{e}_2.$$
+
+Thus, $\vec{\omega}(0) = \omega_\perp  \hat{e}_1 + \omega_3 \hat{e}_3$ and $\dot{\vec{\omega}}(0) = \Omega \omega_\perp \hat{e}_2$.  Now, with $I_1 = I_2 \eqdef I_\perp^i$ and $I_3 \eqdef I_3^i$, we can evaluate each of Euler's equations at $t = 0$ easily:
+
+\begin{itemize}
+
+\item $\tau_1 = I_1 \dot{\omega}_1 + (I_3 - I_2) \omega_3 \omega_2$ evaluates to $\tau_1(0) = 0$, as $\dot{\omega}_1(0) = 0$ and $\omega_2(0) = 0$.
+
+\item $\tau_2 = I_2 \dot{\omega}_2 + (I_1 - I_3) \omega_1 \omega_3$ evaluates to $\tau_2(0) = I_\bot^i \Omega \omega_\bot + (I_\bot^i - I_3^i) \omega_\bot \omega_3$.
+
+\item $\tau_3 = I_3 \dot{\omega}_3 + (I_2 - I_1) \omega_2 \omega_2$ evaluates to $\tau_3(0) = 0$, as $I_1 = I_2$ and $\dot{\omega}_3 = 0$.
+
+We thus get the following expression for torque: $$\boxed{\tau(0) = (I_\bot^i \Omega \omega_\bot + (I_\bot^i - I_3^i) \omega_\bot \omega_3) \hat{e}_2.}$$
+
+\end{itemize}
+
+\begin{comment} To compute the torque, therefore, it suffices to compute $d\vec{L^i}/dt$ for $t = 0$ in the fixed space frame.  We apply the equation $d\vec{L}^i/dt = \partial \vec{L}^i/\partial t + \omega \times \vec{L}^i$.
 
 Consider the first term first.  We have $\vec{\omega} = \omega_\bot \cos (\Omega t + \phi) \hat{e}_1 + \omega_\bot \sin (\Omega t + \phi) \hat{e}_2 + \omega_3 \hat{e}_3$, where $\Omega = \omega_3 (I^i_3 - I^i_\bot)/I^i_\bot$.  Our choice of coordinate system gives us $\phi = 0$, so $\dot{\vec{\omega}}(0) = \omega_\bot \Omega \hat{e}_2$.  As $\vec{L}^i = \overleftrightarrow{I^i} \vec{\omega}$ in the body frame, evaluating $\partial \vec{L}^i/\partial t$ at $t = 0$ gives us $\overleftrightarrow{I^i} \dot{\vec{\omega}}(0) = I^i_\bot \Omega \omega_\bot \hat{e}_2 = (I^i_3 - I^i_\bot) \omega_\bot \omega_3 \hat{e}_2$.
 
-Now consider the second term.  We can take the cross product in the body frame, in which $\vec{L^i} = \overleftrightarrow{I^i} \vec{\omega}$ is still valid.  At $t = 0$, $\vec{\omega} = \omega_\bot \hat{e}_1 + \omega_3 \hat{e}_3$, so $\vec{L^i} = I^i_\bot \omega_\bot \hat{e}^1 + I^i_3 \omega_3 \hat{e}_3$ and $\omega \times \vec{L^i} = - (I^i_3 + I^i_\bot) \omega_\bot \omega_3 \hat{e}_2$.  This gives us our final answer for the torque: $$\boxed{\tau = - 2 I^i_\bot \omega_\bot \omega_e \hat{e}_2.}$$
+Now consider the second term.  We can take the cross product in the body frame, in which $\vec{L^i} = \overleftrightarrow{I^i} \vec{\omega}$ is still valid.  At $t = 0$, $\vec{\omega} = \omega_\bot \hat{e}_1 + \omega_3 \hat{e}_3$, so $\vec{L^i} = I^i_\bot \omega_\bot \hat{e}_1 + I^i_3 \omega_3 \hat{e}_3$ and $\omega \times \vec{L^i} = - (I^i_3 + I^i_\bot) \omega_\bot \omega_3 \hat{e}_2$.  This gives us our final answer for the torque: $$\boxed{\tau = - 2 I^i_\bot \omega_\bot \omega_e \hat{e}_2.}$$
+
+\end{comment}
 
 \end{document}
