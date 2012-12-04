@@ -5,10 +5,15 @@
 \newcommand{\dif}[2]{\f{d#1}{d#2}}
 \newcommand{\eqdef}{\equiv}
 \include{prelude}
+<<<<<<< HEAD
 \author{Keno Fischer, Connor Harris, Alex Lombardi}
 \maketitle
 \paragraph{Question 1}
 \subparagraph*{Part 1-everyone-1}
+=======
+\paragraph{Question 1.}
+\subparagraph*{Part Everyone-1.}
+>>>>>>> Typographical and grammar tidying.
 We will assume that in the cylindrical the speed of light is still equal to $c$ in all initial reference frames. However, as we will see, it is not necessarily true anymore that any two initial reference frames are identical.  \par 
 In this universe, sending out a light pulse simultaneously will result in it coming back from both the $+x$ and the $-x$ direction, after two different time intervals $T_+$ and $T_-$. It is easy to see conceptually how such an asymmetry can arise in a cylindrical universe. Suppose our base ship is moving at some velocity $\beta$ in the $+x$ direction and sends out a light pulse at some time $t_0$. Since $c$ is finite, the ship will continue to travel in the $+x$ direction while the light travels all the way around. However, because of that, the light sent in the $-x$ direction will meet the ship earlier than the light sent into the $+x$ direction (since it had to travel less and both light pulses move at the same speed). \par 
 An interesting and very consequential consequence of this is that the second postulate of special relativity no longer holds in its full generality, as the values of $T_+$ and $T_-$ will be different for every reference frame (see the argument for why such a discrepancy may exist in the first place for a reasoning why this should be the case). In particular, there exists one very special frame in which $T_+=T_-$. This frame could be called the total rest frame of the universe, as the asymmetry in $T_+$ and $T_-$ can be easily explained by objects moving relative to this reference frame. \par 
@@ -64,8 +69,13 @@ In the standard Lagrangian on four-dimensional spacetime, we have four kinds of 
 \item Rotation in 3-space: Angular momentum.
 \item Lorentz boost: Rest mass (i.e.\ Minkowski inner product of the energy-momentum 4-vector).
 \end{itemize}
-
+<<<<<<< HEAD
+The problem asks us for the first two to examine whether or not there exists a symmetry that leads to a conserved quantity and if not to find a counter example. So let's go through both cases:
+For the first category, nothing changes from the classical analysis (with the same condition for conservation of energy and momentum imposed on $V$ as in the classical case). Thus these quantities are conserved by Noether's theorem. This Lagrangian is not, however, symmetric under rotation in 3-space. If we are originally at position $y=2\lambda_c$, we may find ourselves at position $y=\lambda_c$ after a rotation of $2\pi$ and thus it may not be conserved. \par
+\emph{Angular momentum is not conserved.}  For a counterexample, restrict our consideration to the $xy$-``plane.''  Take a fixed reference point at coordinates $(x_0, y_0)$, and consider a solitary particle at rest at the coordinates $(x_0, y_0 + h)$.  We can define the notion of distance consistently for long slices in the $y$-direction with arbitrarily small $x$-dimension (that is, for essentially flat parts of the $xy$-space).
+=======
 The problem asks us to find either a symmetry or a counterexample for the first two conserved quantities (4-vectors and angular momentum).  In the first case, nothing changes from the classical analysis (with the same condition for conservation of energy and momentum imposed on $V$ as in the classical case). Therefore, these quantities are conserved by Noether's theorem.
+>>>>>>> Typographical and grammar tidying.
 
 This Lagrangian is not, however, symmetric under rotation in 3-space, and angular momentum is not conserved.  For a counterexample, restrict our consideration to the $xy$-cylinder,  Take a fixed reference point at coordinates $(x_0, y_0)$.  We can define the notions of distance and angle consistently for long slices in the $y$-direction with arbitrarily small $x$-dimension (that is, for essentially flat parts of the $xy$-space).  If a particle is placed at the reference point at rest and given an impulse so it travels in a helix to the point $(x_0, y_0 + h)$, then the particle has zero angular momentum immediately after the impulse (as it is traveling directly away from the reference point), but nonzero angular momentum when it reaches $(x_0, y_0 + h)$ traveling at an angle to the line $x = x_0$.  (Helical paths of objects in the $xy$-space are a consequence of the conservation of linear momentum.)  Thus, the particle evolves from linear to nonlinear angular momentum.
 
