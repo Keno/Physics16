@@ -90,7 +90,7 @@ $$b=\f{A}{\om_d}=C\f{K_1 m_2-K_2 m_1}{2(K_1+K_2)(m_1+m_2)}$$
 Now, we have completely described $x(t)$.  Our earlier equations relating $x_1$ and $x_2$ to $x$ still hold, so given our description of $x(t)$, we find that (for our calculated values of $A$ and $b$)
 $$x_1(t)=At \cos(\om_d t)+b\sin(\om_d t)+\f{m_2}{m_1+m_2} C\sin(\om_d t)$$
 $$x_2(t)=At\cos(\om_d t)+b\sin(\om_d t)-\f{m_1}{m_1+m_2}C\sin(\om_d t)$$
-\subparagraph{2-a}  First, we relate $x_1$ and $x_2$:
+\subparagraph{Part a}  First, we relate $x_1$ and $x_2$:
 $$x_2(t)= x_1(t)-C\sin(\om_d) t$$
 Then, we compute the Lagrangian:
 $$L=T-V= \f 1 2 (m_1 \dot x_1^2 + m_2 (\dot x_1 - C\om_d \cos(\om_d t))^2)-\f 1 2 (K_1 x_1^2+K_2 (x_1-C \sin(\om_d t)^2))$$
@@ -99,7 +99,7 @@ $$\pdif L {\dot x_1}= m_1 \dot x_1 + m_2 (\dot x_1 - C \om_d \cos(\om_d t))$$
 $$\pdif L {x_1}=-(K_1 x_1+K_2(x_1-C\sin (\om_d t)))$$
 The Euler-Lagrange equation is then 
 $$  (m_1+m_2)\ddot x_1 + C m_2 \om_d^2 \cos(\om_d t)=-((K_1+K_2) x_1 - C K_2 \sin(\om_d t))$$
-\subparagraph{2-b}  The relation between $x_1$ and $x_2$ we will be using is
+\subparagraph{Part b}  The relation between $x_1$ and $x_2$ we will be using is
 $$x_1(t)=x_2(t) + C\sin(\om_d t)$$
 Therefore, the Lagrangian for the system is 
 $$L=T-V= \f 1 2 (m_2 \dot x_2^2 + m_1 (\dot x_2 + C\om_d \cos(\om_d t))^2)-\f 1 2 (K_2 x_2^2+K_1 (x_2+C \sin(\om_d t)^2))$$
@@ -186,17 +186,17 @@ Therefore, our equation reduces to
 $$\sum \tau_i\approx [\f{-2mlg\sqrt{(R-l)^2-z^2}}{R}+\f{mwgz}{R}]\hat z$$
 Now, there are only two torques to consider that are acting on the first wheel - torque due to gravity, and torque due to the normal force $\vec F_n$ of the \textit{second} wheel acting on the half-pipe; note that by Newton's third law, $F_n=|\vec F_n|=|F|$, where $|F|$ is the force acting on the second wheel!  Well, $\tau_n=w F_n \hat z$, as the vector from the front wheel's position to the back wheel's position and $\vec F_n$ are perpendicular to each other.   
 \\\\ The torque due to gravity is also calculable, given everything we've done already.  We know that $F_g=(0, -mg)$ and that our displacement vector is $\vec r_0-c=-l(-\sin(\alpha), \cos(\alpha))-\f w 2(\cos(\alpha), \sin(\alpha))$.  Therefore, 
-$$\tau_g=mg(l\sin(\alpha)+\f w 2 \cos(\alpha))\hat z=mg(\f{l\sqrt{(R-l)^2-z^2}+\f {wz}{2}}{R-l})\hat z$$
+$$\tau_g=-mg(l\sin(\alpha)-\f w 2 \cos(\alpha))\hat z=-mg(\f{l\sqrt{(R-l)^2-z^2}-\f {wz}{2}}{R-l})\hat z$$
 Finally, we have everything that we need to plug into our master equation!
-$$w F_n \hat z\approx  m[\f{-2lg\sqrt{(R-l)^2-z^2}}{R}+\f{wgz}{R}]\hat z-mg(\f{l\sqrt{(R-l)^2-z^2}+\f {wz}{2}}{R-l})\hat z$$
+$$w F_n \hat z\approx  m[\f{-2lg\sqrt{(R-l)^2-z^2}}{R}+\f{wgz}{R}]\hat z+mg(\f{l\sqrt{(R-l)^2-z^2}-\f {wz}{2}}{R-l})\hat z$$
 Thus, with some approximation of $\f {lz} R\approx \f {lz}{R-l}$, we get
-$$|F|=F_n\approx mg(-2l\sqrt{1-(\f z {R-l})^2}+ \f {wz}{R}-l\sqrt{1-(\f z {R-l})^2}- \f {wz}{2R})\approx mg(-3l\sqrt{1-(\f z R)^2}+\f{wz}{2R})$$
+$$|F|=F_n\approx mg(-2l\sqrt{1-(\f z {R-l})^2}+ \f {wz}{R}+l\sqrt{1-(\f z {R-l})^2}-\f {wz}{2R})\approx mg(-l\sqrt{1-(\f z R)^2}+\f{wz}{2R})$$
 These calculations determined the magnitude of the force acting on the second wheel (we knew the direction of $\vec F$ from the start).  The process to determine the force acting on the front wheel is considering the torques acting on the back wheel and setting up the same series of equations.  The calculation of $m(\vec c - \vec r_1)\times (\ddot {\vec r}_1)$, where $\vec r_1$ is the position of the back wheel, is exactly the same - the only difference is a negative factor in the tangential component of $\vec r_1$.  Hence, we get
 $$m(\vec c-\vec r_1)\times \ddot{\vec r}_1\approx m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
-$\dif {\vec L} t\approx 0$ still holds for the same reasons as before, and $\tau_g=mg\f{l\sqrt{(R-l)^2-z^2}-\f {wz}2}{R-l} \hat z$.  The final difference in this case is that $\tau_n=-wF_n \hat z$, as the displacement vector from the back wheel's position to the front wheel's position is now in the opposite direction.  Hence we derive that
-$$w F_n \hat z\approx mg\f{l\sqrt{(R-l)^2-z^2}-\f {wz}2}{R-l} \hat z-m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
+$\dif {\vec L} t\approx 0$ still holds for the same reasons as before, and $\tau_g=-mg\f{l\sqrt{(R-l)^2-z^2}+\f {wz}2}{R-l} \hat z$.  The final difference in this case is that $\tau_n=-wF_n \hat z$, as the displacement vector from the back wheel's position to the front wheel's position is now in the opposite direction.  Hence we derive that
+$$w F_n \hat z\approx -mg\f{l\sqrt{(R-l)^2-z^2}+\f {wz}2}{R-l} \hat z-m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
 Through the same approximation methods, we arrive at our conclusion:
-$$|F_2|\approx mg(3l\sqrt{1-(\f z {R-l})^2}+\f{wz}{2R})$$
+$$|F_2|\approx mg(l\sqrt{1-(\f z {R-l})^2}+\f{wz}{2R})$$
 Note that (as a coherence check) when $z\approx R-l$ (which is when Shaun reaches the bottom of the half-pipe), we find that $|F|=|F_2|=\f {mg}2$, which means that the weight of the center of mass is evenly distributed on the two wheels at this point in time (which is in line with our intuition).  
 
 \paragraph{Question 4.}
