@@ -176,19 +176,25 @@ giving us a final answer of $5h$.
 \subparagraph{Part 3a)}
 Since there is no friction, we know that the only forces acting on Shaun are the normal force and gravity. Now, consider the situation in which Shaun's center of mass is located some distance $z$ below the top of the half pipe. Then we know that
 $$z=(R-l)\cos(\alpha)$$
-Where $\vec r=R\cos(\f \pi 2-\alpha)\hat x-R\sin(\f \pi 2-\alpha)\hat y=R\sin(\alpha)\hat x-R\cos(\alpha)\hat y$.  Define $\vec r_0$ to be the position of the front wheel.  Then, we can approximate $\vec r_0=R(\sin(\alpha), -\cos(\alpha))+\f{w}{2}(-\cos(\alpha), -\sin(\alpha))$, where the first component is the vector to the edge of the circle that goes through the center of mass, and the second component is approximating the board to be flat (on the tangent) on the circle.  Define $\vec c$ to be the position of the center of mass, and we get that $\vec c=(R-l)(\sin(\alpha), -\cos(\alpha))$.  Thus,
+Where $\vec r=R\cos(\f \pi 2-\alpha)\hat x-R\sin(\f \pi 2-\alpha)\hat y=R\sin(\alpha)\hat x-R\cos(\alpha)\hat y$.  Define $\vec r_0$ to be the position of the front wheel and $\vec r_1$ to be the position of the back wheel.  Then, we can approximate 
+$$\vec r_0=R(\sin(\alpha), -\cos(\alpha))+\f{w}{2}(-\cos(\alpha), -\sin(\alpha))$$
+$$\vec r_1=R(\sin(\alpha), -\cos(\alpha))-\f w 2(-\cos(\alpha), -\sin(\alpha))$$
+The first term of these two sums is the vector to the edge of the circle that goes through the center of mass, and the second terms approximate the board to be flat (on the tangent) on the circle.  Define $\vec c$ to be the position of the center of mass, and we get that $\vec c=(R-l)(\sin(\alpha), -\cos(\alpha))$.  Thus,
 $$\vec c-\vec r_0=-l(\sin(\alpha), -\cos(\alpha))-\f{w}{2}(-\cos(\alpha), -\sin(\alpha))$$
-$$\vec c-\vec r_0=l(-\sin(\alpha), \cos(\alpha))+\f w 2(\cos(\alpha), \sin(\alpha))$$
+$$\rightarrow \vec c-\vec r_0=l(-\sin(\alpha), \cos(\alpha))+\f w 2(\cos(\alpha), \sin(\alpha))$$
+and similarly
+$$\vec c-\vec r_1=l(-\sin(\alpha), \cos(\alpha))-\f w 2(\cos(\alpha), \sin(\alpha))$$
 This is necessary to calculate in order to apply the formula
-$$\sum \tau_i=\dif L t+m(\vec c-\vec r_0)\times \ddot {\vec r}_0$$
-This formula allows us to calculate the combined torque of gravity and the normal force acting on the front wheel.  Well, we first need to calculate
+$$\sum \tau_i=\dif L t+m(\vec c-\vec r)\times \ddot {\vec r}$$
+This formula allows us to calculate the combined torque of gravity and the normal force acting on each of the wheels.  Well, we first need to calculate
 $$\dot{\vec r}_0=R(\cos(\alpha)\dif \alpha t, \sin(\alpha)\dif \alpha t)+\f w 2(\sin(\alpha)\dif \alpha t, -\cos(\alpha)\dif \alpha t)$$
+$$\dot{\vec r}_1=R(\cos(\alpha)\dif \alpha t, \sin(\alpha)\dif \alpha t)-\f w 2 (\sin(\alpha)\dif \alpha t, -\cos(\alpha)\dif \alpha t)$$
 Using the fact that $\dif {(\f \pi 2-\alpha)}t=\f{|\vec {\dot r}|}{R}$, we get that $\dif \alpha t=-\f {v} R$.  Furthermore, using conservation of energy, we have that
 $$\f 1 2 m v^2=mgz\rightarrow v=\sqrt {2gz}$$
 Thus, we have $\dif \alpha t=-\f{\sqrt {2gz}}R$.  Then, we can calculate
 $$\ddot{\vec r}_0=R\dif \alpha t(-\sin(\alpha)\dif \alpha t, \cos(\alpha) \dif \alpha t)+R \dif{\dif \alpha t}t(\cos(\alpha), \sin(\alpha))$$
 $$+\f w 2 \dif \alpha t (\cos(\alpha) \dif \alpha t, \sin(\alpha) \dif \alpha t)+\f w 2 \dif{\dif \alpha t}t(\sin(\alpha), -\cos(\alpha))$$
-Now, we can calculate
+With the formula for $r_1$ being the same (with a $-\f w 2$ second term).  Now, we can calculate
 $$m(\vec c-\vec r_0)\times \ddot {\vec r}_0=m[-l R \dif{\dif \alpha t}t-\f{lw}{2}(\dif \alpha t)^2+\f {Rw}{2}(\dif \alpha t)^2-(\f w 2)^2 \dif{\dif \alpha t}t]\hat z$$
 To completely evaluate this, we need to calculate $\dif {\dif \alpha t}t$, which is determined by calculating $\dif z t$.  Well, 
 $$\cos(\alpha)=\f{z}{R-l}$$
@@ -197,28 +203,34 @@ Then, we can calculate
 $$\dif {\dif \alpha t}t=\f {2g \dif z t}{R\sqrt{2gz}}=\f {2g \sqrt{(R-l)^2-z^2}}{R^2}$$
 As we will see in later calculations, we will need to divide $m(\vec c-\vec r_0)\times \ddot {\vec r}_0$ by $w$ and consider all significant terms.  In that case, the second and fourth terms of the expression I gave will have terms of $\f{l}{R}$ or $\f{w}{R}$, and hence are insignificant.  Therefore, we can make the approximation
 $$m(\vec c-\vec r_0)\times \ddot {\vec r}_0\approx m[\f{-2lg\sqrt{(R-l)^2-z^2}}{R}+\f{wgz}{R}]\hat z$$
+Through the same calculations, we find
+$$m(\vec c-\vec r_1)\times \ddot{\vec r}_1\approx m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
 We can also calculate the angular momentum of Shaun's center of mass with respect to $r_0$:
 $$\vec p=m(\dot{\vec c}-\dot{\vec r}_0)=m(l\dif \alpha t(-\cos(\alpha), -\sin(\alpha))+\f w 2 \dif \alpha t(-\sin(\alpha), \cos(\alpha)))$$
 $$\vec L=(\vec c-\vec r_0)\times \vec p=m\dif \alpha t(l^2+(\f w 2)^2)$$
 Thus, 
 $$\dif{\vec L}t=\f{2mg\sqrt{(R-l)^2-z^2}(l^2+(\f w 2)^2)}{R^2}$$
-Similarly, we need to take the significant terms of $\dif{\vec L}t$ when divided by $w$; however, in this case, there will be a factor of $\f{l+\f{w^2}{l}}{R}$ in the result, so this entire thing is in fact zero!  $\dif {\vec L}{t}\approx 0$.
-Therefore, our equation reduces to
+Similarly, we need to take the significant terms of $\dif{\vec L}t$ when divided by $w$; however, in this case, there will be a factor of $\f{l+\f{w^2}{l}}{R}$ in the result, so this entire thing is in fact zero!  $\dif {\vec L}{t}\approx 0$ (and this holds for both $r_0$ and $r_1$ for the same reasons).  
+Therefore, our two equations reduce to
 $$\sum \tau_i\approx [\f{-2mlg\sqrt{(R-l)^2-z^2}}{R}+\f{mwgz}{R}]\hat z$$
-Now, there are only two torques to consider that are acting on the first wheel - torque due to gravity, and torque due to the normal force $\vec F_n$ of the \textit{second} wheel acting on the half-pipe; note that by Newton's third law, $F_n=|\vec F_n|=|F|$, where $|F|$ is the force acting on the second wheel!  Well, $\tau_n=w F_n \hat z$, as the vector from the front wheel's position to the back wheel's position and $\vec F_n$ are perpendicular to each other.   
+$$\sum \tau_i\approx [\f{-2mlg\sqrt{(R-l)^2-z^2}}{R}-\f{mwgz}{R}]\hat z$$
+Now, there are only two torques to consider that are acting on the first wheel - torque due to gravity, and torque due to the normal force $\vec F_n$ of the \textit{second} wheel acting on the half-pipe.  Well, $\tau_n=w F_n \hat z$, as the vector from the front wheel's position to the back wheel's position and $\vec F_n$ are perpendicular to each other.  As for the normal force on the first wheel, we get that $\tau_n=-w F_n \hat z$, because the displacement vector from the back wheel's position to the front wheel's position is in the opposite direction.
 \\\\ The torque due to gravity is also calculable, given everything we've done already.  We know that $F_g=(0, -mg)$ and that our displacement vector is $\vec r_0-c=-l(-\sin(\alpha), \cos(\alpha))-\f w 2(\cos(\alpha), \sin(\alpha))$.  Therefore, 
 $$\tau_g=-mg(l\sin(\alpha)-\f w 2 \cos(\alpha))\hat z=-mg(\f{l\sqrt{(R-l)^2-z^2}-\f {wz}{2}}{R-l})\hat z$$
-Finally, we have everything that we need to plug into our master equation!
+For $r_1$, we get the similar equation
+$$\tau_g=-mg\f{l\sqrt{(R-l)^2-z^2}+\f {wz}2}{R-l} \hat z$$
+Finally, we have everything that we need to plug into our master equation!  For the first wheel:
 $$w F_n \hat z\approx  m[\f{-2lg\sqrt{(R-l)^2-z^2}}{R}+\f{wgz}{R}]\hat z+mg(\f{l\sqrt{(R-l)^2-z^2}-\f {wz}{2}}{R-l})\hat z$$
 Thus, with some approximation of $\f {lz} R\approx \f {lz}{R-l}$, we get
-$$|F|=F_n\approx mg(-2l\sqrt{1-(\f z {R-l})^2}+ \f {wz}{R}+l\sqrt{1-(\f z {R-l})^2}-\f {wz}{2R})\approx mg(-l\sqrt{1-(\f z R)^2}+\f{wz}{2R})$$
-These calculations determined the magnitude of the force acting on the second wheel (we knew the direction of $\vec F$ from the start).  The process to determine the force acting on the front wheel is considering the torques acting on the back wheel and setting up the same series of equations.  The calculation of $m(\vec c - \vec r_1)\times (\ddot {\vec r}_1)$, where $\vec r_1$ is the position of the back wheel, is exactly the same - the only difference is a negative factor in the tangential component of $\vec r_1$.  Hence, we get
-$$m(\vec c-\vec r_1)\times \ddot{\vec r}_1\approx m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
-$\dif {\vec L} t\approx 0$ still holds for the same reasons as before, and $\tau_g=-mg\f{l\sqrt{(R-l)^2-z^2}+\f {wz}2}{R-l} \hat z$.  The final difference in this case is that $\tau_n=-wF_n \hat z$, as the displacement vector from the back wheel's position to the front wheel's position is now in the opposite direction.  Hence we derive that
+$$F_n\approx mg(-2l\sqrt{1-(\f z {R-l})^2}+ \f {wz}{R}+l\sqrt{1-(\f z {R-l})^2}-\f {wz}{2R})\approx mg(-l\sqrt{1-(\f z R)^2}+\f{wz}{2R})$$
+Furthermore, we know that the direction of $F_n$ is in the same direction as $\vec r_0$; therefore, $\vec F_n=F_n\f{-\vec r_0}{r_0}$.  There are two forces acting directly on the second wheel; the normal force $\vec F_n$ that we just calculated, and $F_2$, a component of the gravity force acting directly on it.  Using Newton's second law, we get
+$$\vec F_2+\vec F_n=m \ddot r_1$$
+And hence the two forces acting on the second wheel are $\vec F_n$ as calculated and $\vec F_2=m\ddot r_1-\vec F_n$.
+\\\\ For the second wheel:
 $$w F_n \hat z\approx -mg\f{l\sqrt{(R-l)^2-z^2}+\f {wz}2}{R-l} \hat z-m(\f{-2lg\sqrt{(R-l)^2-z^2}}{R}-\f {wgz}R)\hat z$$
 Through the same approximation methods, we arrive at our conclusion:
-$$|F_2|\approx mg(l\sqrt{1-(\f z {R-l})^2}+\f{wz}{2R})$$
-Note that (as a coherence check) when $z\approx R-l$ (which is when Shaun reaches the bottom of the half-pipe), we find that $|F|=|F_2|=\f {mg}2$, which means that the weight of the center of mass is evenly distributed on the two wheels at this point in time (which is in line with our intuition).  
+$$F_n \approx mg(l\sqrt{1-(\f z {R-l})^2}+\f{wz}{2R})$$
+Then, we find that the two forces acting on the first wheel are $\vec F_n=F_n \f{-\vec r_0}{r_0}$ and $\vec F_1=m\ddot{\vec r}_0-\vec F_n$.  Note that (as a coherence check) when $z\approx R-l$ (which is when Shaun reaches the bottom of the half-pipe), we find that the two different normal forces are equal, with $F_n=\f {mg}2$, which means that the weight of the center of mass is evenly distributed on the two wheels at this point in time (which is in line with our intuition).  
 
 \paragraph{Question 4.}
 
